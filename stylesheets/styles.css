@@ -56,6 +56,16 @@ h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 3em;
   text-transform: uppercase;
+  color: var(--primary-000);
+}
+
+.subtle-h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: var(--primary-000);
+  padding: 1em;
+  text-align: center;
 }
 
 h2 {
@@ -176,21 +186,32 @@ a .icon:hover {
 
 .cv {
   background-color: var(--primary-100);
+}
+
+.events {
+  background-color: var(--primary-000);
+}
+
+.cv,
+.events {
   color: var(--white-000);
   padding: 1.25em;
 }
 
-.cv div {
+.cv div,
+.events div {
   max-width: 600px;
   margin: auto;
 }
 
-.cv ul {
+.cv ul,
+.events ul {
   list-style: none;
   padding: unset;
 }
 
-.cv li {
+.cv li,
+.events li {
   margin: 10px 0;
 }
 
