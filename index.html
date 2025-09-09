@@ -13,69 +13,68 @@
 </head>
 <body>
   <main>
-    <section class="publications">
-      <div class="carousel">
-        <!-- Slides -->
-        <div class="slides">
-          <div class="slide slide-1">
-            <div class="card slide-left">
-              <p class="card-title">
-                Gothesque Magazine
-              </p>
-              <p class="card-description">
-                <a href="https://www.magcloud.com/browse/issue/1862589" target="_blank">Issue #88 — October 2020 — Red Vol.2</a>
-              </p>
-            </div>
-            <div class="images">
-              <img src="./images/birds-2.jpg" alt="The Bird of Prey">
-              <img src="./images/gothedque88cover.jpg" alt="Cover of Gothesque Issue #88">
-            </div>
+    <div class="carousel">
+      <h2>Publications</h2>
+      <div class="slides" role="group" aria-roledescription="carousel">
+        <div class="slide slide-1" aria-live="false" role="group" aria-roledescription="slide">
+          <div class="card slide-left">
+            <p class="card-title">
+              Gothesque Magazine
+            </p>
+            <p class="card-description">
+              <a href="https://www.magcloud.com/browse/issue/1862589" target="_blank">Issue #88 — October 2020 — Red Vol.2</a>
+            </p>
           </div>
-          <div class="slide slide-2">
-            <div class="images">
-              <img src="./images/gothesque114cover.jpg" alt="Cover of Gothesque Issue #11.4">
-            </div>
-            <div class="card slide-left">
-              <p class="card-title">
-                Gothesque Magazine
-              </p>
-              <p class="card-description">
-                <a href="https://www.magcloud.com/browse/issue/730689" target="_blank">Issue #11.4 - April 2014</a>
-              </p>
-              <p class="card-footer">(cover & editorial)</p>
-            </div>
+          <div class=slide-images>
+            <img src="./images/birds-2.jpg" alt="The Bird of Prey">
+            <img src="./images/gothedque88cover.jpg" alt="Cover of Gothesque Issue #88">
           </div>
-          <div class="slide slide-3">
-            <div class="card slide-left">
-              <p class="card-title">
-                Dark Beauty Magazine
-              </p>
-              <p class="card-description">
-                <a href="https://www.magcloud.com/browse/issue/629703" target="_blank">Dark Beauty Magazine ISSUE 24 - High Fashion</a>
-              </p>
-            </div>
-            <div class="images">
-              <img src="./images/db24tear1.jpg" alt="The Bird of Prey">
-              <img src="./images/db24cover.jpg" alt="Cover of Gothesque Issue #88">
-            </div>
-          </div>
-          <!-- Next and previous buttons -->
-          <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;</button>
-          <button type="button" class="next" onclick="plusSlides(1)">&#10095;</buttond>
         </div>
-      </div><div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-    </section>
+        <div class="slide slide-2" aria-live="false" role="group" aria-roledescription="slide">
+          <div class=slide-images>
+            <img src="./images/gothesque114cover.jpg" alt="Cover of Gothesque Issue #11.4">
+          </div>
+          <div class="card slide-left">
+            <p class="card-title">
+              Gothesque Magazine
+            </p>
+            <p class="card-description">
+              <a href="https://www.magcloud.com/browse/issue/730689" target="_blank">Issue #11.4 - April 2014</a>
+            </p>
+            <p class="card-footer">(cover & editorial)</p>
+          </div>
+        </div>
+        <div class="slide slide-3" aria-live="false" role="group" aria-roledescription="slide">
+          <div class="card slide-left">
+            <p class="card-title">
+              Dark Beauty Magazine
+            </p>
+            <p class="card-description">
+              <a href="https://www.magcloud.com/browse/issue/629703" target="_blank">Dark Beauty Magazine ISSUE 24 - High Fashion</a>
+            </p>
+          </div>
+          <div class=slide-images>
+            <img src="./images/db24tear1.jpg" alt="Tear from Dark Beauty Magazine ISSUE 24">
+            <img src="./images/db24cover.jpg" alt="Cover of Dark Beauty Magazine ISSUE 24">
+          </div>
+        </div>
+      </div>
+      <!-- Next and previous buttons -->
+      <button type="button" class="prev" onclick="plusSlides(-1)" aria-controls="slides" aria-label="Next slide">&#10094;</button>
+      <button type="button" class="next" onclick="plusSlides(1)" aria-controls="slides" aria-label="Previous slide">&#10095;</buttond>
+    </div>
+    <div style="text-align:center" role="group" aria-label="Choose slide to display">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
 
     <section class="introduction">
         <div class="header">
           <div class="outline">
-            <h1>Jennifer Leigh Haggerty</h1>
+            <h1>Portrait Photography</h1>
             <h2>
-              Portrait photographer in Augusta, Geogria.
+              by Jennifer Leigh Haggerty, in Augusta, Geogria.
             </h2>
             <p class="note">LGBTQIA+ friendly.</p>
             <ul> 
