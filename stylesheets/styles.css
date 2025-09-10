@@ -75,6 +75,10 @@ button {
   color: var(--white-000);
 }
 
+.hidden {
+  display: none;
+}
+
 .mobile {
   width: 100%;
 }
@@ -185,16 +189,8 @@ a .icon:hover {
 
 .cv {
   background-color: var(--primary-100);
-}
-
-.events {
-  background-color: var(--primary-000);
-}
-
-.cv,
-.events {
   color: var(--white-000);
-  padding: 1.25em;
+  padding: 2em 1.25em;
 }
 
 .cv div,
@@ -244,6 +240,12 @@ a .icon:hover {
 /* START carousel */
 .carousel {
   position: relative;
+  margin: 40px 0;
+}
+
+.carousel h2 {
+  color: var(--primary-100);
+  text-align: center;
 }
 
 .slide-images {
@@ -266,6 +268,8 @@ a .icon:hover {
   position: relative;
   display: flex;
   overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .slide,
@@ -307,6 +311,7 @@ a .icon:hover {
 @media (min-width: 769px) {
   .carousel {
     height: max-content;
+    margin: 60px 0;
   }
 
   .carousel .slide {
