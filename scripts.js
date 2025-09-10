@@ -1,50 +1,60 @@
-let slideIndex = 1;
-let carousel = document.querySelector('.slides');
-let slides = document.getElementsByClassName("slide");
-//let slideWidth = slides[0].offsetWidth;
 
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  let cards = document.getElementsByClassName("slide.card");
-  const offset = 100 * slideIndex;
-  if (n === 1) {
-    // user presses right arrow, content slides in from right
-    for (i = 0; i < cards.length; i++) {
-      let card = cards[i];
-      card.classList.replace("slide-right", "slide-left");
-    }
-  } else {
-    // user presses left arrow, content slides in from left
-    for (i = 0; i < cards.length; i++) {
-      let card = cards[i];
-      card.classList.replace("slide-left", "slide-right");
+class Carousel {
+  constructor(element) {
+    this.carouselSlides = element.querySelector(".slides");
+    this.cards = element.querySelectorAll(".card");
+    this.galleries = element.querySelectorAll(".slide-images");
+    this.arrowLeft = element.querySelector(".prev");
+    this.arrowRight = element.querySelector(".next");
+    this.dots = element.querySelectorAll(".dot");
+    this.slideIndex = 0;
+  }
+
+  slideToIndex(n) {
+    if (n < 0 || n >= this.dots.length) return;
+    this.slideIndex = n;
+    this.carouselSlides.scrollTo(this.carouselSlides.children[n].offsetLeft - this.carouselSlides.offsetLeft, 0);
+    for (let i = 0; i < this.dots.length; i++) {
+      this.dots[i].classList.toggle("active", this.slideIndex === i);
     }
   }
-  carousel.style.transform = `translateX(${offset}%)`;
-  showSlides(slideIndex += n);
+  
+  addEventListeners() {
+    for (let i = 0; i < this.dots.length; i++) {
+      this.dots[i].addEventListener("click", () => {
+        this.slideToIndex(i);
+      });
+    }
+    this.arrowLeft.addEventListener("click", () => {
+      this.slideToIndex((this.slideIndex === 0 ? this.dots.length : this.slideIndex) - 1);
+      this.cards[this.slideIndex].classList.remove("slide-left");
+      this.cards[this.slideIndex].classList.remove("slide-right");
+      this.galleries[this.slideIndex].classList.remove("fade-up");
+
+      void this.cards[this.slideIndex].offsetWidth;
+      void this.galleries[this.slideIndex].offsetWidth;
+
+      this.galleries[this.slideIndex].classList.add("fade-up");
+      this.cards[this.slideIndex].classList.add("slide-left");
+    });
+    this.arrowRight.addEventListener("click", () => {
+      this.slideToIndex(this.slideIndex === this.dots.length -1 ? 0 : this.slideIndex + 1);
+      this.cards[this.slideIndex].classList.remove("slide-left");
+      this.galleries[this.slideIndex].classList.remove("fade-up");
+      this.cards[this.slideIndex].classList.remove("slide-right");
+
+      void this.cards[this.slideIndex].offsetWidth;
+      void this.galleries[this.slideIndex].offsetWidth;
+
+      this.galleries[this.slideIndex].classList.add("fade-up");
+      this.cards[this.slideIndex].classList.add("slide-right");
+    });
+  }
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+const carousels = document.getElementsByClassName("carousel");
 
-function showSlides(n) {
-  let i;
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    const slide = slides[i]
-    slide.ariaHidden = true;
-    slide.ariaLive = false;
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].ariaHidden = false;
-  slides[slideIndex-1].ariaLive = true;
-  dots[slideIndex-1].className += " active";
+for (const carousel of carousels) {
+  new Carousel(carousel).addEventListeners();
 }

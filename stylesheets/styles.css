@@ -227,7 +227,6 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fade 2s, slide-bottom 0.75s;
 }
 
 .carousel .slide-images img {
@@ -243,6 +242,7 @@ ul {
 .slides {
   position: relative;
   display: flex;
+  overflow: hidden;
 }
 
 .slide,
@@ -303,8 +303,25 @@ ul {
     top: 50%;
   }
 }
+
 /* END carousel */
 
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: var(--black-000);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2.5px;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: var(--accent-000);
+}
+
+/* START ANIMATIONS */
 @keyframes glow-pulse {
   0% {
     box-shadow: 0 0 2px 3px rgba(40, 76, 82, 0.5);
@@ -373,4 +390,7 @@ ul {
 }
 .slide-down {
   animation: left-to-right 0.75s;
+}
+.fade-up {
+  animation: fade 2s, slide-bottom 0.75s;
 }
