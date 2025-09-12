@@ -27,12 +27,8 @@ class Carousel {
       this.dots[i].addEventListener("click", () => {
         this.slideToIndex(i);
 
-        this.cards[i].classList.remove("slide-left");
-        this.cards[i].classList.remove("slide-right");
-        this.cards[i].classList.remove("slide-down");
-        this.cards[i].classList.remove("slide-up");
-        this.galleries[i].classList.remove("fade-up");
-        this.galleries[i].classList.remove("fade-down");
+        this.cards[this.slideIndex].classList = "card";
+        this.galleries[this.slideIndex].classList = "slide-images";
 
         void this.cards[i].offsetWidth;
         void this.galleries[i].offsetWidth;
@@ -43,12 +39,8 @@ class Carousel {
     }
     this.arrowLeft.addEventListener("click", () => {
       this.slideToIndex((this.slideIndex === 0 ? this.dots.length : this.slideIndex) - 1);
-      this.cards[this.slideIndex].classList.remove("slide-left");
-      this.cards[this.slideIndex].classList.remove("slide-right");
-      this.cards[this.slideIndex].classList.remove("slide-down");
-      this.cards[this.slideIndex].classList.remove("slide-up");
-      this.galleries[this.slideIndex].classList.remove("fade-up");
-      this.galleries[this.slideIndex].classList.remove("fade-down");
+      this.cards[this.slideIndex].classList = "card";
+      this.galleries[this.slideIndex].classList = "slide-images";
 
       void this.cards[this.slideIndex].offsetWidth;
       void this.galleries[this.slideIndex].offsetWidth;
@@ -58,12 +50,8 @@ class Carousel {
     });
     this.arrowRight.addEventListener("click", () => {
       this.slideToIndex(this.slideIndex === this.dots.length -1 ? 0 : this.slideIndex + 1);
-      this.cards[this.slideIndex].classList.remove("slide-left");
-      this.cards[this.slideIndex].classList.remove("slide-right");
-      this.cards[this.slideIndex].classList.remove("slide-down");
-      this.cards[this.slideIndex].classList.remove("slide-up");
-      this.galleries[this.slideIndex].classList.remove("fade-up");
-      this.galleries[this.slideIndex].classList.remove("fade-down");
+      this.cards[this.slideIndex].classList = "card";
+      this.galleries[this.slideIndex].classList = "slide-images";
 
       void this.cards[this.slideIndex].offsetWidth;
       void this.galleries[this.slideIndex].offsetWidth;
