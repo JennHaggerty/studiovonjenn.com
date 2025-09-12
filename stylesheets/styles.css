@@ -414,11 +414,15 @@ a .icon:hover {
   animation: left-to-right 0.75s;
 }
 .slide-up {
-  animation: right-to-left 0.75s;
+  animation: slide-bottom 1s;
 }
 .slide-down {
-  animation: left-to-right 0.75s;
+  animation: slide-top 1s;
 }
 .fade-up {
   animation: fade 2s, slide-bottom 0.75s;
+}
+
+.fade-down {
+  animation: fade 2s, slide-top 0.75s;
 }

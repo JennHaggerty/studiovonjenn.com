@@ -13,8 +13,10 @@ class Carousel {
 
   slideToIndex(n) {
     if (n < 0 || n >= this.dots.length) return;
+
     this.slideIndex = n;
     this.carouselSlides.scrollTo(this.carouselSlides.children[n].offsetLeft - this.carouselSlides.offsetLeft, 0);
+    
     for (let i = 0; i < this.dots.length; i++) {
       this.dots[i].classList.toggle("active", this.slideIndex === i);
     }
@@ -24,13 +26,29 @@ class Carousel {
     for (let i = 0; i < this.dots.length; i++) {
       this.dots[i].addEventListener("click", () => {
         this.slideToIndex(i);
+
+        this.cards[i].classList.remove("slide-left");
+        this.cards[i].classList.remove("slide-right");
+        this.cards[i].classList.remove("slide-down");
+        this.cards[i].classList.remove("slide-up");
+        this.galleries[i].classList.remove("fade-up");
+        this.galleries[i].classList.remove("fade-down");
+
+        void this.cards[i].offsetWidth;
+        void this.galleries[i].offsetWidth;
+        
+        this.galleries[i].classList.add("fade-down");
+        this.cards[i].classList.add("slide-up");
       });
     }
     this.arrowLeft.addEventListener("click", () => {
       this.slideToIndex((this.slideIndex === 0 ? this.dots.length : this.slideIndex) - 1);
       this.cards[this.slideIndex].classList.remove("slide-left");
       this.cards[this.slideIndex].classList.remove("slide-right");
+      this.cards[this.slideIndex].classList.remove("slide-down");
+      this.cards[this.slideIndex].classList.remove("slide-up");
       this.galleries[this.slideIndex].classList.remove("fade-up");
+      this.galleries[this.slideIndex].classList.remove("fade-down");
 
       void this.cards[this.slideIndex].offsetWidth;
       void this.galleries[this.slideIndex].offsetWidth;
@@ -41,8 +59,11 @@ class Carousel {
     this.arrowRight.addEventListener("click", () => {
       this.slideToIndex(this.slideIndex === this.dots.length -1 ? 0 : this.slideIndex + 1);
       this.cards[this.slideIndex].classList.remove("slide-left");
-      this.galleries[this.slideIndex].classList.remove("fade-up");
       this.cards[this.slideIndex].classList.remove("slide-right");
+      this.cards[this.slideIndex].classList.remove("slide-down");
+      this.cards[this.slideIndex].classList.remove("slide-up");
+      this.galleries[this.slideIndex].classList.remove("fade-up");
+      this.galleries[this.slideIndex].classList.remove("fade-down");
 
       void this.cards[this.slideIndex].offsetWidth;
       void this.galleries[this.slideIndex].offsetWidth;
