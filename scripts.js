@@ -43,7 +43,7 @@ class Gallery {
       .then((titles) => {
         titles.forEach((title) => {
           const image = this.createImageElement(title);
-          console.log(image, typeof image, this.gallery)
+          
           this.gallery.appendChild(image);
         })
       });
