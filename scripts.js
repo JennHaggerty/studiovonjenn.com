@@ -1,4 +1,54 @@
 
+class Gallery {
+  constructor(element) {
+    this.imagesDir = "./images/"
+    this.gallery = element;
+  }
+
+  customSort(a, b) {
+    return (Number(a.match(/(\d+)/g)[0]) - Number((b.match(/(\d+)/g)[0])));
+  }
+
+  async getImageSource() {
+    const titles = await fetch("./images/")
+      .then((response) => response.text())
+      .then((text) => {
+        const el = document.createElement('html');
+        el.innerHTML = text;
+        const list = el.querySelector("#files").getElementsByTagName("a");
+        let arr = [];
+        for (let i = 0; i < list.length; i++) {
+          arr[i] = list[i].title;
+        }
+
+        arr.shift(); // get rid of first result which is the "../" directory reference
+        arr.sort(this.customSort);
+        return(arr);
+      })
+      .catch((error) => console.log(error));
+
+      return titles;
+  }
+
+  createImageElement(src) {
+    const image = document.createElement("img");
+    image.setAttribute("src", this.imagesDir + src);
+    image.setAttribute("alt", "");
+
+    return image;
+  }
+
+  async onLoad() {
+    await this.getImageSource()
+      .then((titles) => {
+        titles.forEach((title) => {
+          const image = this.createImageElement(title);
+          console.log(image, typeof image, this.gallery)
+          this.gallery.appendChild(image);
+        })
+      });
+  }
+}
 
 class Carousel {
   constructor(element) {
@@ -62,8 +112,20 @@ class Carousel {
   }
 }
 
-const carousels = document.getElementsByClassName("carousel");
+window.onload = (event) => {
+  const gallery = document.querySelector(".gallery");
+  if (gallery) {
+    new Gallery(gallery).onLoad();
+  }
 
-for (const carousel of carousels) {
-  new Carousel(carousel).addEventListeners();
+  const carousels = document.getElementsByClassName("carousel");
+  if (carousels) {
+    for (const carousel of carousels) {
+      new Carousel(carousel).addEventListeners();
+    }
+  }
+
+  const footer = document.querySelector("footer");
+  const text = document.createTextNode("Copyright © " + new Date().getFullYear() + " Jennifer Haggerty. All rights reserved." + " ");
+  footer.prepend(text);
 }
