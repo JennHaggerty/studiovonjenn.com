@@ -1,0 +1,28 @@
+{
+  "name": "studiovonjenn.com",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/JennHaggerty/studiovonjenn.com#readme",
+  "bugs": {
+    "url": "https://github.com/JennHaggerty/studiovonjenn.com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JennHaggerty/studiovonjenn.com.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.17",
+    "@types/express": "5.0.0"
+  }
+}
