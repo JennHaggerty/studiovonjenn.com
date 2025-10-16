@@ -1,7 +1,6 @@
 "use client";
 
-import { act, Suspense, useState } from "react";
-import HomepagegCV from "./homepageCV";
+import { Suspense, useState } from "react";
 import HomepageGallery from "./homepageGallery";
 import HomepageHeader from "./homepageHeader";
 import Loading from "./loading";
