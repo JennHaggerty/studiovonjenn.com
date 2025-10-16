@@ -4,7 +4,7 @@ const HomepageHeader = () => {
       <div className="header">
         <div className="outline">
           <h1>Portrait Photography</h1>
-          <h2>by Jennifer Leigh Haggerty in Augusta, Geogria.</h2>
+          <h2>by Jennifer Haggerty in Augusta, Georgia.</h2>
           <p className="note">LGBTQIA+, poc, and immigrant friendly.</p>
           <p className="note">Not MAGA friendly.</p>
           <ul>

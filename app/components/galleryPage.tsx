@@ -1,3 +1,5 @@
+import { promises as fs } from "fs";
+
 interface Image {
   src: string;
   alt?: string;
@@ -6,25 +8,36 @@ interface Image {
 interface Props {
   title: string;
   description?: string;
-  images: Image[];
+  images?: Image[];
+  directory?: string;
 }
 
-const GalleryPage = (props: Props) => {
-  const { title, description, images } = props;
+const GalleryPage = async (props: Props) => {
+  const { title, description, images, directory } = props;
+
+  if (directory) {
+    const fileNames = await fs.readdir(directory);
+    console.log(fileNames);
+  }
 
   return (
     <div className="main">
-      <div className="header">
-        <div className="outline">
-          <h2 className="subtle-h1">{title}</h2>
-          {description && <p>{description}</p>}
+      {(title || description) && (
+        <div className="header">
+          <div className="outline">
+            {title && <h2 className="subtle-h1">{title}</h2>}
+            {description && <p>{description}</p>}
+          </div>
         </div>
-      </div>
-      <div className="gallery">
-        {images.map((image) => (
-          <img src={image.src} alt={image.alt ? image.alt : ""} />
-        ))}
-      </div>
+      )}
+      {images && (
+        <div className="gallery">
+          {images &&
+            images.map((image) => (
+              <img src={image.src} alt={image.alt ? image.alt : ""} />
+            ))}
+        </div>
+      )}
     </div>
   );
 };
