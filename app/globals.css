@@ -22,6 +22,8 @@
   --primary-100: #720000;
   --accent-000: #284c52;
   --accent-100: #03a7c4;
+
+  font-size: 16px;
 }
 
 body {
@@ -57,6 +59,7 @@ h1 {
 
 h2 {
   font-family: var(--font-serif);
+  font-size: 2em;
 }
 
 @media (min-width: 1119px) {
@@ -67,6 +70,7 @@ h2 {
 
 a {
   color: var(--white-000);
+  text-decoration: underline;
 }
 
 a:hover {
