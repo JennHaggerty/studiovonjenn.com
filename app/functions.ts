@@ -19,3 +19,14 @@ export const getFilenames = async (arg: { directory: string }) => {
       return e;
     });
 };
+export const customSort = (a: string, b: string) => {
+  return Number(a.match(/(\d+)/g)![0]) - Number(b.match(/(\d+)/g)![0]);
+};
+
+export const scrollToTop = (delay?: number) => {
+  const safeDelay = delay ? delay : 300;
+
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, safeDelay);
+};

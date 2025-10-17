@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import HomepageGallery from "./homepageGallery";
 import HomepageHeader from "./homepageHeader";
 import Loading from "./loading";
@@ -8,71 +8,107 @@ import GalleryPage from "./Gallery/galleryPage";
 import PublicationsList from "./publicationsList";
 import ExhibitList from "./exhibitsList";
 import EducationList from "./educationList";
+import { scrollToTop } from "../functions";
 
 interface GalleryInterface {
   directory: string;
   title: string;
   description?: string;
+  onCloseText?: string;
 }
 
-const atmosDir = "/galleries/atmos/{date}/";
-const atmosDesc =
+const atmosDirextory = "/galleries/atmos/{date}/";
+const atmosDescriptionText =
   "Images from the monthly event available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
-const atmos1025 = atmosDir.replace("{date}", "1025");
+const atmosOnCloseText = "Return to index";
+
+const galleries: GalleryInterface[] = [
+  {
+    directory: atmosDirextory.replace("{date}", "1025"),
+    title: "Atmosphere October 2025",
+    description: atmosDescriptionText,
+    onCloseText: atmosOnCloseText,
+  },
+  {
+    directory: atmosDirextory.replace("{date}", "0925"),
+    title: "Atmosphere September 2025",
+    description: atmosDescriptionText,
+    onCloseText: atmosOnCloseText,
+  },
+];
 
 export default function Homepage() {
   const [activeGallery, setActiveGallery] = useState<GalleryInterface>();
-  const [galleries, setGalleries] = useState<GalleryInterface[]>();
-  const [showGallery, setShowGallery] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   const handleGalleryPageLinkClick = (directory: string) => {
     if (!galleries) return;
 
     const target = galleries.find((gallery) => gallery.directory === directory);
-
     setActiveGallery(target);
-    setShowGallery(true);
+  };
+
+  const closeActiveGallery = () => {
+    setActiveGallery(undefined);
+    scrollToTop();
   };
 
   return (
-    <Suspense fallback={<Loading />}>
+    <>
       {activeGallery ? (
-        <GalleryPage
-          directory={activeGallery.directory}
-          title={activeGallery.title}
-          description={activeGallery.description}
-        />
+        loading ? (
+          <Loading text="Loading gallery page" />
+        ) : (
+          <GalleryPage
+            directory={activeGallery.directory}
+            title={activeGallery.title}
+            description={activeGallery.description}
+            onClose={closeActiveGallery}
+            onCloseText={activeGallery.onCloseText}
+          />
+        )
       ) : (
         <>
           <HomepageHeader />
-          <HomepageGallery />
-          <div className="cv">
-            <PublicationsList />
-            <ExhibitList />
-            <EducationList />
-            <div>
-              <h2>Events</h2>
-              <ul>
-                <li>
-                  <a href="/galleries/atmos/1025/index">
-                    Atmosphere October 2025
-                  </a>
-                  , Augusta, GA 2025.
-                </li>
-                <li>
-                  <a href="/galleries/atmos/0925/index">
-                    Atmosphere September 2025
-                  </a>
-                  , Augusta, GA 2025.
-                </li>
-                <li>Hero's Con, Charlotte NC, 2018</li>
-                <li>Steampunk World's Fair, Piscataway NJ, 2016</li>
-                <li>Steampunk World's Fair, Piscataway NJ, 2015</li>
-              </ul>
-            </div>
-          </div>
+          {loading ? (
+            <Loading text="Loading home page" />
+          ) : (
+            <>
+              <HomepageGallery />
+              <div className="cv">
+                <PublicationsList />
+                <ExhibitList />
+                <EducationList />
+                <div>
+                  <h2>Events</h2>
+                  <ul>
+                    {galleries.map((gallery) => (
+                      <li key={gallery.directory}>
+                        <button
+                          className="a"
+                          type="button"
+                          onClick={() =>
+                            handleGalleryPageLinkClick(gallery.directory)
+                          }
+                        >
+                          {gallery.title}
+                        </button>
+                      </li>
+                    ))}
+                    <li>Hero's Con, Charlotte NC, 2018</li>
+                    <li>Steampunk World's Fair, Piscataway NJ, 2016</li>
+                    <li>Steampunk World's Fair, Piscataway NJ, 2015</li>
+                  </ul>
+                </div>
+              </div>
+            </>
+          )}
         </>
       )}
-    </Suspense>
+    </>
   );
 }

@@ -1,16 +1,20 @@
-import { getFilenames } from "@/app/functions";
+import { getFilenames, scrollToTop } from "@/app/functions";
 import { useEffect, useState } from "react";
 import Gallery from "./gallery";
+import Loading from "../loading";
 
 interface Props {
   directory: string;
   title: string;
   description?: string;
+  onCloseText?: string;
+  onClose?: () => void;
 }
 
 const GalleryPage = (props: Props) => {
-  const { directory, title, description } = props;
+  const { directory, title, description, onClose, onCloseText } = props;
 
+  const [loading, setLoading] = useState<boolean>(true);
   const [images, setImages] = useState();
 
   const getImages = async () => {
@@ -28,6 +32,8 @@ const GalleryPage = (props: Props) => {
 
   useEffect(() => {
     getImages();
+    setLoading(false);
+    scrollToTop();
   }, []);
 
   return (
@@ -38,7 +44,16 @@ const GalleryPage = (props: Props) => {
           {description && <p>{description}</p>}
         </div>
       </div>
-      {images && <Gallery images={images} />}
+      {loading ? (
+        <Loading text="Loading images" />
+      ) : (
+        images && <Gallery images={images} />
+      )}
+      {onClose && (
+        <button className="w-full" type="button" onClick={onClose}>
+          {onCloseText ? onCloseText : "Return"}
+        </button>
+      )}
     </div>
   );
 };

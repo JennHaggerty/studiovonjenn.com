@@ -3,6 +3,7 @@
 @theme inline {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
+  --loading--text: var(--loading-text);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,14 +53,14 @@ h2 {
 
 h1 {
   font-family: var(--font-sans);
-  font-size: 2.75em;
+  font-size: 2em;
   text-transform: uppercase;
   color: var(--primary-000);
 }
 
 h2 {
   font-family: var(--font-serif);
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 @media (min-width: 1119px) {
@@ -68,17 +69,29 @@ h2 {
   }
 }
 
+p {
+  color: var(--white-000);
+}
+
 a {
   color: var(--white-000);
   text-decoration: underline;
 }
 
-a:hover {
-  color: var(--white-000);
+button.a {
+  padding: 0;
+  background: unset;
+}
+button.a:hover {
+  text-decoration: underline;
 }
 
-p {
+a:hover,
+.a:hover,
+button,
+a.button {
   color: var(--white-000);
+  cursor: pointer;
 }
 
 button,
@@ -460,5 +473,39 @@ a .icon:hover {
 }
 .fade-down {
   animation: fade 2s, slide-top 0.75s;
+}
+
+.loader {
+  height: 500px;
+  text-align: center;
+  padding: 225px 2em;
+  margin: 3em 1em;
+  font-size: 1em;
+  position: relative; /* Needed for positioning the pseudo-element */
+}
+
+.loader::after {
+  content: ""; /* Start with empty content */
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1em; /* Adjust width as needed for dot spacing */
+  animation: loading-dots 1.5s infinite steps(1); /* Animation for dots */
+}
+@keyframes loading-dots {
+  0% {
+    content: ".";
+  }
+  25% {
+    content: "..";
+  }
+  50% {
+    content: "...";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "."; /* Reset to empty or continue with dots */
+  }
 }
 /* end ANIMATIONS */
