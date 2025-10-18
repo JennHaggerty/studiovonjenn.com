@@ -42,7 +42,7 @@ export default function Homepage() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => setLoading(false), 2000);
   }, []);
 
   const handleGalleryPageLinkClick = (directory: string) => {

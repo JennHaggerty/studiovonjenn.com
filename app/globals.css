@@ -478,9 +478,8 @@ a .icon:hover {
 }
 
 .loader {
-  height: 500px;
   text-align: center;
-  padding: 225px 2em;
+  padding: 200px 2em;
   margin: 3em 1em;
   font-size: 1em;
   position: relative; /* Needed for positioning the pseudo-element */
