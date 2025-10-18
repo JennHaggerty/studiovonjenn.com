@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import HomepageGallery from "./homepageGallery";
 import HomepageHeader from "./homepageHeader";
 import Loading from "./loading";
