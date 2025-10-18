@@ -32,9 +32,10 @@ const GalleryPage = (props: Props) => {
 
   useEffect(() => {
     getImages();
-    setLoading(false);
-    scrollToTop();
   }, []);
+  useEffect(() => {
+    if (images != undefined) setLoading(false);
+  }, [images]);
 
   return (
     <div className="main gallery-page">
