@@ -34,7 +34,7 @@ const GalleryPage = (props: Props) => {
     getImages();
   }, []);
   useEffect(() => {
-    if (images != undefined) setTimeout(() => setLoading(false), 3000);
+    if (images != undefined) setTimeout(() => setLoading(false), 2000);
   }, [images]);
 
   return (

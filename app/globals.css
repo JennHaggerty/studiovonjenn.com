@@ -79,8 +79,6 @@ a {
 button.a {
   padding: 0;
   background: unset;
-}
-button.a:hover {
   text-decoration: underline;
 }
 
