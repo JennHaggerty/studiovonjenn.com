@@ -37,7 +37,7 @@ const GalleryPage = (props: Props) => {
   }, []);
 
   return (
-    <div className="main">
+    <div className="main gallery-page">
       <div className="header">
         <div className="outline">
           <h2 className="subtle-h1">{title}</h2>
@@ -50,7 +50,7 @@ const GalleryPage = (props: Props) => {
         images && <Gallery images={images} />
       )}
       {onClose && (
-        <button className="w-full" type="button" onClick={onClose}>
+        <button type="button" onClick={onClose}>
           {onCloseText ? onCloseText : "Return"}
         </button>
       )}
