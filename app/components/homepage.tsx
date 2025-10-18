@@ -53,7 +53,9 @@ export default function Homepage() {
   };
 
   const closeActiveGallery = () => {
+    setLoading(true);
     setActiveGallery(undefined);
+    setTimeout(() => setLoading(false), 1000);
     scrollToTop();
   };
 
