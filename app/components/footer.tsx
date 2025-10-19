@@ -1,11 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { siteStrings } from "../cms";
 
 const Footer = () => {
-  const copyrightText =
-    "Copyright © " +
-    new Date().getFullYear() +
-    " Jennifer Haggerty. All rights reserved.";
+  const copyrightText = siteStrings.copyright.replace(
+    "{year}",
+    new Date().getFullYear().toString(),
+  );
 
   return <footer>{copyrightText}</footer>;
 };

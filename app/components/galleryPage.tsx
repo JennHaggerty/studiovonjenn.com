@@ -1,44 +1,53 @@
-import { promises as fs } from "fs";
-
-interface Image {
-  src: string;
-  alt?: string;
-}
+import { getFilenames } from "@/app/functions";
+import { useEffect, useState } from "react";
+import Gallery from "./gallery";
 
 interface Props {
+  directory: string;
   title: string;
   description?: string;
-  images?: Image[];
-  directory?: string;
+  onCloseText?: string;
+  onClose?: () => void;
 }
 
-const GalleryPage = async (props: Props) => {
-  const { title, description, images, directory } = props;
+const GalleryPage = (props: Props) => {
+  const { directory, title, description, onClose, onCloseText } = props;
 
-  if (directory) {
-    const fileNames = await fs.readdir(directory);
-    console.log(fileNames);
-  }
+  const [images, setImages] = useState();
+
+  const getImages = async () => {
+    const fileNames = await getFilenames({ directory }).then((res) => {
+      const data = res.json();
+
+      return data;
+    });
+    const images = fileNames.map((fileName: string) => {
+      return { src: directory + fileName, alt: "" };
+    });
+
+    setImages(images);
+  };
+
+  useEffect(() => {
+    getImages();
+  }, []);
 
   return (
-    <div className="main">
-      {(title || description) && (
-        <div className="header">
-          <div className="outline">
-            {title && <h2 className="subtle-h1">{title}</h2>}
-            {description && <p>{description}</p>}
-          </div>
+    <div className="main gallery-page">
+      <div className="header">
+        <div className="outline">
+          <h2 className="subtle-h1">{title}</h2>
+          {description && <p>{description}</p>}
         </div>
-      )}
-      {images && (
-        <div className="gallery">
-          {images &&
-            images.map((image) => (
-              <img src={image.src} alt={image.alt ? image.alt : ""} />
-            ))}
-        </div>
+      </div>
+      {images && <Gallery images={images} />}
+      {onClose && (
+        <button type="button" onClick={onClose}>
+          {onCloseText ? onCloseText : "Return"}
+        </button>
       )}
     </div>
   );
 };
+
 export default GalleryPage;
