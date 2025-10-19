@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { getFilenames } from "../functions";
 import { site } from "../cms";
+import Loading from "./loading";
 
 const setData = async (args: {
   directory: string;
@@ -21,7 +22,7 @@ const getSiteSettings = (site: { [s: string]: any } | ArrayLike<any>) => {
 
     if (typeof value === "string") {
       return (
-        <div className="flex justify-center" key={"site-setting" + i}>
+        <div className="site-setting-row" key={"site-setting" + i}>
           <div>{label}:</div> <div>{value}</div>
         </div>
       );
@@ -34,43 +35,55 @@ const getSiteSettings = (site: { [s: string]: any } | ArrayLike<any>) => {
 const AdminDashboard = () => {
   const [images, setImages] = useState<[]>();
   const [galleries, setGalleries] = useState<[]>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setData({ directory: "/images/", setState: setImages });
     setData({ directory: "/images/galleries/", setState: setGalleries });
+    setLoading(false);
   }, []);
 
   return (
-    <div className="admin-area outline">
+    <div className="main admin-area outline">
       <h1>Admin Dashboard</h1>
-      <section>
-        <h2 className="h3">Site Settings</h2>
-        <div>{getSiteSettings(site)}</div>
-      </section>
-      <section>
-        <h2 className="h3">Images</h2>
-        {images && (
-          <div>
-            <ul className="filename-list">
-              {images.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </section>
-      <section>
-        <h2 className="h3">Galleries</h2>
-        {galleries && (
-          <div>
-            <ul className="filename-list">
-              {galleries.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </section>
+      <div className="admin-settings">
+        <section>
+          <h2 className="h3">Site Settings</h2>
+          <div>{getSiteSettings(site)}</div>
+        </section>
+        <section>
+          <h2 className="h3">Images</h2>
+          {loading ? (
+            <Loading />
+          ) : (
+            images && (
+              <div>
+                <ul className="filename-list">
+                  {images.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          )}
+        </section>
+        <section>
+          <h2 className="h3">Galleries</h2>
+          {loading ? (
+            <Loading />
+          ) : (
+            galleries && (
+              <div>
+                <ul className="filename-list">
+                  {galleries.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          )}
+        </section>
+      </div>
     </div>
   );
 };

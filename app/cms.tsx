@@ -25,7 +25,7 @@ export const site = {
   description: "by Jennifer Haggerty in Augusta, Georgia.",
   note: "LGBTQIA+, poc, and immigrant friendly. Not MAGA friendly.",
   email: "thejenniferhaggerty@gmail.com",
-  discordLink: "https://discord.gg/gh9TMHQsdB",
+  social: "https://discord.gg/gh9TMHQsdB",
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
 };
 

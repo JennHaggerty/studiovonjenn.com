@@ -7,7 +7,7 @@ const HomepageHeader = () => {
     <section className="introduction">
       <div className="header">
         <div className="outline">
-          <h1>{site.name}</h1>
+          <h1 className="site-title">{site.name}</h1>
           <h2>{site.description}</h2>
           <p className="note">{site.note}</p>
           <ul>
@@ -18,7 +18,7 @@ const HomepageHeader = () => {
             </li>
             <li>
               <a
-                href={site.discordLink}
+                href={site.social}
                 target="_blank"
                 aria-label="Connect with Jennifer"
               >

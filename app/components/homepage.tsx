@@ -15,6 +15,7 @@ import AdminDashboard from "./adminDashboard";
 
 export default function Homepage() {
   const [activeGallery, setActiveGallery] = useState<GalleryInterface>();
+  const [showPreview, setShowPreview] = useState<boolean>(false);
 
   const env = process.env.NODE_ENV;
   const isAdmin = env !== "production";
@@ -33,7 +34,22 @@ export default function Homepage() {
 
   return (
     <>
-      {isAdmin ? (
+      {isAdmin && (
+        <div className="sitewide-banner">
+          {showPreview ? (
+            <button onClick={() => setShowPreview(!showPreview)}>
+              Show admin dashboard
+            </button>
+          ) : (
+            <>
+              <button onClick={() => setShowPreview(!showPreview)}>
+                Show live view
+              </button>
+            </>
+          )}
+        </div>
+      )}
+      {isAdmin && !showPreview ? (
         <AdminDashboard />
       ) : activeGallery ? (
         <GalleryPage

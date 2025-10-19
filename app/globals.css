@@ -70,9 +70,13 @@ h3,
 }
 
 @media (min-width: 1119px) {
+  .site-title {
+    font-size: 8em;
+  }
+
   h1,
   .h1 {
-    font-size: 8em;
+    font-size: 3em;
   }
 }
 
@@ -115,6 +119,23 @@ a.button {
   gap: 1em;
 }
 /* start CUSTOM CSS */
+.sitewide-banner button {
+  width: 100%;
+  padding: 2em;
+  border-radius: 0;
+  margin: 0 0 1em;
+}
+
+.admin-settings {
+  margin: 1em 0;
+}
+
+.site-setting-row {
+  display: flex;
+  margin: 0.25em 1.25em;
+  justify-content: space-between;
+}
+
 .filename-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -505,7 +526,7 @@ a .icon:hover {
 
 .loader {
   text-align: center;
-  padding: 200px 2em;
+  padding: 3em;
   margin: 3em 1em;
   font-size: 1em;
   position: relative; /* Needed for positioning the pseudo-element */
