@@ -49,20 +49,29 @@ h2 {
   margin: unset;
 }
 
-h1 {
+h1,
+.h1 {
   font-family: var(--font-sans);
   font-size: 2em;
   text-transform: uppercase;
   color: var(--primary-000);
 }
 
-h2 {
+h2,
+.h2 {
   font-family: var(--font-serif);
   font-size: 1.5em;
 }
 
+h3,
+.h3 {
+  font-family: var(--font-sans);
+  font-size: 1.5em;
+}
+
 @media (min-width: 1119px) {
-  h1 {
+  h1,
+  .h1 {
     font-size: 8em;
   }
 }
@@ -106,6 +115,11 @@ a.button {
   gap: 1em;
 }
 /* start CUSTOM CSS */
+.filename-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .gallery-page button {
   width: 100%;
 }
