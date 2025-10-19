@@ -1,28 +1,27 @@
 {
-  "name": "studiovonjenn.com",
-  "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/JennHaggerty/studiovonjenn.com#readme",
-  "bugs": {
-    "url": "https://github.com/JennHaggerty/studiovonjenn.com/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JennHaggerty/studiovonjenn.com.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "module",
-  "main": "sever.js",
+  "name": "nextjs",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "@vercel/functions": "^3.1.4",
+    "next": "15.5.5",
+    "node": "^22.0.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "typescript": "^5"
   },
   "devDependencies": {
-    "@types/node": "20.11.17",
-    "@types/express": "5.0.0"
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  },
+  "browser": {
+    "fs": false
   }
 }

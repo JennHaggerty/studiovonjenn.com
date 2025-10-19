@@ -1,3 +1,16 @@
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --loading--text: var(--loading-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
 :root {
   --white-000: #e4d0cf;
   --white-100: whitesmoke;
@@ -8,12 +21,15 @@
   --primary-100: #720000;
   --accent-000: #284c52;
   --accent-100: #03a7c4;
+
+  font-size: 16px;
 }
 
 body {
   background: var(--black-100);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
+  color: var(--white-000);
 }
 
 .main {
@@ -34,14 +50,15 @@ h2 {
 }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.75em;
+  font-family: var(--font-sans);
+  font-size: 2em;
   text-transform: uppercase;
   color: var(--primary-000);
 }
 
 h2 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-serif);
+  font-size: 1.5em;
 }
 
 @media (min-width: 1119px) {
@@ -50,25 +67,49 @@ h2 {
   }
 }
 
-a {
-  color: var(--white-000);
-}
-
-a:hover {
-  color: var(--white-000);
-}
-
 p {
   color: var(--white-000);
 }
 
-button {
-  font-family: "Montserrat", sans-serif;
-  background: var(--accent-100);
+a {
+  color: var(--white-000);
+  text-decoration: underline;
+}
+
+button.a {
+  padding: 0;
+  background: unset;
+  text-decoration: underline;
+}
+
+a:hover,
+.a:hover,
+button,
+a.button {
+  color: var(--white-000);
+  cursor: pointer;
+}
+
+button,
+a.button {
+  font-family: var(--font-sans);
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--accent-000);
   border: unset;
   color: var(--white-000);
+  padding: 1em;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 /* start CUSTOM CSS */
+.gallery-page button {
+  width: 100%;
+}
+
 .hidden {
   display: none;
 }
@@ -90,11 +131,11 @@ button {
 }
 
 .subtle-h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-size: 2em;
   text-transform: uppercase;
   color: var(--primary-000);
-  padding: 1em;
+  padding: 0.5em;
   text-align: center;
 }
 
@@ -120,6 +161,7 @@ a .icon:hover {
 }
 
 .outline {
+  outline: unset;
   background: var(--black-000);
   padding: 1em;
 
@@ -154,10 +196,24 @@ a .icon:hover {
   list-style: none;
 }
 
+.introduction .outline {
+  width: 100%;
+}
+
 @media (min-width: 1198px) {
   .introduction {
     flex-direction: row;
   }
+}
+
+@media (max-width: 1654px) {
+  .introduction img {
+    display: none;
+  }
+}
+
+.gallery-page .header {
+  padding-bottom: 1em;
 }
 
 .header {
@@ -431,5 +487,38 @@ a .icon:hover {
 }
 .fade-down {
   animation: fade 2s, slide-top 0.75s;
+}
+
+.loader {
+  text-align: center;
+  padding: 200px 2em;
+  margin: 3em 1em;
+  font-size: 1em;
+  position: relative; /* Needed for positioning the pseudo-element */
+}
+
+.loader::after {
+  content: ""; /* Start with empty content */
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1em; /* Adjust width as needed for dot spacing */
+  animation: loading-dots 1.5s infinite steps(1); /* Animation for dots */
+}
+@keyframes loading-dots {
+  0% {
+    content: ".";
+  }
+  25% {
+    content: "..";
+  }
+  50% {
+    content: "...";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "."; /* Reset to empty or continue with dots */
+  }
 }
 /* end ANIMATIONS */
