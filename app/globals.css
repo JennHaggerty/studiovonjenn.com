@@ -118,7 +118,23 @@ a.button {
   align-items: center;
   gap: 1em;
 }
+
+button.primary {
+  background-color: var(--primary-100);
+}
+button.secondary {
+  background-color: var(--accent-000);
+}
 /* start CUSTOM CSS */
+.gap-1 {
+  gap: 1em;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sitewide-banner button {
   width: 100%;
   padding: 2em;
@@ -130,10 +146,18 @@ a.button {
   margin: 1em 0;
 }
 
+.justify-end {
+  justify-content: end;
+}
+
 .site-setting-row {
   display: flex;
   margin: 0.25em 1.25em;
   justify-content: space-between;
+}
+
+.site-setting-row input {
+  width: 80%;
 }
 
 .filename-list {

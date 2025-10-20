@@ -20,7 +20,7 @@ export const galleries: GalleryInterface[] = [
   },
 ];
 
-export const site = {
+export const siteSettings = {
   name: "Portrait Photography",
   description: "by Jennifer Haggerty in Augusta, Georgia.",
   note: "LGBTQIA+, poc, and immigrant friendly. Not MAGA friendly.",

@@ -1,9 +1,9 @@
 "use client";
 
-import { site } from "../cms";
+import { siteSettings } from "../cms";
 
 const Footer = () => {
-  const copyrightText = site.copyright.replace(
+  const copyrightText = siteSettings.copyright.replace(
     "{year}",
     new Date().getFullYear().toString(),
   );

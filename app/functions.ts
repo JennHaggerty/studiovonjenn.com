@@ -1,7 +1,7 @@
-export const getFilenames = async (arg: { directory: string }) => {
+export const getFiles = async (arg: { directory: string }) => {
   const { directory } = arg;
 
-  return await fetch("./api/files/getNames", {
+  return await fetch("./api/files/get", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const getFilenames = async (arg: { directory: string }) => {
       return e;
     });
 };
-export const customSort = (a: string, b: string) => {
+export const customStringSort = (a: string, b: string) => {
   return Number(a.match(/(\d+)/g)![0]) - Number(b.match(/(\d+)/g)![0]);
 };
 

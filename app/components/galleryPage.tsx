@@ -1,4 +1,4 @@
-import { customSort, getFilenames } from "@/app/functions";
+import { customStringSort, getFiles } from "@/app/functions";
 import { useEffect, useState } from "react";
 import Gallery from "./gallery";
 
@@ -16,13 +16,13 @@ const GalleryPage = (props: Props) => {
   const [images, setImages] = useState();
 
   const getImages = async () => {
-    const fileNames = await getFilenames({ directory }).then((res) => {
+    const fileNames = await getFiles({ directory }).then((res) => {
       return res.json();
     });
     const images = fileNames.map((fileName: string) => {
       return { src: directory + fileName, alt: "" };
     });
-    const sortedImages = images.sort(customSort);
+    const sortedImages = images.sort(customStringSort);
 
     setImages(sortedImages);
   };

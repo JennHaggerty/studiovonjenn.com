@@ -1,4 +1,4 @@
-import { site } from "../cms";
+import { siteSettings } from "../cms";
 import AddFriendIcon from "./svgs/addFriendIcon";
 import AmpersandIcon from "./svgs/ampersandIcon";
 
@@ -7,18 +7,18 @@ const HomepageHeader = () => {
     <section className="introduction">
       <div className="header">
         <div className="outline">
-          <h1 className="site-title">{site.name}</h1>
-          <h2>{site.description}</h2>
-          <p className="note">{site.note}</p>
+          <h1 className="site-title">{siteSettings.name}</h1>
+          <h2>{siteSettings.description}</h2>
+          <p className="note">{siteSettings.note}</p>
           <ul>
             <li>
-              <a href={site.email} aria-label="Email Jennifer">
+              <a href={siteSettings.email} aria-label="Email Jennifer">
                 <AmpersandIcon />
               </a>
             </li>
             <li>
               <a
-                href={site.social}
+                href={siteSettings.social}
                 target="_blank"
                 aria-label="Connect with Jennifer"
               >
