@@ -7,7 +7,6 @@ import GalleryPage from "./galleryPage";
 import PublicationsList from "./publicationsList";
 import ExhibitList from "./exhibitsList";
 import EducationList from "./educationList";
-import { scrollToTop } from "../functions";
 import { GalleryInterface } from "../interfaces";
 import { galleries } from "../cms";
 import EventList from "./eventList";
@@ -29,7 +28,6 @@ export default function Homepage() {
 
   const closeActiveGallery = () => {
     setActiveGallery(undefined);
-    scrollToTop();
   };
 
   return (

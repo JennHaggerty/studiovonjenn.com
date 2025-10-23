@@ -16,8 +16,8 @@ const GalleryPage = (props: Props) => {
   const [images, setImages] = useState();
 
   const getImages = async () => {
-    const fileNames = await getFiles({ directory }).then((res) => {
-      return res.json();
+    const fileNames = await getFiles({ directory }).then((data) => {
+      return data;
     });
     const images = fileNames.map((fileName: string) => {
       return { src: directory + fileName, alt: "" };

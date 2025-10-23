@@ -125,7 +125,39 @@ button.primary {
 button.secondary {
   background-color: var(--accent-000);
 }
+
+section {
+  margin: 1em 0;
+}
 /* start CUSTOM CSS */
+.filename-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0;
+  gap: 0.75em;
+}
+@media (min-width: 661px) {
+  .filename-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .filename-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.filename-grid img {
+  width: 100%;
+}
+
+.border {
+  border-radius: 5px;
+  border: 2px solid var(--accent-000);
+  padding: 1em;
+}
+
 .gap-1 {
   gap: 1em;
 }
@@ -146,23 +178,69 @@ button.secondary {
   margin: 1em 0;
 }
 
+.label,
+label {
+  text-transform: capitalize;
+}
+
 .justify-end {
   justify-content: end;
 }
 
 .site-setting-row {
-  display: flex;
   margin: 0.25em 1.25em;
-  justify-content: space-between;
 }
 
 .site-setting-row input {
-  width: 80%;
+  width: 100%;
 }
 
-.filename-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.break {
+  overflow-wrap: break-word;
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+.filename-grid svg {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+
+@media (min-width: 661px) {
+  .filename-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-setting-row {
+    display: flex;
+    margin: 0.25em 1.25em;
+    justify-content: space-between;
+  }
+
+  .site-setting-row input {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filename-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .gallery-page button {

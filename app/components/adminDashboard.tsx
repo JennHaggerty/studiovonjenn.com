@@ -1,29 +1,34 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { getFiles } from "../functions";
+import { useEffect, useState } from "react";
+import { getAllFiles } from "../functions";
 import { siteSettings } from "../cms";
 import Loading from "./loading";
+import FolderIcon from "./svgs/folderIcon";
 
-const setData = async (args: {
-  directory: string;
-  setState: Dispatch<SetStateAction<[] | undefined>>;
-}) => {
-  const { directory, setState } = args;
-  const files = await getFiles({ directory }).then((res) => {
-    return res.json();
-  });
-
-  setState(files);
-};
+interface AllFiles {
+  folders?: string[];
+  files?: string[];
+}
 
 const AdminDashboard = () => {
-  const [images, setImages] = useState<[]>();
-  const [galleries, setGalleries] = useState<[]>();
+  const [files, setFiles] = useState<AllFiles>();
   const [loading, setLoading] = useState<boolean>(true);
   const [showForm, setShowForm] = useState<boolean>();
+  const [siteSettingsData, setSiteSettingsData] = useState(siteSettings);
+  const [listView, setListView] = useState<string>("grid");
 
-  useEffect(() => {
-    setData({ directory: "/images/", setState: setImages });
-    setData({ directory: "/images/galleries/", setState: setGalleries });
+  const imagesDirectory = "/images/";
+
+  const getAll = async () => {
+    const files = await getAllFiles({ directory: imagesDirectory }).then(
+      (data) => {
+        return data;
+      },
+    );
+    setFiles(files);
+  };
+
+  useEffect(function getImagesOnLoad() {
+    getAll();
     setLoading(false);
   }, []);
 
@@ -35,7 +40,8 @@ const AdminDashboard = () => {
       if (typeof value === "string") {
         return (
           <div className="site-setting-row" key={"site-setting" + i}>
-            <div>{label}:</div> <div>{value}</div>
+            <div className="label">{label}:</div>{" "}
+            <div className="break">{value}</div>
           </div>
         );
       } else {
@@ -43,11 +49,12 @@ const AdminDashboard = () => {
       }
     });
   };
+
   const editSiteSettings = () => {
     return (
       <div aria-hidden={!showForm}>
         <form>
-          {Object.entries(siteSettings).map((setting, i) => {
+          {Object.entries(siteSettingsData).map((setting, i) => {
             const id = setting[0];
             const defaultValue = setting[1];
             const label = id;
@@ -70,84 +77,140 @@ const AdminDashboard = () => {
     );
   };
 
+  const renderFormButtons = () => {
+    return (
+      <div className="flex gap-1 justify-end">
+        <button
+          className="primary"
+          type="button"
+          onClick={() => setShowForm(!showForm)}
+        >
+          Cancel
+        </button>
+        <button type="button" onClick={() => setShowForm(!showForm)}>
+          Save
+        </button>
+      </div>
+    );
+  };
+
+  const renderFileList = () => {
+    return (
+      files && (
+        <>
+          {files.folders && (
+            <div>
+              <h2 className="h3">Folders</h2>
+              <ul className="filename-list">
+                {files.folders.map((item, i) => (
+                  <li key={`directory-${i}`}>
+                    <a href={`/public/${item}`} className="break-word">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {files.files && (
+            <div>
+              <h2 className="h3">Files</h2>
+              <ul className="filename-list">
+                {files.files.map((item, i) => (
+                  <li key={`image-${i}`}>
+                    <a href={`/images/${item}`} className="break-word">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
+      )
+    );
+  };
+
+  const renderFileGrid = () => {
+    return (
+      files && (
+        <>
+          {files?.folders && (
+            <div>
+              <h2 className="h3">Folders</h2>
+              <ul className="filename-grid">
+                {files.folders.map((item, i) => (
+                  <li key={`directory-${i}`}>
+                    <a
+                      href={`/public/${item}`}
+                      className="break-word flex-col center"
+                    >
+                      <FolderIcon />
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {files.files && (
+            <div>
+              <h2 className="h3">Images</h2>
+              <ul className="filename-grid">
+                {files.files.map((item, i) => (
+                  <li key={`image-${i}`}>
+                    <img src={`/images/${item}`} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
+      )
+    );
+  };
+
   return (
-    <div className="main admin-area">
+    <div className="main admin-area ">
       <h1>Admin Dashboard</h1>
       <div className="admin-settings">
-        <section className="outline">
-          {showForm ? (
-            <>
-              <div className="flex-between">
-                <h2 className="h3">Site Settings</h2>
-                <div className="flex gap-1">
-                  <button
-                    className="primary"
-                    type="button"
-                    onClick={() => setShowForm(!showForm)}
-                  >
-                    Cancel
-                  </button>
-                  <button type="button" onClick={() => setShowForm(!showForm)}>
-                    Save
-                  </button>
-                </div>
-              </div>
-              <div>{editSiteSettings()}</div>
-              <div className="flex gap-1 justify-end">
-                <button
-                  className="primary"
-                  type="button"
-                  onClick={() => setShowForm(!showForm)}
-                >
-                  Cancel
-                </button>
-                <button type="button" onClick={() => setShowForm(!showForm)}>
-                  Save
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="flex-between">
-                <h2 className="h3">Site Settings</h2>
-                <button type="button" onClick={() => setShowForm(!showForm)}>
-                  Edit
-                </button>
-              </div>
-              <div>{showSiteSettings(siteSettings)}</div>
-            </>
-          )}
+        <section className="border">
+          <div className="flex-between">
+            <h2 className="h3">Site Settings</h2>
+            {showForm ? (
+              renderFormButtons()
+            ) : (
+              <button type="button" onClick={() => setShowForm(!showForm)}>
+                Edit
+              </button>
+            )}
+          </div>
+          {showForm ? editSiteSettings() : showSiteSettings(siteSettingsData)}
+          {showForm && renderFormButtons()}
         </section>
-        <section className="outline">
-          <h2 className="h3">Images</h2>
+        <section className="border">
+          <div className="flex-between">
+            <p className="note">
+              Your files in the `/public/images/` directory
+            </p>
+            <div className="flex justify-end gap-1">
+              {listView === "list" ? (
+                <button type="button" onClick={() => setListView("grid")}>
+                  Thumbnails
+                </button>
+              ) : (
+                <button type="button" onClick={() => setListView("list")}>
+                  Filenames
+                </button>
+              )}
+            </div>
+          </div>
           {loading ? (
             <Loading />
+          ) : listView === "list" ? (
+            renderFileList()
           ) : (
-            images && (
-              <div>
-                <ul className="filename-list">
-                  {images.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )
-          )}
-        </section>
-        <section className="outline">
-          <h2 className="h3">Galleries</h2>
-          {loading ? (
-            <Loading />
-          ) : (
-            galleries && (
-              <div>
-                <ul className="filename-list">
-                  {galleries.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )
+            renderFileGrid()
           )}
         </section>
       </div>
