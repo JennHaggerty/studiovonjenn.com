@@ -1,19 +1,42 @@
 import { Dispatch, SetStateAction } from "react";
 
+const jsonHeaders = {
+  "Content-Type": "application/json",
+};
+
+export const deleteFile = async (arg: { fullImagePath: string }) => {
+  const { fullImagePath } = arg;
+  const body = JSON.stringify(fullImagePath);
+
+  return await fetch("./api/files/delete", {
+    method: "DELETE",
+    headers: jsonHeaders,
+    body,
+  })
+    .then(async (res) => {
+      if (res.status !== 201) {
+        return console.log("There was an error deleting the image.");
+      }
+
+      return res;
+    })
+    .catch();
+};
+
 export const getAllFiles = async (arg: { directory: string }) => {
   const { directory } = arg;
+  const body = JSON.stringify(directory);
 
-  return await fetch("./api/files/getAll", {
+  return await fetch("./api/files/get", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(directory),
+    headers: jsonHeaders,
+    body,
   })
     .then(async (res) => {
       if (res.status !== 201) {
         return console.log("There was an error getting images.");
       }
+
       return res.json();
     })
     .then((data) => {
@@ -26,13 +49,12 @@ export const getAllFiles = async (arg: { directory: string }) => {
 
 export const getFiles = async (arg: { directory: string }) => {
   const { directory } = arg;
+  const body = JSON.stringify(directory);
 
   return await fetch("./api/files/getFiles", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(directory),
+    headers: jsonHeaders,
+    body,
   })
     .then(async (res) => {
       if (res.status !== 201) {
@@ -50,13 +72,14 @@ export const getFiles = async (arg: { directory: string }) => {
 
 export const getDirectories = async (arg: { directory: string }) => {
   const { directory } = arg;
+  const body = JSON.stringify(directory);
 
   return await fetch("./api/files/getFolders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(directory),
+    body,
   })
     .then(async (res) => {
       if (res.status !== 201) {
