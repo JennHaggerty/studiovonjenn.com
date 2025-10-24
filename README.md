@@ -1,3 +1,19 @@
+# Welcome to Studio von Jennifer Haggerty
+
+This website hosts my photography and art works, and is a space for personal code challenges, building widgets, and testing tools.
+
+## Portfolio
+
+Primaryily displaying images, emphasis is placed on imagery and ADA compliance.
+
+## Interface
+
+An admin dashboard is in the works allowing users to edit the website when it's hosted.
+
+
+---------------
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
