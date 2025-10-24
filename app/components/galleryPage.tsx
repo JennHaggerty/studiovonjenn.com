@@ -19,12 +19,12 @@ const GalleryPage = (props: Props) => {
     const fileNames = await getFiles({ directory }).then((data) => {
       return data;
     });
-    const images = fileNames.map((fileName: string) => {
+    const sortedFiles = fileNames.sort(customStringSort);
+    const images = sortedFiles.map((fileName: string) => {
       return { src: directory + fileName, alt: "" };
     });
-    const sortedImages = images.sort(customStringSort);
 
-    setImages(sortedImages);
+    setImages(images);
   };
 
   useEffect(() => {
