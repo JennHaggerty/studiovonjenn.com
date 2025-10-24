@@ -1,10 +1,10 @@
-# Welcome to Studio von Jennifer Haggerty
+# Welcome to Studio von Jenn
 
-This website hosts my photography and art works, and is a space for personal code challenges, building widgets, and testing tools.
+This website hosts Jennifer Haggerty's photography and art works, and is a space for personal code challenges, building widgets, and testing tools.
 
 ## Portfolio
 
-Primaryily displaying images, emphasis is placed on imagery and ADA compliance.
+Primarily displaying images, emphasis is placed on imagery and ADA compliance.
 
 ## Interface
 
