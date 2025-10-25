@@ -24,7 +24,7 @@ export const site = {
   name: "Portrait Photography",
   description: "by Jennifer Haggerty in Augusta, Georgia.",
   note: "LGBTQIA+, poc, and immigrant friendly. Not MAGA friendly.",
-  email: "thejenniferhaggerty@gmail.com",
+  email: "mailto:thejenniferhaggerty@gmail.com",
   discordLink: "https://discord.gg/gh9TMHQsdB",
 };
 
