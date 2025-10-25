@@ -1,6 +1,7 @@
 "use client";
 
 import { siteSettings } from "../cms";
+import SocialLinks from "./socialLinks";
 
 const Footer = () => {
   const copyrightText = siteSettings.copyright.replace(
@@ -8,7 +9,12 @@ const Footer = () => {
     new Date().getFullYear().toString(),
   );
 
-  return <footer>{copyrightText}</footer>;
+  return (
+    <footer>
+      <SocialLinks />
+      {copyrightText}
+    </footer>
+  );
 };
 
 export default Footer;
