@@ -141,6 +141,7 @@ const AdminDashboard = () => {
           List View
         </button>
       )}
+      <button type="button">Add</button>
       <button type="button" onClick={() => setEditFiles(!editFiles)}>
         Edit
       </button>
