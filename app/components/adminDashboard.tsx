@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { deleteFile, getAllFiles } from "../functions";
 import { siteSettings } from "../cms";
 import Loading from "./loading";
 import FolderIcon from "./svgs/folderIcon";
+
+const imagesDirectory = "/images/";
 
 interface File {
   name: string;
@@ -17,8 +19,9 @@ const AdminDashboard = () => {
   const [siteSettingsData, setSiteSettingsData] = useState(siteSettings);
   const [listView, setListView] = useState<string>("list");
   const [editFiles, setEditFiles] = useState<boolean>(false);
-
-  const imagesDirectory = "/images/";
+  // TODO: move directory/file/folder actions/info to context
+  const [currentDirectory, setCurrentDirectory] = useState<string>();
+  const [newFolderName, setNewFolderName] = useState<string>("");
 
   const getAll = async () => {
     const cmsFiles = await getAllFiles({ directory: imagesDirectory })
@@ -30,6 +33,7 @@ const AdminDashboard = () => {
 
   useEffect(function getImagesOnLoad() {
     getAll();
+    setCurrentDirectory(imagesDirectory);
     setLoading(false);
   }, []);
 
@@ -84,15 +88,74 @@ const AdminDashboard = () => {
 
     setLoading(true);
 
-    await deleteFile({ fullImagePath })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => console.log(e));
+    await deleteFile({ fullImagePath });
 
     getAll();
 
     setLoading(false);
+  };
+
+  const handleAddFolder = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+    const body = JSON.stringify(data);
+
+    await fetch("./api/files/createDirectory", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body,
+    })
+      .then(async (res) => {
+        if (res.status != 201) {
+          return console.log("Could not make folder.");
+        }
+        return getAll();
+      })
+      .catch((e) => console.log(e));
+
+    return setLoading(false);
+  };
+
+  const renderAddFilesForms = () => {
+    return (
+      <div className="outline flex flex-col gap-1">
+        <h3>Add files and folders</h3>
+        <form id="add-folder" className="p-1 dotted" onSubmit={handleAddFolder}>
+          <input
+            type="text"
+            id="directory"
+            name="directory"
+            defaultValue={currentDirectory}
+            //className="hidden"
+          />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="border w-full"
+            placeholder="Folder name"
+            aria-label="New folder name"
+          />
+          <button type="submit" className="w-full">
+            Add folder
+          </button>
+        </form>
+        <div className="">
+          <button
+            onClick={() => console.log("add file")}
+            id="add-file"
+            className="w-full"
+          >
+            Add file
+          </button>
+        </div>
+      </div>
+    );
   };
 
   const renderFormButtons = () => {
@@ -117,7 +180,7 @@ const AdminDashboard = () => {
     return (
       <button
         onClick={() => handleDelete({ id })}
-        className="primary w-half center"
+        className="primary w-1/2 center"
       >
         Delete
       </button>
@@ -130,21 +193,22 @@ const AdminDashboard = () => {
     </button>
   );
 
-  const renderViewButtons = () => (
-    <div className="flex justify-end gap-1">
-      {listView === "list" ? (
-        <button type="button" onClick={() => setListView("grid")}>
-          Grid View
+  const renderFileSectionButtons = () => (
+    <div className="flex-1 flex-col">
+      <div className="flex justify-end gap-1">
+        {listView === "list" ? (
+          <button type="button" onClick={() => setListView("grid")}>
+            Grid View
+          </button>
+        ) : (
+          <button type="button" onClick={() => setListView("list")}>
+            List View
+          </button>
+        )}
+        <button type="button" onClick={() => setEditFiles(!editFiles)}>
+          Edit
         </button>
-      ) : (
-        <button type="button" onClick={() => setListView("list")}>
-          List View
-        </button>
-      )}
-      <button type="button">Add</button>
-      <button type="button" onClick={() => setEditFiles(!editFiles)}>
-        Edit
-      </button>
+      </div>
     </div>
   );
 
@@ -155,7 +219,7 @@ const AdminDashboard = () => {
       <ul className="filename-list">
         {files.map((item, i) =>
           item.isDirectory ? (
-            <li key={`directory-${i}`} className="w-full flex-between">
+            <li key={`folder-${i}`} className="w-full flex-between">
               <a href={`/public/${item.name}`} className="break-word uppercase">
                 {item.name}
               </a>
@@ -182,7 +246,7 @@ const AdminDashboard = () => {
       <ul className="filename-grid">
         {files.map((item, i) =>
           item.isDirectory ? (
-            <li key={`directory-${i}`}>
+            <li key={`folder-${i}`}>
               <a
                 href={`/public/${item}`}
                 className="break-word flex-col center"
@@ -209,7 +273,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="main admin-area ">
-      <h1>Admin Dashboard</h1>
+      <h1 className="p-3">Admin Dashboard</h1>
       <div className="admin-settings">
         <section className="border">
           <div className="flex-between">
@@ -222,8 +286,9 @@ const AdminDashboard = () => {
         <section className="border">
           <div className="flex-between">
             <h2 className="h3">Files</h2>
-            <div className="flex justify-end gap-1">{renderViewButtons()}</div>
+            {renderFileSectionButtons()}
           </div>
+          {renderAddFilesForms()}
           {loading ? (
             <Loading />
           ) : listView === "list" ? (

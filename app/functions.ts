@@ -20,7 +20,7 @@ export const deleteFile = async (arg: { fullImagePath: string }) => {
 
       return res;
     })
-    .catch();
+    .catch((e) => console.log(e));
 };
 
 export const getAllFiles = async (arg: { directory: string }) => {

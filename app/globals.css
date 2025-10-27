@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @theme inline {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
@@ -184,14 +186,18 @@ section {
   margin: auto;
 }
 
-.w-half {
-  width: 50%;
+.border,
+.dotted {
+  border-radius: 5px;
 }
 
 .border {
-  border-radius: 5px;
   border: 2px solid var(--accent-000);
-  padding: 1em;
+  @apply m-1 p-1;
+}
+
+.dotted {
+  border: 2px dotted var(--accent-000);
 }
 
 .gap-sm {
@@ -252,10 +258,6 @@ label {
 
 .break-word {
   word-break: break-word;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .filename-list {
@@ -358,6 +360,7 @@ a .icon:hover {
   outline: unset;
   background: var(--black-000);
   padding: 1em;
+  margin: 1em;
 
   border-radius: 5px;
   border: 1px solid var(--accent-000);
