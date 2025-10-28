@@ -1,16 +1,11 @@
 import { FormEvent, useEffect, useState } from "react";
-import { deleteFile, getAllFiles } from "../functions";
+import { deleteFile, deleteFolder, getAllFiles } from "../functions";
 import { siteSettings } from "../cms";
 import Loading from "./loading";
 import FolderIcon from "./svgs/folderIcon";
+import { File } from "../interfaces";
 
 const imagesDirectory = "/images/";
-
-interface File {
-  name: string;
-  extension?: string;
-  isDirectory?: boolean;
-}
 
 const AdminDashboard = () => {
   const [files, setFiles] = useState<File[]>();
@@ -21,7 +16,6 @@ const AdminDashboard = () => {
   const [editFiles, setEditFiles] = useState<boolean>(false);
   // TODO: move directory/file/folder actions/info to context
   const [currentDirectory, setCurrentDirectory] = useState<string>();
-  const [newFolderName, setNewFolderName] = useState<string>("");
 
   const getAll = async () => {
     const cmsFiles = await getAllFiles({ directory: imagesDirectory })
@@ -82,13 +76,18 @@ const AdminDashboard = () => {
     );
   };
 
-  const handleDelete = async (args: { id: string }) => {
-    const { id } = args;
-    const fullImagePath = imagesDirectory + id;
+  const handleDelete = async (args: { item: File }) => {
+    const { item } = args;
+    console.log(item);
+    const fullImagePath = imagesDirectory + item.name;
 
     setLoading(true);
 
-    await deleteFile({ fullImagePath });
+    if (item.isDirectory) {
+      await deleteFolder({ fullPath: fullImagePath });
+    } else {
+      await deleteFile({ fullImagePath });
+    }
 
     getAll();
 
@@ -175,15 +174,21 @@ const AdminDashboard = () => {
     );
   };
 
-  const renderDeleteButton = (arg: { id: string }) => {
-    const { id } = arg;
+  const renderDeleteFileButton = (arg: { item: File }) => {
+    const { item } = arg;
     return (
-      <button
-        onClick={() => handleDelete({ id })}
-        className="primary w-1/2 center"
-      >
-        Delete
-      </button>
+      <>
+        {item.isDirectory && item.name === "galleries" ? (
+          ""
+        ) : (
+          <button
+            onClick={() => handleDelete({ item })}
+            className="primary w-1/2 center"
+          >
+            Delete
+          </button>
+        )}
+      </>
     );
   };
 
@@ -217,24 +222,17 @@ const AdminDashboard = () => {
 
     return (
       <ul className="filename-list">
-        {files.map((item, i) =>
-          item.isDirectory ? (
-            <li key={`folder-${i}`} className="w-full flex-between">
-              <a href={`/public/${item.name}`} className="break-word uppercase">
-                {item.name}
-              </a>
-            </li>
-          ) : (
-            <li key={`image-${i}`} className="w-full flex-between">
-              <a href={`/images/${item.name}`} className="break-word w-full">
-                {item.name}
-              </a>
-              {editFiles &&
-                renderDeleteButton &&
-                renderDeleteButton({ id: item.name })}
-            </li>
-          ),
-        )}
+        {files.map((item, i) => (
+          <li key={`file-${i}`} className="w-full flex-between">
+            <a
+              href={`/public/${item.name}`}
+              className={`break-word ${item.isDirectory ? "uppercase" : ""}`}
+            >
+              {item.name}
+            </a>
+            {editFiles && renderDeleteFileButton({ item })}
+          </li>
+        ))}
       </ul>
     );
   };
@@ -244,29 +242,19 @@ const AdminDashboard = () => {
 
     return (
       <ul className="filename-grid">
-        {files.map((item, i) =>
-          item.isDirectory ? (
-            <li key={`folder-${i}`}>
-              <a
-                href={`/public/${item}`}
-                className="break-word flex-col center"
-              >
-                <FolderIcon />
-                {item.name}
-              </a>
-            </li>
-          ) : (
-            <li className="border" key={`image-${i}`}>
+        {files.map((item, i) => (
+          <li className="border" key={`image-${i}`}>
+            {item.isDirectory ? (
+              <FolderIcon />
+            ) : (
               <img src={`/images/${item.name}`} />
-              <div className="flex-col gap-1">
-                <p className="center">{item.name}</p>
-                {editFiles &&
-                  renderDeleteButton &&
-                  renderDeleteButton({ id: item.name })}
-              </div>
-            </li>
-          ),
-        )}
+            )}
+            <div className="flex-col gap-1">
+              <p className="center">{item.name}</p>
+              {editFiles && renderDeleteFileButton({ item })}
+            </div>
+          </li>
+        ))}
       </ul>
     );
   };
@@ -288,7 +276,7 @@ const AdminDashboard = () => {
             <h2 className="h3">Files</h2>
             {renderFileSectionButtons()}
           </div>
-          {renderAddFilesForms()}
+          {editFiles && renderAddFilesForms()}
           {loading ? (
             <Loading />
           ) : listView === "list" ? (
