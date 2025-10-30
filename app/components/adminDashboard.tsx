@@ -4,8 +4,7 @@ import { siteSettings } from "../cms";
 import Loading from "./loading";
 import FolderIcon from "./svgs/folderIcon";
 import { File } from "../interfaces";
-
-const imagesDirectory = "/images/";
+import formidable from "formidable";
 
 const AdminDashboard = () => {
   const [files, setFiles] = useState<File[]>();
@@ -15,10 +14,10 @@ const AdminDashboard = () => {
   const [listView, setListView] = useState<string>("list");
   const [editFiles, setEditFiles] = useState<boolean>(false);
   // TODO: move directory/file/folder actions/info to context
-  const [currentDirectory, setCurrentDirectory] = useState<string>();
+  const [currentDirectory, setCurrentDirectory] = useState<string>("/images/");
 
   const getAll = async () => {
-    const cmsFiles = await getAllFiles({ directory: imagesDirectory })
+    const cmsFiles = await getAllFiles({ directory: currentDirectory })
       .then((res) => res)
       .catch((e) => console.log(e));
 
@@ -27,7 +26,7 @@ const AdminDashboard = () => {
 
   useEffect(function getImagesOnLoad() {
     getAll();
-    setCurrentDirectory(imagesDirectory);
+    setCurrentDirectory(currentDirectory);
     setLoading(false);
   }, []);
 
@@ -79,7 +78,7 @@ const AdminDashboard = () => {
   const handleDelete = async (args: { item: File }) => {
     const { item } = args;
     console.log(item);
-    const fullImagePath = imagesDirectory + item.name;
+    const fullImagePath = currentDirectory + item.name;
 
     setLoading(true);
 
@@ -113,46 +112,95 @@ const AdminDashboard = () => {
         if (res.status != 201) {
           return console.log("Could not make folder.");
         }
-        return getAll();
+        return await getAll();
       })
       .catch((e) => console.log(e));
 
     return setLoading(false);
   };
 
+  const handleAddFile = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    await fetch("./api/files/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "form-data",
+      },
+      body: formData,
+    })
+      .then(async (res) => {
+        if (res.status != 201) {
+          return console.log("Could not make folder.");
+        }
+        return await getAll();
+      })
+      .catch((e) => console.log(e));
+
+    setLoading(false);
+  };
+
   const renderAddFilesForms = () => {
     return (
-      <div className="outline flex flex-col gap-1">
-        <h3>Add files and folders</h3>
-        <form id="add-folder" className="p-1 dotted" onSubmit={handleAddFolder}>
+      <div aria-live="assertive" className="outline flex max-md:flex-col gap-1">
+        <form
+          id="add-file"
+          onSubmit={handleAddFile}
+          className="dotted p-3 w-full"
+          encType="multipart/form-data"
+          method="post"
+        >
+          <h3>Add files</h3>
           <input
             type="text"
             id="directory"
             name="directory"
+            aria-label="Current directory"
             defaultValue={currentDirectory}
-            //className="hidden"
+            disabled
+            className="hidden"
+          />
+          <input
+            type="file"
+            id="newFiles"
+            name="newFiles"
+            aria-label="Upload a file"
+            multiple
+            className="w-full"
+            required
+          />
+          <button className="w-full">Upload file</button>
+        </form>
+        <form
+          id="add-folder"
+          onSubmit={handleAddFolder}
+          className="dotted p-3 w-full"
+        >
+          <h3>Add folders</h3>
+          <input
+            type="text"
+            id="directory"
+            name="directory"
+            aria-label="Current directory"
+            defaultValue={currentDirectory}
+            className="hidden"
           />
           <input
             type="text"
-            id="name"
-            name="name"
-            className="border w-full"
+            id="newFolder"
+            name="newFolder"
+            className="w-full"
             placeholder="Folder name"
             aria-label="New folder name"
+            required
           />
           <button type="submit" className="w-full">
             Add folder
           </button>
         </form>
-        <div className="">
-          <button
-            onClick={() => console.log("add file")}
-            id="add-file"
-            className="w-full"
-          >
-            Add file
-          </button>
-        </div>
       </div>
     );
   };
@@ -263,15 +311,16 @@ const AdminDashboard = () => {
     <div className="main admin-area ">
       <h1 className="p-3">Admin Dashboard</h1>
       <div className="admin-settings">
-        <section className="border">
+        <section className="dotted p-2">
           <div className="flex-between">
             <h2 className="h3">Site Settings</h2>
             {showForm ? renderFormButtons() : renderShowFormButton()}
           </div>
           {showForm ? editSiteSettings() : showSiteSettings(siteSettingsData)}
+
           {showForm && renderFormButtons()}
         </section>
-        <section className="border">
+        <section className="dotted p-2">
           <div className="flex-between">
             <h2 className="h3">Files</h2>
             {renderFileSectionButtons()}
