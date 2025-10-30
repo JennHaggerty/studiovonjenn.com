@@ -5,7 +5,7 @@ import path from "path";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const body = req.body;
-    const name = body.name;
+    const name = body.newFolder;
     const sanitized = name.split(" ").join("_");
     const directory = body.directory;
     const fullPath = directory + sanitized;
