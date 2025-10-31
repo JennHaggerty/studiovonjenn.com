@@ -4,7 +4,7 @@ import SocialLinks from "./socialLinks";
 const HomepageHeader = () => {
   return (
     <section className="introduction">
-      <div className="radial-gradient">
+      <div className="smoke-background relative overflow-hidden flex max-lg:justify-center min-lg:flex-row w-full">
         <div className="header lg:min-w-1/2 lg:my-auto">
           <div className="outline">
             <h1>{siteSettings.name}</h1>
@@ -13,7 +13,7 @@ const HomepageHeader = () => {
             <SocialLinks />
           </div>
         </div>
-        <div className="max-lg:hidden">
+        <div className="cover-image max-lg:hidden">
           <img
             src="/images/jennifer.jpg"
             alt="Self portrait as Morticia Addams drinking tea."

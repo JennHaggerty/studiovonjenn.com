@@ -384,26 +384,30 @@ a .icon:hover {
   gap: 5px;
   font-size: 1em;
 }
-
-.introduction .radial-gradient {
-  @apply relative overflow-hidden flex max-lg:justify-center min-lg:flex-row;
-
-  background: radial-gradient(
-    circle at 75% 0,
-    var(--black-000) 30%,
-    rgba(var(--primary-100-rgba), -1) 40%,
-    rgba(var(--primary-000-rgba), 0.3) 65%
-  );
+@media (min-width: 1024px) {
+  .smoke-background {
+    background: radial-gradient(
+        circle at 76% 30%,
+        var(--black-000) 30%,
+        rgba(var(--primary-000-rgba), 0.7) 65%
+      ),
+      url("/gifs/smoke.gif") no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
+    mix-blend-mode: screen;
+  }
 }
 
 .introduction {
+  @apply relative overflow-hidden flex max-lg:justify-center min-lg:flex-row w-full;
   background: url("/images/smoke.jpg") no-repeat;
   background-size: cover;
-  width: 100%;
+  z-index: 0;
 }
 .introduction img {
   height: 100vh;
   max-width: unset;
+  mix-blend-mode: lighten;
 }
 
 .gallery-page .header {
