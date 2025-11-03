@@ -394,7 +394,7 @@ a .icon:hover {
     background: radial-gradient(
         circle at 68% 10%,
         var(--black-000) calc(100vh - 20%),
-        rgba(var(--primary-000-rgba), 0.7)
+        rgba(var(--primary-000-rgba), 1)
       ),
       url("https://i.imgur.com/DMeHjh9.gif") no-repeat;
     background-size: cover;
