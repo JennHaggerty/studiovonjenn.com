@@ -396,7 +396,7 @@ a .icon:hover {
         var(--black-000) calc(100vh - 20%),
         rgba(var(--primary-000-rgba), 0.7)
       ),
-      url("/gifs/smoke.gif") no-repeat;
+      url("https://i.imgur.com/DMeHjh9.gif") no-repeat;
     background-size: cover;
     background-blend-mode: color;
     mix-blend-mode: screen;
