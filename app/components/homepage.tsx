@@ -62,7 +62,7 @@ export default function Homepage() {
         <>
           <HomepageHeader />
           <HomepageGallery />
-          <div className="primary-bg ">
+          <div className="primary-bg">
             <div className="col-2-img-right">
               <div className="col col-text">
                 <About />

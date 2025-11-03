@@ -99,6 +99,7 @@ button.a {
   padding: 0;
   background: unset;
   text-decoration: underline;
+  text-align: unset;
 }
 
 a:hover,
@@ -465,12 +466,15 @@ a .icon:hover {
   margin: auto;
 }
 .col-2-img-right .col-text {
-  padding: 1em;
+  padding: 2em;
   margin: auto;
 }
 .col-2-img-right .col-image {
   overflow: hidden;
   object-fit: cover;
+}
+.col-image img {
+  max-width: unset;
 }
 @media (max-width: 1185px) {
   .col-2-img-right .col-text {
