@@ -109,6 +109,10 @@ a.button {
   cursor: pointer;
 }
 
+button.a:hover {
+  background: unset;
+}
+
 button,
 a.button {
   font-family: var(--font-sans);
@@ -387,20 +391,20 @@ a .icon:hover {
 @media (min-width: 1024px) {
   .smoke-background {
     background: radial-gradient(
-        circle at 76% 30%,
-        var(--black-000) 30%,
-        rgba(var(--primary-000-rgba), 0.7) 65%
+        circle at 68% 10%,
+        var(--black-000) calc(100vh - 20%),
+        rgba(var(--primary-000-rgba), 0.7)
       ),
       url("/gifs/smoke.gif") no-repeat;
     background-size: cover;
-    background-blend-mode: screen;
+    background-blend-mode: color;
     mix-blend-mode: screen;
   }
 }
 
 .introduction {
   @apply relative overflow-hidden flex max-lg:justify-center min-lg:flex-row w-full;
-  background: url("/images/smoke.jpg") no-repeat;
+  background: url("/images/smoke.jpg") 0 45% no-repeat;
   background-size: cover;
   z-index: 0;
 }

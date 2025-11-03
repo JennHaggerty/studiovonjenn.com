@@ -13,8 +13,9 @@ const HomepageHeader = () => {
             <SocialLinks />
           </div>
         </div>
-        <div className="cover-image max-lg:hidden">
+        <div className="cover-image max-lg:hidden faded">
           <img
+            className=""
             src="/images/jennifer.jpg"
             alt="Self portrait as Morticia Addams drinking tea."
           />

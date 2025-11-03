@@ -11,6 +11,7 @@ import { GalleryInterface } from "../interfaces";
 import { galleries } from "../cms";
 import EventList from "./eventList";
 import AdminDashboard from "./adminDashboard";
+import About from "./about";
 
 export default function Homepage() {
   const [activeGallery, setActiveGallery] = useState<GalleryInterface>();
@@ -64,6 +65,7 @@ export default function Homepage() {
           <div className="primary-bg ">
             <div className="col-2-img-right">
               <div className="col col-text">
+                <About />
                 <PublicationsList />
                 <ExhibitList />
                 <EducationList />
