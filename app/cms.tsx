@@ -1,25 +1,25 @@
 import { GalleryInterface } from "./interfaces";
 
-const atmosDirextory = "/images/galleries/atmos/{date}/";
+const atmosDirectory = "/images/galleries/atmos/{date}/";
 const atmosDescriptionText =
   "Images from the monthly event available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
 const atmosOnCloseText = "Return to index";
 
 export const galleries: GalleryInterface[] = [
   {
-    directory: atmosDirextory.replace("{date}", "1125"),
+    directory: atmosDirectory.replace("{date}", "1125"),
     title: "Atmosphere, Augusta GA, November 2025",
     description: atmosDescriptionText,
     onCloseText: atmosOnCloseText,
   },
   {
-    directory: atmosDirextory.replace("{date}", "1025"),
+    directory: atmosDirectory.replace("{date}", "1025"),
     title: "Atmosphere, Augusta GA, October 2025",
     description: atmosDescriptionText,
     onCloseText: atmosOnCloseText,
   },
   {
-    directory: atmosDirextory.replace("{date}", "0925"),
+    directory: atmosDirectory.replace("{date}", "0925"),
     title: "Atmosphere, Augusta GA, September 2025",
     description: atmosDescriptionText,
     onCloseText: atmosOnCloseText,
