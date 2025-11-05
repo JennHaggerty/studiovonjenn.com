@@ -7,6 +7,12 @@ const atmosOnCloseText = "Return to index";
 
 export const galleries: GalleryInterface[] = [
   {
+    directory: atmosDirextory.replace("{date}", "1125"),
+    title: "Atmosphere, Augusta GA, November 2025",
+    description: atmosDescriptionText,
+    onCloseText: atmosOnCloseText,
+  },
+  {
     directory: atmosDirextory.replace("{date}", "1025"),
     title: "Atmosphere, Augusta GA, October 2025",
     description: atmosDescriptionText,
