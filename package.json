@@ -28,5 +28,6 @@
   },
   "browser": {
     "fs": false
-  }
+  },
+  "type": "module"
 }
