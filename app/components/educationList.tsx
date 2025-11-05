@@ -1,7 +1,7 @@
 const EducationList = () => {
   return (
     <div>
-      <h2>Education</h2>
+      <h3>Education</h3>
       <ul>
         <li>
           Augusta Technical College, AAS Computer Programming. Augusta, GA 2021.

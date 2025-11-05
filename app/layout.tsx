@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import { site } from "./cms";
+import { siteSettings } from "./cms";
 
 const montserratSans = Montserrat({
   variable: "--font-sans",
@@ -12,8 +12,8 @@ const cormorantSerif = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: site.name,
-  description: site.description,
+  title: siteSettings.name,
+  description: siteSettings.description,
 };
 
 export default function RootLayout({

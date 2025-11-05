@@ -7,13 +7,18 @@ import GalleryPage from "./galleryPage";
 import PublicationsList from "./publicationsList";
 import ExhibitList from "./exhibitsList";
 import EducationList from "./educationList";
-import { scrollToTop } from "../functions";
 import { GalleryInterface } from "../interfaces";
 import { galleries } from "../cms";
 import EventList from "./eventList";
+import AdminDashboard from "./adminDashboard";
+import About from "./about";
 
 export default function Homepage() {
   const [activeGallery, setActiveGallery] = useState<GalleryInterface>();
+  const [showPreview, setShowPreview] = useState<boolean>(false);
+
+  const env = process.env.NODE_ENV;
+  const isAdmin = env !== "production";
 
   const handleGalleryPageLinkClick = (directory: string) => {
     if (!galleries) return;
@@ -24,12 +29,28 @@ export default function Homepage() {
 
   const closeActiveGallery = () => {
     setActiveGallery(undefined);
-    scrollToTop();
   };
 
   return (
     <>
-      {activeGallery ? (
+      {isAdmin && (
+        <div className="sitewide-banner">
+          {showPreview ? (
+            <button onClick={() => setShowPreview(!showPreview)}>
+              Show admin dashboard
+            </button>
+          ) : (
+            <>
+              <button onClick={() => setShowPreview(!showPreview)}>
+                Show live view
+              </button>
+            </>
+          )}
+        </div>
+      )}
+      {isAdmin && !showPreview ? (
+        <AdminDashboard />
+      ) : activeGallery ? (
         <GalleryPage
           directory={activeGallery.directory}
           title={activeGallery.title}
@@ -41,11 +62,22 @@ export default function Homepage() {
         <>
           <HomepageHeader />
           <HomepageGallery />
-          <div className="cv">
-            <PublicationsList />
-            <ExhibitList />
-            <EducationList />
-            <EventList onClick={handleGalleryPageLinkClick} />
+          <div className="primary-bg">
+            <div className="col-2-img-right">
+              <div className="col col-text">
+                <About />
+                <PublicationsList />
+                <ExhibitList />
+                <EducationList />
+                <EventList onClick={handleGalleryPageLinkClick} />
+              </div>
+              <div className="col col-image">
+                <img
+                  src={`/images/ophelia-1.jpg`}
+                  alt="Ophelia in the waters"
+                />
+              </div>
+            </div>
           </div>
         </>
       )}

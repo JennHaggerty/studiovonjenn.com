@@ -1,7 +1,7 @@
 const PublicationsList = () => {
   return (
     <div>
-      <h2>Publications</h2>
+      <h3>Publications</h3>
       <ul>
         <li>Gothesque Magazine issue #88. Augusta, GA 2020.</li>
         <li>Gothesque Magazine August issue. Austin, TX 2016.</li>

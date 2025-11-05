@@ -1,37 +1,29 @@
-import { site } from "../cms";
-import AddFriendIcon from "./svgs/addFriendIcon";
-import AmpersandIcon from "./svgs/ampersandIcon";
+import { siteSettings } from "../cms";
+import SocialLinks from "./socialLinks";
 
 const HomepageHeader = () => {
   return (
     <section className="introduction">
-      <div className="header">
-        <div className="outline">
-          <h1>{site.name}</h1>
-          <h2>{site.description}</h2>
-          <p className="note">{site.note}</p>
-          <ul>
-            <li>
-              <a href={site.email} aria-label="Email Jennifer">
-                <AmpersandIcon />
-              </a>
-            </li>
-            <li>
-              <a
-                href={site.discordLink}
-                target="_blank"
-                aria-label="Connect with Jennifer"
-              >
-                <AddFriendIcon />
-              </a>
-            </li>
-          </ul>
+      <div
+        className="smoke-background relative overflow-hidden 
+      flex max-xl:justify-center min-xl:flex-row w-full"
+      >
+        <div className="header xl:min-w-1/2 xl:my-auto">
+          <div className="outline">
+            <h1>{siteSettings.name}</h1>
+            <h2>{siteSettings.description}</h2>
+            <p className="note">{siteSettings.note}</p>
+            <SocialLinks />
+          </div>
+        </div>
+        <div className="cover-image max-xl:hidden faded">
+          <img
+            className=""
+            src="/images/jennifer.jpg"
+            alt="Self portrait as Morticia Addams drinking tea."
+          />
         </div>
       </div>
-      <img
-        src="/images/jennifer.jpg"
-        alt="Self portrait as Morticia Addams drinking tea."
-      />
     </section>
   );
 };

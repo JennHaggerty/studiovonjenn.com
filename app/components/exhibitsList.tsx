@@ -1,7 +1,7 @@
 const ExhibitList = () => {
   return (
     <div>
-      <h2>Shows &amp; Exhibits</h2>
+      <h3>Shows &amp; Exhibits</h3>
       <ul>
         <li>Art & Soul Gallery in Aiken, South Carolina, 2022-2023.</li>
         <li>Meadowlands Museum in Rutherford, New Jersey, 2013.</li>

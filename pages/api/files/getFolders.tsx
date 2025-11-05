@@ -1,16 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { promises as fs } from "fs";
 import path from "path";
-import { customSort } from "@/app/functions";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const directory = path.join(process.cwd(), "public", req.body);
-    console.log(directory);
-    const filenames = await fs.readdir(directory);
-    const sortedFilenames = filenames.sort(customSort);
+    const dirents = await fs.readdir(directory, { withFileTypes: true });
+    const files = dirents
+      .filter((dirent) => dirent.isDirectory())
+      .map((dirent) => dirent.name);
 
-    return res.status(201).json(sortedFilenames);
+    return res.status(201).json(files);
   } catch (e) {
     console.log(e);
   }

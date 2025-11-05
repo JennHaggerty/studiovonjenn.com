@@ -1,14 +1,20 @@
 "use client";
 
-import { siteStrings } from "../cms";
+import { siteSettings } from "../cms";
+import SocialLinks from "./socialLinks";
 
 const Footer = () => {
-  const copyrightText = siteStrings.copyright.replace(
+  const copyrightText = siteSettings.copyright.replace(
     "{year}",
     new Date().getFullYear().toString(),
   );
 
-  return <footer>{copyrightText}</footer>;
+  return (
+    <footer>
+      <SocialLinks />
+      {copyrightText}
+    </footer>
+  );
 };
 
 export default Footer;

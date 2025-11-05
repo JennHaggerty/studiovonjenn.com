@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @theme inline {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
@@ -14,13 +16,17 @@
 :root {
   --white-000: #e4d0cf;
   --white-100: whitesmoke;
-  --black-000: #100306;
+  --old-black-000: #100306;
+  --black-000: #180b11;
   --black-100: #1c1118;
   --black-200: #3b3f3f;
   --primary-000: #f50000;
   --primary-100: #720000;
   --accent-000: #284c52;
   --accent-100: #03a7c4;
+
+  --primary-000-rgba: 245, 0, 0;
+  --primary-100-rgba: 114, 0, 0;
 
   font-size: 16px;
 }
@@ -49,21 +55,34 @@ h2 {
   margin: unset;
 }
 
-h1 {
+h1,
+.h1 {
   font-family: var(--font-sans);
   font-size: 2em;
   text-transform: uppercase;
   color: var(--primary-000);
 }
 
-h2 {
+h2,
+.h2 {
   font-family: var(--font-serif);
   font-size: 1.5em;
 }
 
+h3,
+.h3 {
+  font-family: var(--font-sans);
+  font-size: 1.5em;
+}
+
 @media (min-width: 1119px) {
-  h1 {
+  .site-title {
     font-size: 8em;
+  }
+
+  h1,
+  .h1 {
+    font-size: 3em;
   }
 }
 
@@ -80,6 +99,7 @@ button.a {
   padding: 0;
   background: unset;
   text-decoration: underline;
+  text-align: unset;
 }
 
 a:hover,
@@ -88,6 +108,10 @@ button,
 a.button {
   color: var(--white-000);
   cursor: pointer;
+}
+
+button.a:hover {
+  background: unset;
 }
 
 button,
@@ -105,7 +129,194 @@ a.button {
   align-items: center;
   gap: 1em;
 }
+
+button.primary {
+  background-color: var(--primary-100);
+}
+button.primary:hover {
+  background-color: var(--primary-000);
+  color: var(--white-000);
+}
+button.secondary {
+  background-color: var(--accent-000);
+}
+button:hover,
+button.secondary:hover {
+  background-color: var(--accent-100);
+  color: var(--black-100);
+}
+
+section {
+  margin: 1em 0;
+}
 /* start CUSTOM CSS */
+.uppercase {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.border,
+.dotted {
+  border-radius: 5px;
+}
+
+.border,
+input {
+  border: 2px solid var(--accent-000);
+  @apply m-1 p-1;
+}
+
+input {
+  background: var(--black-000);
+  margin: unset;
+}
+
+form.dotted {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+hr {
+  color: #333;
+}
+
+.dotted {
+  border: 2px dotted var(--accent-000);
+}
+
+.gap-sm {
+  gap: 0.5em;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sitewide-banner button {
+  width: 100%;
+  padding: 2em;
+  border-radius: 0;
+  margin: 0 0 1em;
+}
+
+.admin-settings {
+  margin: 1em 0;
+}
+
+.label,
+label {
+  text-transform: capitalize;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.site-setting-row {
+  margin: 0.25em 1.25em;
+}
+
+.site-setting-row input {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.break {
+  overflow-wrap: break-word;
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+.filename-list {
+  margin: unset;
+  padding: 0 0 0 0.5em;
+}
+
+.filename-list li {
+  padding: 0.15em;
+  border: 1px solid var(--accent-000);
+}
+
+.filename-list li button {
+  padding: unset;
+  margin: unset;
+  border-radius: 0;
+  max-width: 50%;
+}
+
+.filename-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0;
+  gap: 0.75em;
+}
+
+.filename-grid li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 1em;
+}
+
+.filename-grid div {
+  display: flex;
+  justify-content: center;
+}
+
+.filename-grid img {
+  width: 100%;
+}
+
+.filename-grid svg {
+  height: 90%;
+  width: 90%;
+  margin: auto;
+}
+
+@media (min-width: 661px) {
+  .filename-list {
+    display: grid;
+    grid-column-gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filename-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-setting-row {
+    display: flex;
+    margin: 0.25em 1.25em;
+    justify-content: space-between;
+  }
+
+  .site-setting-row input {
+    width: 80%;
+  }
+}
+@media (min-width: 1199px) {
+  .filename-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .filename-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+  }
+}
+
 .gallery-page button {
   width: 100%;
 }
@@ -156,14 +367,11 @@ a .icon:hover {
   transform: scale(1.5);
 }
 
-.flex {
-  display: flex;
-}
-
 .outline {
   outline: unset;
   background: var(--black-000);
   padding: 1em;
+  margin: 1em;
 
   border-radius: 5px;
   border: 1px solid var(--accent-000);
@@ -175,59 +383,45 @@ a .icon:hover {
   animation: glow-pulse 1s infinite alternate;
 }
 
-.introduction h2 {
-  color: var(--primary-000);
+.header {
+  @apply flex flex-col items-center lg:items-end;
+  text-align: center;
+  gap: 5px;
+  font-size: 1em;
+}
+@media (min-width: 1024px) {
+  .smoke-background {
+    background: radial-gradient(
+        circle at 68% 10%,
+        var(--black-000) calc(100vh - 20%),
+        rgba(var(--primary-000-rgba), 0.5)
+      ),
+      url("https://i.imgur.com/DMeHjh9.gif") no-repeat;
+    background-size: cover;
+    background-blend-mode: color;
+    mix-blend-mode: screen;
+  }
 }
 
 .introduction {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 10px;
-  justify-content: space-between;
+  @apply relative overflow-hidden flex max-lg:justify-center min-lg:flex-row w-full;
+  background: url("/images/smoke.jpg") 0 45% no-repeat;
+  background-size: cover;
+  z-index: 0;
 }
-
-.introduction ul {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 0;
-  list-style: none;
-}
-
-.introduction .outline {
-  width: 100%;
-}
-
-@media (min-width: 1198px) {
-  .introduction {
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 1654px) {
-  .introduction img {
-    display: none;
-  }
+.introduction img {
+  height: 100vh;
+  max-width: unset;
+  mix-blend-mode: lighten;
+  mask-image: radial-gradient(circle at center, black 60%, transparent 80%);
 }
 
 .gallery-page .header {
   padding-bottom: 1em;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 5px;
-  font-size: 1em;
-}
-
-.introduction img {
-  height: 100vh;
+.primary-bg {
+  background-color: var(--primary-100);
 }
 
 .gallery,
@@ -256,6 +450,48 @@ a .icon:hover {
   }
   .portfolio img {
     object-fit: cover;
+  }
+}
+
+.socials {
+  display: flex;
+  margin: auto;
+  list-style: none;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1em 0;
+}
+
+.col-2-img-right {
+  max-width: 1200px;
+  margin: auto;
+}
+.col-2-img-right .col-text {
+  padding: 2em;
+  margin: auto;
+}
+.col-2-img-right .col-image {
+  overflow: hidden;
+  object-fit: cover;
+}
+.col-image img {
+  max-width: unset;
+}
+@media (max-width: 1185px) {
+  .col-2-img-right .col-text {
+    width: fit-content;
+  }
+  .col-2-img-right .col-image {
+    display: none;
+  }
+}
+@media (min-width: 1185px) {
+  .col-2-img-right .col-text {
+    width: fit-content;
+    max-width: 50%;
+  }
+  .col-2-img-right {
+    display: flex;
   }
 }
 
@@ -491,7 +727,7 @@ a .icon:hover {
 
 .loader {
   text-align: center;
-  padding: 200px 2em;
+  padding: 3em;
   margin: 3em 1em;
   font-size: 1em;
   position: relative; /* Needed for positioning the pseudo-element */

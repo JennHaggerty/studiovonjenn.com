@@ -26,6 +26,18 @@ const HomepageGallery = () => {
         alt="The Raven wearing a black cape and a black plague doctor mask with red eyes."
       />
       <img
+        src="/images/winter-queen-1.jpg"
+        alt="Melanie wears a brilliant silver crown of twigs with intense makeup."
+      />
+      <img
+        src="/images/winter-queen-2.jpg"
+        alt="Melanie is the ice queen with her crown of sparkling twigs and silver corset gown."
+      />
+      <img
+        src="/images/winter-queen-3.jpg"
+        alt="Her crown and scepter of silver twigs, Melanie stands against a winter backdrop in falling snow"
+      />
+      <img
         src="/images/tiffany-rae-knight-1.jpg"
         alt="Victorian portrait of Tiffay in purple holding a mirror"
       />
@@ -55,26 +67,14 @@ const HomepageGallery = () => {
         alt="Editorial portrait of Paige and Rozi together"
       />
       <img src="/images/rozi-1.jpg" alt="Editorial portrait of Rozi" />
-      <img
-        src="/images/winter-queen-1.jpg"
-        alt="Melanie wears a brilliant silver crown of twigs with intense makeup."
-      />
-      <img
-        src="/images/winter-queen-2.jpg"
-        alt="Melanie is the ice queen with her crown of sparkling twigs and silver corset gown."
-      />
-      <img
-        src="/images/winter-queen-3.jpg"
-        alt="Her crown and scepter of silver twigs, Melanie stands against a winter backdrop in falling snow"
-      />
       <img src="/images/safara-1.jpg" alt="Safara's portrait in a dark realm" />
       <img
         src="/images/sarah-2.jpg"
         alt="A black spiral shell crown sits atop Sarah's head."
       />
       <img
-        src="/images/ophelia-1.jpg"
-        alt="Melanie portrays Ophelia in the pond on Staten Island in a dusty rose lace dress"
+        src="/images/safara-2.jpg"
+        alt="Safara's portrait in a dark realm with lace."
       />
       <img
         src="/images/demons-1.jpg"
