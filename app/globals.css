@@ -391,15 +391,8 @@ a .icon:hover {
 }
 @media (min-width: 1024px) {
   .smoke-background {
-    background: radial-gradient(
-        circle at 68% 10%,
-        var(--black-000) calc(100vh - 20%),
-        rgba(var(--primary-000-rgba), 0.5)
-      ),
-      url("https://i.imgur.com/DMeHjh9.gif") no-repeat;
     background-size: cover;
     background-blend-mode: color;
-    mix-blend-mode: screen;
   }
 }
 
