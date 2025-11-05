@@ -125,21 +125,6 @@ const AdminDashboard = () => {
 
     const formData = new FormData(e.currentTarget);
 
-    await fetch("./api/files/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "form-data",
-      },
-      body: formData,
-    })
-      .then(async (res) => {
-        if (res.status != 201) {
-          return console.log("Could not make folder.");
-        }
-        return await getAll();
-      })
-      .catch((e) => console.log(e));
-
     setLoading(false);
   };
 
