@@ -1,46 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import { File } from "./interfaces";
 
 const jsonHeaders = {
   "Content-Type": "application/json",
-};
-
-export const deleteFolder = async (arg: { fullPath: string }) => {
-  const { fullPath } = arg;
-  const body = JSON.stringify(fullPath);
-
-  return await fetch("./api/files/deleteDirectory", {
-    method: "DELETE",
-    headers: jsonHeaders,
-    body,
-  })
-    .then((res) => {
-      if (res.status !== 201) {
-        return console.log("Could not delete directory.");
-      }
-
-      return res;
-    })
-    .catch((e) => console.log(e));
-};
-
-export const deleteFile = async (arg: { fullImagePath: string }) => {
-  const { fullImagePath } = arg;
-  const body = JSON.stringify(fullImagePath);
-
-  return await fetch("./api/files/delete", {
-    method: "DELETE",
-    headers: jsonHeaders,
-    body,
-  })
-    .then((res) => {
-      if (res.status !== 201) {
-        return console.log("There was an error deleting the image.");
-      }
-
-      return res;
-    })
-    .catch((e) => console.log(e));
 };
 
 export const getAllFiles = async (arg: { directory: string }) => {

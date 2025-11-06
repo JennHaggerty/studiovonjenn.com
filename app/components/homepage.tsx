@@ -10,15 +10,10 @@ import EducationList from "./educationList";
 import { GalleryInterface } from "../interfaces";
 import { galleries } from "../cms";
 import EventList from "./eventList";
-import AdminDashboard from "./adminDashboard";
 import About from "./about";
 
 export default function Homepage() {
   const [activeGallery, setActiveGallery] = useState<GalleryInterface>();
-  const [showPreview, setShowPreview] = useState<boolean>(false);
-
-  const env = process.env.NODE_ENV;
-  const isAdmin = env !== "production";
 
   const handleGalleryPageLinkClick = (directory: string) => {
     if (!galleries) return;
@@ -33,24 +28,7 @@ export default function Homepage() {
 
   return (
     <>
-      {isAdmin && (
-        <div className="sitewide-banner">
-          {showPreview ? (
-            <button onClick={() => setShowPreview(!showPreview)}>
-              Show admin dashboard
-            </button>
-          ) : (
-            <>
-              <button onClick={() => setShowPreview(!showPreview)}>
-                Show live view
-              </button>
-            </>
-          )}
-        </div>
-      )}
-      {isAdmin && !showPreview ? (
-        <AdminDashboard />
-      ) : activeGallery ? (
+      {activeGallery ? (
         <GalleryPage
           directory={activeGallery.directory}
           title={activeGallery.title}
