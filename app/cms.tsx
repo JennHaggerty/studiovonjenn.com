@@ -11,7 +11,7 @@ const galleryDescription =
 export const galleries: GalleryInterface[] = [
   {
     directory: "/images/galleries/pirate-party-1125/",
-    title: "Pirate Ball, Augusta GA, November 2025",
+    title: "3rd Annual Buccaneer's Ball",
     description: galleryDescription,
     onCloseText: atmosOnCloseText,
   },
