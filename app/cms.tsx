@@ -5,7 +5,16 @@ const atmosDescriptionText =
   "Images from the monthly event available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
 const atmosOnCloseText = "Return to index";
 
+const galleryDescription =
+  "Images are available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
+
 export const galleries: GalleryInterface[] = [
+  {
+    directory: "/images/galleries/pirate-party-1125/",
+    title: "Pirate Ball, Augusta GA, November 2025",
+    description: galleryDescription,
+    onCloseText: atmosOnCloseText,
+  },
   {
     directory: atmosDirectory.replace("{date}", "1125"),
     title: "Atmosphere, Augusta GA, November 2025",

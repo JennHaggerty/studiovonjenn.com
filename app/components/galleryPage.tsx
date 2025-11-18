@@ -34,7 +34,7 @@ const GalleryPage = (props: Props) => {
   return (
     <div className="main gallery-page">
       <div className="header">
-        <div className="outline">
+        <div className="outline mx-auto!">
           <h2 className="subtle-h1">{title}</h2>
           {description && <p>{description}</p>}
         </div>
