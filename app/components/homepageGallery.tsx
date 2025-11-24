@@ -94,6 +94,18 @@ const HomepageGallery = () => {
         src="/images/egan-3.jpg"
         alt="Egan wearing black horns, a red heart eye patch, and pentagram top for Gothesque Magazine"
       />
+      <img
+        src="/images/galleries/pirate-party-1125/pirateparty11202537.jpg"
+        alt="Classical portrait of an Augustian pirate."
+      />
+      <img
+        src="/images/galleries/pirate-party-1125/pirateparty11202567.jpg"
+        alt="Portrait of an Augustian pirate with magically floating wooden dice in her hand."
+      />
+      <img
+        src="/images/galleries/pirate-party-1125/pirateparty11202577.jpg"
+        alt="A gentleman pirate adorned in black with strings of white pearls."
+      />
     </div>
   );
 };
