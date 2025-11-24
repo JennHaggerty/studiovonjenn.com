@@ -38,7 +38,7 @@ export const galleries: GalleryInterface[] = [
 export const siteSettings = {
   name: "Portrait Photography",
   description: "by Jennifer Haggerty in Augusta, Georgia.",
-  note: "LGBTQIA+, poc, and immigrant friendly. Not MAGA friendly.",
+  note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
   email: "thejenniferhaggerty@gmail.com",
   social: "https://discord.gg/gh9TMHQsdB",
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",

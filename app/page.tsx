@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <main>
       {activeGallery ? (
         <GalleryPage
           directory={activeGallery.directory}
@@ -59,6 +59,6 @@ export default function Home() {
           </div>
         </>
       )}
-    </>
+    </main>
   );
 }
