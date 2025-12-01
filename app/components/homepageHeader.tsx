@@ -12,7 +12,7 @@ const HomepageHeader = () => {
           <div className="outline">
             <h1>{siteSettings.name}</h1>
             <h2>{siteSettings.description}</h2>
-            <p className="note">{siteSettings.note}</p>
+            <p className="note mb-5">{siteSettings.note}</p>
             <SocialLinks />
           </div>
         </div>
