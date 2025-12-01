@@ -39,7 +39,7 @@ export const siteSettings = {
   name: "Portrait Photography",
   description: "by Jennifer Haggerty in Augusta, Georgia.",
   note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
-  email: "thejenniferhaggerty@gmail.com",
+  email: "mailto:thejenniferhaggerty@gmail.com",
   social: "https://discord.gg/gh9TMHQsdB",
   pricelist: "/pdfs/Photography-Recipe-Book.pdf",
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
