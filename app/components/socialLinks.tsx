@@ -3,6 +3,7 @@
 import { siteSettings } from "../cms";
 import AddFriendIcon from "./svgs/addFriendIcon";
 import AmpersandIcon from "./svgs/ampersandIcon";
+import CurrencyIcon from "./svgs/currencyIcon";
 
 const SocialLinks = () => {
   return (
@@ -19,6 +20,15 @@ const SocialLinks = () => {
           aria-label="Connect with Jennifer"
         >
           <AddFriendIcon />
+        </a>
+      </li>
+      <li>
+        <a
+          href={siteSettings.pricelist}
+          target="_blank"
+          aria-label="Price list"
+        >
+          <CurrencyIcon />
         </a>
       </li>
     </ul>
