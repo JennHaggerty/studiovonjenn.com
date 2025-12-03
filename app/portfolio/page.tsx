@@ -27,12 +27,12 @@ const TattooGallery = () => {
           className="md:col-span-3"
           src="/images/galleries/atmos/0925/atmos09259.jpg"
         />
-        <img alt="" src="/images/galleries/atmos/0925/atmos092513.jpg" />
-        <img alt="" src="/images/galleries/atmos/1125/atmos11254.jpg" />
-        <img alt="" src="" />
         <img alt="" src="/images/safara-1.jpg" />
-        <img alt="" src="/images/unknown.jpg" />
+        <img alt="" src="" />
         <img alt="" src="/images/egan-2.jpg" />
+        <img alt="" src="/images/unknown.jpg" />
+        <img alt="" src="/images/galleries/atmos/1125/atmos11254.jpg" />
+        <img alt="" src="/images/galleries/atmos/0925/atmos092513.jpg" />
         <img
           alt=""
           className="md:col-span-3"
