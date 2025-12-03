@@ -33,7 +33,11 @@ const TattooGallery = () => {
         <img alt="" src="/images/safara-1.jpg" />
         <img alt="" src="/images/unknown.jpg" />
         <img alt="" src="/images/egan-2.jpg" />
-        <img alt="" src="/images/galleries/atmos/1025/atmos10251.jpg" />
+        <img
+          alt=""
+          className="md:col-span-3"
+          src="/images/galleries/atmos/1025/atmos10251.jpg"
+        />
       </div>
     </div>
   );
