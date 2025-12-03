@@ -90,7 +90,7 @@ p {
   color: var(--white-000);
 }
 
-a {
+a :not(h1) {
   color: var(--white-000);
   text-decoration: underline;
 }
