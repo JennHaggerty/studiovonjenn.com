@@ -1,6 +1,6 @@
 "use client";
 
-import { siteSettings } from "../cms";
+import { settings } from "../cms";
 
 const SocialLinks = () => {
   return (
@@ -8,7 +8,7 @@ const SocialLinks = () => {
       <li>
         <a
           className="outline"
-          href={siteSettings.email}
+          href={settings.email}
           aria-label="Email Jennifer"
         >
           Contact
@@ -17,7 +17,7 @@ const SocialLinks = () => {
       <li>
         <a
           className="outline"
-          href={siteSettings.pricelist}
+          href={settings.pricelist}
           target="_blank"
           aria-label="Price list"
         >
@@ -27,7 +27,7 @@ const SocialLinks = () => {
       <li>
         <a
           className="outline"
-          href={siteSettings.social}
+          href={settings.social}
           target="_blank"
           aria-label="Connect with Jennifer"
         >

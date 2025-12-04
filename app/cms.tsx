@@ -1,6 +1,6 @@
 import { GalleryInterface } from "./interfaces";
 
-const atmosDirectory = "/images/galleries/atmos/{date}/";
+const atmosSlug = "atmosphere/{date}";
 const atmosDescriptionText =
   "Images from the monthly event available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
 const atmosOnCloseText = "Return to index";
@@ -10,32 +10,32 @@ const galleryDescription =
 
 export const galleries: GalleryInterface[] = [
   {
-    directory: "/images/galleries/pirate-party-1125/",
+    slug: "pirate-party-1125",
     title: "3rd Annual Buccaneer's Ball",
     description: galleryDescription,
     onCloseText: atmosOnCloseText,
   },
   {
-    directory: atmosDirectory.replace("{date}", "1125"),
+    slug: atmosSlug.replace("{date}", "11-25"),
     title: "Atmosphere, Augusta GA, November 2025",
     description: atmosDescriptionText,
     onCloseText: atmosOnCloseText,
   },
   {
-    directory: atmosDirectory.replace("{date}", "1025"),
+    slug: atmosSlug.replace("{date}", "10-25"),
     title: "Atmosphere, Augusta GA, October 2025",
     description: atmosDescriptionText,
     onCloseText: atmosOnCloseText,
   },
   {
-    directory: atmosDirectory.replace("{date}", "0925"),
+    slug: atmosSlug.replace("{date}", "09-25"),
     title: "Atmosphere, Augusta GA, September 2025",
     description: atmosDescriptionText,
     onCloseText: atmosOnCloseText,
   },
 ];
 
-export const siteSettings = {
+export const settings = {
   name: "Portrait Photography",
   description: "by Jennifer Haggerty in Augusta, Georgia.",
   note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
@@ -45,7 +45,7 @@ export const siteSettings = {
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
 };
 
-export const siteStrings = {
+export const strings = {
   loadingGalleryPage: "Loading gallery page",
   loadingHomePage: "Loading home page",
   loadingGallery: "Loading images",

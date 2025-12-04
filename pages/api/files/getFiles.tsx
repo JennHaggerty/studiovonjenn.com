@@ -4,8 +4,8 @@ import path from "path";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const directory = path.join(process.cwd(), "public", req.body);
-    const dirents = await fs.readdir(directory, { withFileTypes: true });
+    const slug = path.join(process.cwd(), "public", req.body);
+    const dirents = await fs.readdir(slug, { withFileTypes: true });
     const files = dirents
       .filter((dirent) => dirent.isFile())
       .map((dirent) => dirent.name);

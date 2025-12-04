@@ -1,4 +1,4 @@
-import { siteSettings } from "../cms";
+import { settings } from "../cms";
 import SocialLinks from "./socialLinks";
 
 const HomepageHeader = () => {
@@ -10,9 +10,9 @@ const HomepageHeader = () => {
       >
         <div className="header xl:min-w-1/2 xl:my-auto">
           <div className="outline">
-            <h1>{siteSettings.name}</h1>
-            <h2>{siteSettings.description}</h2>
-            <p className="note mb-5">{siteSettings.note}</p>
+            <h1>{settings.name}</h1>
+            <h2>{settings.description}</h2>
+            <p className="note mb-5">{settings.note}</p>
             <SocialLinks />
           </div>
         </div>

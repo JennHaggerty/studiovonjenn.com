@@ -1,10 +1,10 @@
 "use client";
 
-import { siteSettings } from "../cms";
+import { settings } from "../cms";
 import SocialLinks from "./socialLinks";
 
 const Footer = () => {
-  const copyrightText = siteSettings.copyright.replace(
+  const copyrightText = settings.copyright.replace(
     "{year}",
     new Date().getFullYear().toString(),
   );

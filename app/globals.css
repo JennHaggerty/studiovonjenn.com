@@ -28,6 +28,9 @@
   --primary-000-rgba: 245, 0, 0;
   --primary-100-rgba: 114, 0, 0;
 
+  --link-text-decoration: underline;
+  --link-font-weight: bold;
+
   font-size: 16px;
 }
 
@@ -92,14 +95,16 @@ p {
 
 a {
   color: var(--white-000);
-  text-decoration: underline;
+  text-decoration: var(--link-text-decoration);
+  font-weight: var(--link-font-weight);
 }
 
 button.a {
   padding: 0;
   background: unset;
-  text-decoration: underline;
   text-align: unset;
+  text-decoration: var(--link-text-decoration);
+  font-weight: var(--link-font-weight);
 }
 
 a:hover,
@@ -117,7 +122,7 @@ button.a:hover {
 button,
 a.button {
   font-family: var(--font-sans);
-  font-weight: bold;
+  font-weight: var(--link-font-weight);
   text-transform: uppercase;
   background-color: var(--accent-000);
   border: unset;
