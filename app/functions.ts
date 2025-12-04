@@ -4,9 +4,9 @@ const jsonHeaders = {
   "Content-Type": "application/json",
 };
 
-export const getAllFiles = async (arg: { slug: string }) => {
-  const { slug } = arg;
-  const body = JSON.stringify(slug);
+export const getAllFiles = async (arg: { directory: string }) => {
+  const { directory } = arg;
+  const body = JSON.stringify(directory);
 
   return await fetch("./api/files/get", {
     method: "POST",
@@ -28,9 +28,9 @@ export const getAllFiles = async (arg: { slug: string }) => {
     });
 };
 
-export const getFiles = async (arg: { slug: string }) => {
-  const { slug } = arg;
-  const body = JSON.stringify(slug);
+export const getFiles = async (arg: { directory: string }) => {
+  const { directory } = arg;
+  const body = JSON.stringify(directory);
 
   return await fetch("./api/files/getFiles", {
     method: "POST",
@@ -51,9 +51,9 @@ export const getFiles = async (arg: { slug: string }) => {
     });
 };
 
-export const getDirectories = async (arg: { slug: string }) => {
-  const { slug } = arg;
-  const body = JSON.stringify(slug);
+export const getDirectories = async (arg: { directory: string }) => {
+  const { directory } = arg;
+  const body = JSON.stringify(directory);
 
   return await fetch("./api/files/getFolders", {
     method: "POST",
@@ -89,11 +89,11 @@ export const scrollToTop = (delay?: number) => {
 };
 
 export const setFiles = async (args: {
-  slug: string;
+  directory: string;
   setState: Dispatch<SetStateAction<[] | undefined>>;
 }) => {
-  const { slug, setState } = args;
-  const files = await getFiles({ slug }).then((data) => {
+  const { directory, setState } = args;
+  const files = await getFiles({ directory }).then((data) => {
     return data;
   });
   setState(files);

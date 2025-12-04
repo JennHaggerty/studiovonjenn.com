@@ -1,6 +1,6 @@
 "use client";
 
-import { settings } from "../cms";
+import { settings } from "../../cms";
 
 const SocialLinks = () => {
   return (

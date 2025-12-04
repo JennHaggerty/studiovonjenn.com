@@ -1,37 +1,37 @@
 import { GalleryInterface } from "./interfaces";
 
-const atmosSlug = "atmosphere/{date}";
+const atmosSlug = "atmos{date}";
+const atmosDirectory = "/images/galleries/atmos/{date}/";
 const atmosDescriptionText =
   "Images from the monthly event available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
-const atmosOnCloseText = "Return to index";
 
-const galleryDescription =
+const defaultGalleryDescription =
   "Images are available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
 
 export const galleries: GalleryInterface[] = [
   {
-    slug: "pirate-party-1125",
+    slug: "pirateparty1125",
+    directory: "/images/galleries/pirate-party-1125/",
     title: "3rd Annual Buccaneer's Ball",
-    description: galleryDescription,
-    onCloseText: atmosOnCloseText,
+    description: defaultGalleryDescription,
   },
   {
-    slug: atmosSlug.replace("{date}", "11-25"),
+    slug: atmosSlug.replace("{date}", "1125"),
+    directory: atmosDirectory.replace("{date}", "1125"),
     title: "Atmosphere, Augusta GA, November 2025",
     description: atmosDescriptionText,
-    onCloseText: atmosOnCloseText,
   },
   {
-    slug: atmosSlug.replace("{date}", "10-25"),
+    slug: atmosSlug.replace("{date}", "1025"),
+    directory: atmosDirectory.replace("{date}", "1125"),
     title: "Atmosphere, Augusta GA, October 2025",
     description: atmosDescriptionText,
-    onCloseText: atmosOnCloseText,
   },
   {
-    slug: atmosSlug.replace("{date}", "09-25"),
+    slug: atmosSlug.replace("{date}", "0925"),
+    directory: atmosDirectory.replace("{date}", "1125"),
     title: "Atmosphere, Augusta GA, September 2025",
     description: atmosDescriptionText,
-    onCloseText: atmosOnCloseText,
   },
 ];
 

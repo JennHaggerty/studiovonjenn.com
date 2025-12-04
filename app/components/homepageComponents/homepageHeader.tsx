@@ -1,5 +1,5 @@
-import { settings } from "../cms";
-import SocialLinks from "./socialLinks";
+import { settings } from "../../cms";
+import SocialLinks from "../lists/socialLinksList";
 
 const HomepageHeader = () => {
   return (
