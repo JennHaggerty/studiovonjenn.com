@@ -23,13 +23,13 @@ export const galleries: GalleryInterface[] = [
   },
   {
     slug: atmosSlug.replace("{date}", "1025"),
-    directory: atmosDirectory.replace("{date}", "1125"),
+    directory: atmosDirectory.replace("{date}", "1025"),
     title: "Atmosphere, Augusta GA, October 2025",
     description: atmosDescriptionText,
   },
   {
     slug: atmosSlug.replace("{date}", "0925"),
-    directory: atmosDirectory.replace("{date}", "1125"),
+    directory: atmosDirectory.replace("{date}", "0925"),
     title: "Atmosphere, Augusta GA, September 2025",
     description: atmosDescriptionText,
   },

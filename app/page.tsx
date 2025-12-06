@@ -8,6 +8,7 @@ import ExhibitList from "./components/lists/exhibitsList";
 import HomepageGallery from "./components/homepageComponents/homepageGallery";
 import HomepageHeader from "./components/homepageComponents/homepageHeader";
 import PublicationsList from "./components/lists/publicationsList";
+import Footer from "./components/footer";
 
 export const metadata: Metadata = {
   title: settings.name,
@@ -41,6 +42,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }

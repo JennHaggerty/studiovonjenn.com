@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer>
       <SocialLinks />
-      {copyrightText}
+      <p className="mt-2">{copyrightText}</p>
     </footer>
   );
 };

@@ -1,4 +1,8 @@
+import { customStringSort, getGallery } from "@/app/functions";
 import { galleries } from "../../cms";
+import { promises as fs } from "fs";
+import path from "path";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return galleries.map((gallery) => ({
@@ -9,19 +13,45 @@ export async function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{
+    slug: string;
+  }>;
 }) {
   const { slug } = await params;
+  const gallery = await getGallery(slug);
 
-  console.log(slug);
+  if (!gallery) return;
+
+  const directory = path.join(process.cwd(), "public", gallery.directory);
+  const dirents = await fs.readdir(directory, { withFileTypes: true });
+  const files = dirents
+    .filter((dirent) => dirent.isFile())
+    .map((dirent) => dirent.name);
+  const sortedFiles = files.sort(customStringSort);
+  const images = sortedFiles.map((fileName: string) => {
+    return { src: gallery.directory + fileName, alt: "" };
+  });
 
   return (
     <div className="main gallery-page">
+      <div className="w-full text-center">
+        <Link href={`/`}>Home</Link>
+      </div>
       <div className="header">
         <div className="outline mx-auto!">
-          <h2 className="subtle-h1">{slug}</h2>
-          <p>{slug}</p>
+          <h1>{gallery.title ? gallery.title : "Photo Gallery"}</h1>
+          {gallery.description && <p>{gallery.description}</p>}
         </div>
+      </div>
+
+      <div className="gallery">
+        {images.map((image) => (
+          <img
+            key={image.src}
+            src={image.src}
+            alt={image.alt ? image.alt : ""}
+          />
+        ))}
       </div>
     </div>
   );
