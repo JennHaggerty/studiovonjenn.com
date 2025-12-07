@@ -93,7 +93,7 @@ p {
   color: var(--white-000);
 }
 
-a :not(h1) {
+a {
   color: var(--white-000);
   text-decoration: var(--link-text-decoration);
   font-weight: var(--link-font-weight);

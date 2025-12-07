@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteSettings } from "../cms";
+import { settings } from "../cms";
 
 const TattooGallery = () => {
   return (
@@ -10,10 +10,10 @@ const TattooGallery = () => {
             <div className="outline">
               <h1>
                 <Link href="/" className="">
-                  {siteSettings.name}
+                  {settings.name}
                 </Link>
               </h1>
-              <h2>{siteSettings.description}</h2>
+              <h2>{settings.description}</h2>
               <p className="note">
                 Tattoo and piercing portraiture for clients and their artists.
               </p>
@@ -30,14 +30,17 @@ const TattooGallery = () => {
         <img alt="" src="/images/safara-1.jpg" />
         <img alt="" src="" />
         <img alt="" src="/images/egan-2.jpg" />
-        <img alt="" src="/images/unknown.jpg" />
         <img alt="" src="/images/galleries/atmos/1125/atmos11254.jpg" />
+        <img alt="" src="/images/unknown.jpg" />
         <img alt="" src="/images/galleries/atmos/0925/atmos092513.jpg" />
         <img
           alt=""
           className="md:col-span-3"
           src="/images/galleries/atmos/1025/atmos10251.jpg"
         />
+      </div>
+      <div className="w-full text-center">
+        <Link href={`/`}>Home</Link>
       </div>
     </div>
   );
