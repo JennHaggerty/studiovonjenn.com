@@ -1,6 +1,6 @@
 import Footer from "../components/footer";
 
-export default function Layout(props: LayoutProps<"/gallery">) {
+export default function Layout(props: LayoutProps<"/">) {
   return (
     <section>
       {props.children}
