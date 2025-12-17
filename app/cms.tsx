@@ -4,7 +4,7 @@ const atmosSlug = "atmos{date}";
 const atmosDirectory = "/images/galleries/atmos/{date}/";
 
 export const defaultGalleryDescription =
-  "Images are for personal use only and may not be used commercially; selling prints, advertisements, representing goods and services, and editing/retouching/alterations/manipulations to the images are prohibited. Inquires to request commercial licenses and personal printing licenses may be sent to thejenniferhaggerty@gmail.com.";
+  "Images are for personal use only and may not be used commercially; selling prints, advertisements, representing goods and services, and editing/retouching/alterations/manipulations to the images are prohibited. Inquires to request commercial licenses, prints, and personal printing licenses may be sent to thejenniferhaggerty@gmail.com.";
 
 export const galleries: GalleryInterface[] = [
   {
