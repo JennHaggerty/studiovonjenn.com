@@ -2,36 +2,30 @@ import { GalleryInterface } from "./interfaces";
 
 const atmosSlug = "atmos{date}";
 const atmosDirectory = "/images/galleries/atmos/{date}/";
-const atmosDescriptionText =
-  "Images from the monthly event available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
 
-const defaultGalleryDescription =
-  "Images are available for client use on mobile devices, websites, and social networks for personal, non-commercial, use only. Alterations are prohibited.";
+export const defaultGalleryDescription =
+  "Images are for personal use only and may not be used commercially; selling prints, advertisements, representing goods and services, and editing/retouching/alterations/manipulations to the images are prohibited. Inquires to request commercial licenses and personal printing licenses may be sent to thejenniferhaggerty@gmail.com.";
 
 export const galleries: GalleryInterface[] = [
   {
     slug: "pirateparty1125",
     directory: "/images/galleries/pirate-party-1125/",
     title: "3rd Annual Buccaneer's Ball",
-    description: defaultGalleryDescription,
   },
   {
     slug: atmosSlug.replace("{date}", "1125"),
     directory: atmosDirectory.replace("{date}", "1125"),
     title: "Atmosphere, Augusta GA, November 2025",
-    description: atmosDescriptionText,
   },
   {
     slug: atmosSlug.replace("{date}", "1025"),
     directory: atmosDirectory.replace("{date}", "1025"),
     title: "Atmosphere, Augusta GA, October 2025",
-    description: atmosDescriptionText,
   },
   {
     slug: atmosSlug.replace("{date}", "0925"),
     directory: atmosDirectory.replace("{date}", "0925"),
     title: "Atmosphere, Augusta GA, September 2025",
-    description: atmosDescriptionText,
   },
 ];
 

@@ -1,8 +1,7 @@
 import { customStringSort, getGallery } from "@/app/functions";
-import { galleries } from "../../cms";
+import { defaultGalleryDescription, galleries } from "../../cms";
 import { promises as fs } from "fs";
 import path from "path";
-import Link from "next/link";
 
 export async function generateStaticParams() {
   return galleries.map((gallery) => ({
@@ -33,14 +32,15 @@ export default async function Page({
   });
 
   return (
-    <div className="main gallery-page">
-      <div className="w-full text-center">
-        <Link href={`/`}>Home</Link>
-      </div>
+    <>
       <div className="header">
         <div className="outline mx-auto!">
           <h1>{gallery.title ? gallery.title : "Photo Gallery"}</h1>
-          {gallery.description && <p>{gallery.description}</p>}
+          <p className="text-left">
+            {gallery.description
+              ? gallery.description
+              : defaultGalleryDescription}
+          </p>
         </div>
       </div>
 
@@ -53,6 +53,6 @@ export default async function Page({
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }
