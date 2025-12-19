@@ -46,7 +46,7 @@ export const prices = [
         price: 30,
       },
       {
-        name: "Personal printing license",
+        name: "Personal printing license (per image)",
         price: 175,
       },
     ],
@@ -58,7 +58,7 @@ export const prices = [
     delivery: "1-3 days",
     price: 25,
     includes: [
-      "1 digital image; light and color corrected, sized  for social media, includes watermark.",
+      "1 digital image, light and color corrected, sized  for social media. Includes watermark.",
       "Posing and direction.",
     ],
   },
@@ -69,15 +69,15 @@ export const prices = [
     delivery: "3-5 days",
     price: 325,
     includes: [
-      "1 digital image artistically rendered; light and color corrected, sized  for social media, includes watermark.",
-      "1 personal print license, full-sized digital photo without watermark.",
+      "1 digital image artistically rendered; light and color corrected, sized  for social media. Includes watermark.",
+      "1 personal print license with full-sized digital photo. No watermark.",
       "1-2 backdrops/backgrounds.",
       "1 outfit/look.",
       "Posing and direction.",
     ],
     addons: [
       { name: "Additional person, limit 3", price: 80 },
-      { name: "Additional images, artistically rendered", price: 125 },
+      { name: "Aristic rendering, per image", price: 125 },
     ],
   },
   {
@@ -87,13 +87,13 @@ export const prices = [
     delivery: "2-3 weeks",
     price: 575,
     includes: [
-      "All images, light and color corrected, sized for social media, includes watermark.",
+      "All images, light and color corrected, sized for social media. Includes watermark.",
       "1 backdrop/background.",
       "Posing and direction.",
     ],
     addons: [
       { name: "Additional hour, limit 2", price: 100 },
-      { name: "Aristic rendering", price: 125 },
+      { name: "Aristic rendering, per image", price: 125 },
     ],
   },
 ];
