@@ -62,6 +62,7 @@ h1,
 .h1 {
   font-family: var(--font-sans);
   font-size: 2em;
+  font-weight: bold;
   text-transform: uppercase;
   color: var(--primary-000);
 }
