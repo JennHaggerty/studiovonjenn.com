@@ -54,9 +54,9 @@ export default async function Page({
                   )}
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex max-sm:flex-col justify-between">
                   {recipe.includes && (
-                    <div className="outline w-full">
+                    <div className="outline w-full max-sm:mx-0!">
                       <h3>Includes</h3>
                       <ul className="flex flex-col gap-2">
                         {recipe.includes.map((item, i) => (
@@ -66,7 +66,7 @@ export default async function Page({
                     </div>
                   )}
                   {recipe.addons && (
-                    <div className="outline w-full">
+                    <div className="outline w-full max-sm:mx-0!">
                       <h3>Add-ons</h3>
                       <ul className="flex flex-col gap-2">
                         {recipe.addons.map((item, i) => (
