@@ -29,13 +29,82 @@ export const galleries: GalleryInterface[] = [
   },
 ];
 
+export const prices = [
+  {
+    name: "Prints à la carte ",
+    options: [
+      {
+        name: "8in x 10in (x1)",
+        price: 30,
+      },
+      {
+        name: "5in x 7in (x2)",
+        price: 30,
+      },
+      {
+        name: "2.5in x 3.5in (x4)",
+        price: 30,
+      },
+      {
+        name: "Personal printing license",
+        price: 175,
+      },
+    ],
+  },
+  {
+    name: "Le Chat Noir Photo Booth",
+    image: "",
+    time: "8:30pm - 1:30am",
+    delivery: "1-3 days",
+    price: 25,
+    includes: [
+      "1 digital image; light and color corrected, sized  for social media, includes watermark.",
+      "Posing and direction.",
+    ],
+  },
+  {
+    name: "Fine Art Portraiture",
+    image: "",
+    time: "45 - 90 minutes",
+    delivery: "3-5 days",
+    price: 325,
+    includes: [
+      "1 digital image artistically rendered; light and color corrected, sized  for social media, includes watermark.",
+      "1 personal print license, full-sized digital photo without watermark.",
+      "1-2 backdrops/backgrounds.",
+      "1 outfit/look.",
+      "Posing and direction.",
+    ],
+    addons: [
+      { name: "Additional person, limit 3", price: 80 },
+      { name: "Additional images, artistically rendered", price: 125 },
+    ],
+  },
+  {
+    name: "Parties and Events",
+    image: "",
+    time: "2.5 hours",
+    delivery: "2-3 weeks",
+    price: 575,
+    includes: [
+      "All images, light and color corrected, sized for social media, includes watermark.",
+      "1 backdrop/background.",
+      "Posing and direction.",
+    ],
+    addons: [
+      { name: "Additional hour, limit 2", price: 100 },
+      { name: "Aristic rendering", price: 125 },
+    ],
+  },
+];
+
 export const settings = {
   name: "Portrait Photography",
   description: "by Jennifer Haggerty in Augusta, Georgia.",
   note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
   email: "mailto:thejenniferhaggerty@gmail.com",
   social: "https://discord.gg/gh9TMHQsdB",
-  pricelist: "/pdfs/Photography-Recipe-Book.pdf",
+  pricelist: "/prices",
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
 };
 

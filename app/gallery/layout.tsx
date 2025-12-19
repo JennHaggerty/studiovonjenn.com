@@ -1,13 +1,9 @@
-import Link from "next/link";
 import Footer from "../components/footer";
 
 export default function Layout(props: LayoutProps<"/">) {
   return (
-    <section>
-      <div className="w-full text-center">
-        <Link href={`/`}>Home</Link>
-      </div>
-      <div className="main gallery-page">{props.children}</div>
+    <section className="flex flex-col justify-between h-screen max-w-[1200px]">
+      <div className="gallery-page">{props.children}</div>
       <Footer />
     </section>
   );

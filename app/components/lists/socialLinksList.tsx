@@ -18,7 +18,6 @@ const SocialLinks = () => {
         <a
           className="outline"
           href={settings.pricelist}
-          target="_blank"
           aria-label="Price list"
         >
           Prices
