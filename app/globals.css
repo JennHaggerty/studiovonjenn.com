@@ -22,6 +22,7 @@
   --black-200: #3b3f3f;
   --primary-000: #f50000;
   --primary-100: #720000;
+  --primary-200: #ff7070;
   --accent-000: #284c52;
   --accent-100: #03a7c4;
 
@@ -64,7 +65,7 @@ h1,
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--primary-000);
+  color: var(--primary-200);
 }
 
 h2,
