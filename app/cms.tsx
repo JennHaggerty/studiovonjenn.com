@@ -112,4 +112,18 @@ export const strings = {
   loadingGalleryPage: "Loading gallery page",
   loadingHomePage: "Loading home page",
   loadingGallery: "Loading images",
+  home: "Home",
+  pricing: "Pricing",
+  sessionTime: "Session time",
+  imagesReadyIn: "Images ready in",
+  includes: "Includes",
+  addons: "Add-ons",
+  contact: "Contact",
+  prices: "Prices",
+  discord: "Discord",
+  connect: "Connect with Jennifer on Discord",
+  loading: "Loading",
+  portfolioHeaderNote:
+    "Tattoo and piercing portraiture for clients and their artists.",
+  summary: "Summary",
 };

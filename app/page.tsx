@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
-import { settings } from "./cms";
+import { settings, strings } from "./cms";
 
 import EducationList from "./components/lists/educationList";
 import EventList from "./components/lists/eventList";
 import ExhibitList from "./components/lists/exhibitsList";
-import HomepageGallery from "./components/homepageComponents/homepageGallery";
-import HomepageHeader from "./components/homepageComponents/homepageHeader";
+import HomepageGallery from "./components/homepageGallery";
 import PublicationsList from "./components/lists/publicationsList";
 import Footer from "./components/footer";
+import SocialLinks from "./components/lists/socialLinksList";
 
 export const metadata: Metadata = {
   title: settings.name,
@@ -18,13 +18,34 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <HomepageHeader />
+      <section className="introduction">
+        <div
+          className="smoke-background relative overflow-hidden 
+      flex max-xl:justify-center min-xl:flex-row w-full"
+        >
+          <div className="header xl:min-w-1/2 xl:my-auto">
+            <div className="outline">
+              <h1>{settings.name}</h1>
+              <h2>{settings.description}</h2>
+              <p className="note mb-5">{settings.note}</p>
+              <SocialLinks />
+            </div>
+          </div>
+          <div className="cover-image max-xl:hidden faded">
+            <img
+              className=""
+              src="/images/jennifer.jpg"
+              alt="Self portrait as Morticia Addams drinking tea."
+            />
+          </div>
+        </div>
+      </section>
       <HomepageGallery />
       <div className="primary-bg">
         <div className="col-2-img-right">
           <div className="col col-text">
             <div>
-              <h3>Summary</h3>
+              <h3>{strings.summary}</h3>
               <p>
                 Jennifer has been obsessed with light, color, and painting since
                 1997. She began photographing portraits in 2003. When she's not

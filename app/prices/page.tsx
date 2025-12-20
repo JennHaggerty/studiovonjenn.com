@@ -1,7 +1,4 @@
-import { customStringSort, getGallery } from "@/app/functions";
-import { promises as fs } from "fs";
-import path from "path";
-import { prices as recipes, settings } from "../cms";
+import { prices as recipes, strings } from "../cms";
 import Footer from "../components/footer";
 import Link from "next/link";
 
@@ -17,8 +14,8 @@ export default async function Page({
       <main>
         <div className="header">
           <div className="outline mx-auto!">
-            <Link href={`/`}>Home</Link>
-            <h1>Pricing</h1>
+            <Link href={`/`}>{strings.home}</Link>
+            <h1>{strings.pricing}</h1>
             <p className="note">Updated December 18, 2025</p>
           </div>
         </div>
@@ -33,12 +30,12 @@ export default async function Page({
                     {recipe.image && <img src={recipe.image} aria-label={``} />}
                     {recipe.time && (
                       <p>
-                        Session time <b>{recipe.time}</b>
+                        {strings.sessionTime} <b>{recipe.time}</b>
                       </p>
                     )}
                     {recipe.delivery && (
                       <p>
-                        Images ready in <b>{recipe.delivery}</b>
+                        {strings.imagesReadyIn} <b>{recipe.delivery}</b>
                       </p>
                     )}
                   </div>
@@ -57,7 +54,7 @@ export default async function Page({
                 <div className="flex max-sm:flex-col justify-between">
                   {recipe.includes && (
                     <div className="outline w-full max-sm:mx-0!">
-                      <h3>Includes</h3>
+                      <h3>{strings.includes}</h3>
                       <ul className="flex flex-col gap-2">
                         {recipe.includes.map((item, i) => (
                           <li key={`includes-${i}`}>{item}</li>
@@ -67,7 +64,7 @@ export default async function Page({
                   )}
                   {recipe.addons && (
                     <div className="outline w-full max-sm:mx-0!">
-                      <h3>Add-ons</h3>
+                      <h3>{strings.addons}</h3>
                       <ul className="flex flex-col gap-2">
                         {recipe.addons.map((item, i) => (
                           <li

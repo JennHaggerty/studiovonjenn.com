@@ -1,10 +1,18 @@
+import { strings } from "../cms";
+
 interface Props {
   text?: string;
+  customClass?: string;
 }
-const Loading = (props: Props) => {
-  const { text } = props;
 
-  return <div className="loader outline main">{text ? text : "Loading"}</div>;
+const Loading = (props: Props) => {
+  const { text, customClass } = props;
+
+  return (
+    <div className={`loader ${customClass}`}>
+      {text ? text : strings.loading}
+    </div>
+  );
 };
 
 export default Loading;

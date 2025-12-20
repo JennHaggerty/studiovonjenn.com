@@ -727,18 +727,15 @@ a .icon:hover {
 
 .loader {
   text-align: center;
-  padding: 3em;
-  margin: 3em 1em;
   font-size: 1em;
-  position: relative; /* Needed for positioning the pseudo-element */
 }
 
 .loader::after {
-  content: ""; /* Start with empty content */
+  content: "";
   display: inline-block;
   vertical-align: bottom;
-  width: 1em; /* Adjust width as needed for dot spacing */
-  animation: loading-dots 1.5s infinite steps(1); /* Animation for dots */
+  width: 1em;
+  animation: loading-dots 1.5s infinite steps(1);
 }
 @keyframes loading-dots {
   0% {
@@ -754,7 +751,7 @@ a .icon:hover {
     content: "...";
   }
   100% {
-    content: "."; /* Reset to empty or continue with dots */
+    content: ".";
   }
 }
 /* end ANIMATIONS */

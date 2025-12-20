@@ -1,27 +1,19 @@
 "use client";
 
-import { settings } from "../../cms";
+import { settings, strings } from "../../cms";
 
 const SocialLinks = () => {
   return (
     <ul className="socials">
       <li>
-        <a href={settings.email} aria-label="Email Jennifer">
-          Contact
-        </a>
+        <a href={settings.email}>{strings.contact}</a>
       </li>
       <li>
-        <a href={settings.pricelist} aria-label="Price list">
-          Prices
-        </a>
+        <a href={settings.pricelist}>{strings.prices}</a>
       </li>
       <li>
-        <a
-          href={settings.social}
-          target="_blank"
-          aria-label="Connect with Jennifer"
-        >
-          Discord
+        <a href={settings.social} target="_blank" aria-label={strings.connect}>
+          {strings.discord}
         </a>
       </li>
     </ul>

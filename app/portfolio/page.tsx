@@ -1,22 +1,17 @@
 import Link from "next/link";
-import { settings } from "../cms";
+import { settings, strings } from "../cms";
 
 const TattooGallery = () => {
   return (
     <div>
       <div className="introduction">
         <div className="smoke-background max-xl:justify-center w-full">
-          <div className="center md:w-1/2">
+          <div className="center">
             <div className="outline">
-              <h1>
-                <Link href="/" className="">
-                  Photography
-                </Link>
-              </h1>
+              <Link href={`/`}>{strings.home}</Link>
+              <h1>{settings.name}</h1>
               <h2>{settings.description}</h2>
-              <p className="note">
-                Tattoo and piercing portraiture for clients and their artists.
-              </p>
+              <p className="note">{strings.portfolioHeaderNote}</p>
             </div>
           </div>
         </div>
@@ -35,9 +30,6 @@ const TattooGallery = () => {
           className="md:col-span-3"
           src="/images/galleries/atmos/1025/atmos10251.jpg"
         />
-      </div>
-      <div className="w-full text-center">
-        <Link href={`/`}>Home</Link>
       </div>
     </div>
   );

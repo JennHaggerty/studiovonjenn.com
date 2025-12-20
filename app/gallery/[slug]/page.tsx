@@ -1,5 +1,5 @@
 import { customStringSort, getGallery } from "@/app/functions";
-import { defaultGalleryDescription, galleries } from "../../cms";
+import { defaultGalleryDescription, galleries, strings } from "../../cms";
 import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
@@ -36,7 +36,7 @@ export default async function Page({
     <>
       <div className="header">
         <div className="outline mx-auto!">
-          <Link href={`/`}>Home</Link>
+          <Link href={`/`}>{strings.home}</Link>
           <h1>{gallery.title ? gallery.title : "Photo Gallery"}</h1>
           <p className="text-left">
             {gallery.description
