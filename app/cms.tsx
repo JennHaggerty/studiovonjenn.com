@@ -31,7 +31,7 @@ export const galleries: GalleryInterface[] = [
 
 export const prices = [
   {
-    name: "Prints à la carte ",
+    name: "à la carte",
     options: [
       {
         name: "8in x 10in (x1)",
@@ -46,6 +46,10 @@ export const prices = [
         price: 30,
       },
       {
+        name: "Artistic rendering (starts at)",
+        price: 125,
+      },
+      {
         name: "Personal printing license (per image)",
         price: 175,
       },
@@ -53,7 +57,7 @@ export const prices = [
   },
   {
     name: "Le Chat Noir Photo Booth",
-    image: "",
+    image: "/images/galleries/atmos/0925/atmos09258.jpg",
     time: "8:30pm - 1:30am",
     delivery: "1-3 days",
     price: 25,
@@ -61,10 +65,14 @@ export const prices = [
       "1 digital image, light and color corrected, sized  for social media. Includes watermark.",
       "Posing and direction.",
     ],
+    tips: [
+      "There's no obligation to purchase a photo. Come in, we’ll take a few and if you don’t want to keep them they get deleted.",
+      "Bring cash for the door fee ($10) and tips for the staff and performers.",
+    ],
   },
   {
     name: "Fine Art Portraiture",
-    image: "",
+    image: "/images/safara-1.jpg",
     time: "45 - 90 minutes",
     delivery: "3-5 days",
     price: 325,
@@ -75,14 +83,16 @@ export const prices = [
       "1 outfit/look.",
       "Posing and direction.",
     ],
-    addons: [
-      { name: "Additional person, limit 3", price: 80 },
-      { name: "Aristic rendering, per image", price: 125 },
+    addons: [{ name: "Additional person, limit 3", price: 80 }],
+    tips: [
+      "Book your professional makeup and hair artist(s) prior to our session for a truly elevated experience!",
+      "Get a good night’s rest and drink lots of water before our session.",
+      "Eat a filling meal that’s not overly heavy or bloating. Feel free to bring non-messy snacks (carrots, celery, power bars).",
     ],
   },
   {
     name: "Parties and Events",
-    image: "",
+    image: "/images/galleries/pirate-party-1125/pirateparty11202561.jpg",
     time: "2.5 hours",
     delivery: "2-3 weeks",
     price: 575,
@@ -91,9 +101,11 @@ export const prices = [
       "1 backdrop/background.",
       "Posing and direction.",
     ],
-    addons: [
-      { name: "Additional hour, limit 2", price: 100 },
-      { name: "Aristic rendering, per image", price: 125 },
+    addons: [{ name: "Additional hour, limit 2", price: 100 }],
+    tips: [
+      "Make sure an electrical outlet is available nearby and is free of water, debris, and rust.",
+      "If you have furniture and fabrics that fit the vibe you can send me a photo or set them to the side.",
+      "Send me the vibes/dress code, I love immersion and will dress to blend in!",
     ],
   },
 ];
@@ -126,4 +138,5 @@ export const strings = {
   portfolioHeaderNote:
     "Tattoo and piercing portraiture for clients and their artists.",
   summary: "Summary",
+  tips: "Tips",
 };

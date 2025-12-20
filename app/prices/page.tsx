@@ -22,12 +22,11 @@ export default async function Page({
 
         <div className="flex flex-col gap-3 mx-2">
           {recipes.map((recipe, i) => (
-            <div key={`pricing-${i}`} className="primary-bg p-3">
+            <div key={`pricing-${i}`} className="primary-bg p-5">
               <div>
                 <div className="flex justify-between">
                   <div>
-                    <h2>{recipe.name}</h2>
-                    {recipe.image && <img src={recipe.image} aria-label={``} />}
+                    <h2 className="text-4xl!">{recipe.name}</h2>
                     {recipe.time && (
                       <p>
                         {strings.sessionTime} <b>{recipe.time}</b>
@@ -41,67 +40,91 @@ export default async function Page({
                   </div>
                   {recipe.price && (
                     <p>
-                      <b>
-                        {new Intl.NumberFormat("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        }).format(recipe.price)}
-                      </b>
+                      {new Intl.NumberFormat("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      }).format(recipe.price)}
                     </p>
                   )}
                 </div>
 
-                <div className="flex max-sm:flex-col justify-between">
-                  {recipe.includes && (
-                    <div className="outline w-full max-sm:mx-0!">
-                      <h3>{strings.includes}</h3>
-                      <ul className="flex flex-col gap-2">
-                        {recipe.includes.map((item, i) => (
-                          <li key={`includes-${i}`}>{item}</li>
-                        ))}
-                      </ul>
+                {(recipe.addons || recipe.includes || recipe.image) && (
+                  <div className="flex mx-0! max-sm:flex-col justify-between gap-5 outline">
+                    {recipe.image && (
+                      <img
+                        className=" max-h-[550px] mx-0!"
+                        src={recipe.image}
+                        aria-label={``}
+                      />
+                    )}
+                    <div className=" w-full mx-0! flex flex-col gap-5">
+                      {recipe.includes && (
+                        <div>
+                          <h3>{strings.includes}</h3>
+                          <ul className="flex flex-col gap-2">
+                            {recipe.includes.map((item, i) => (
+                              <li key={`includes-${i}`}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {recipe.addons && (
+                        <div>
+                          <h3>{strings.addons}</h3>
+                          <ul className="flex flex-col gap-2">
+                            {recipe.addons.map((item, i) => (
+                              <li
+                                key={`addons-${i}`}
+                                className="flex justify-between gap-3"
+                              >
+                                <span>{item.name}</span>
+                                <span>
+                                  {new Intl.NumberFormat("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                  }).format(item.price)}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {recipe.tips && (
+                        <div>
+                          <h3>{strings.tips}</h3>
+                          <ul className="flex flex-col gap-2 list-disc">
+                            {recipe.tips.map((item, i) => (
+                              <li
+                                key={`tips-${i}`}
+                                className="flex justify-between gap-3"
+                              >
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
-                  )}
-                  {recipe.addons && (
-                    <div className="outline w-full max-sm:mx-0!">
-                      <h3>{strings.addons}</h3>
-                      <ul className="flex flex-col gap-2">
-                        {recipe.addons.map((item, i) => (
-                          <li
-                            key={`addons-${i}`}
-                            className="flex justify-between gap-3"
-                          >
-                            <span>{item.name}</span>
-                            <span>
-                              {new Intl.NumberFormat("en-US", {
-                                style: "currency",
-                                currency: "USD",
-                              }).format(item.price)}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {recipe.options && (
-                    <ul className="w-full flex flex-col justify-between m-2">
-                      {recipe.options.map((item, i) => (
-                        <li
-                          key={`addons-${i}`}
-                          className="flex justify-between gap-3"
-                        >
-                          <span>{item.name}</span>
-                          <span className="font-bold">
-                            {new Intl.NumberFormat("en-US", {
-                              style: "currency",
-                              currency: "USD",
-                            }).format(item.price)}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                  </div>
+                )}
+                {recipe.options && (
+                  <ul className="w-full flex flex-col justify-between m-2 gap-2">
+                    {recipe.options.map((item, i) => (
+                      <li
+                        key={`addons-${i}`}
+                        className="flex justify-between gap-3"
+                      >
+                        <span>{item.name}</span>
+                        <span>
+                          {new Intl.NumberFormat("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                          }).format(item.price)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           ))}
