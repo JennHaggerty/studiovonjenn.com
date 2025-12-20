@@ -43,7 +43,7 @@ export default function Home() {
       <HomepageGallery />
       <div className="primary-bg">
         <div className="col-2-img-right">
-          <div className="col col-text">
+          <div className="col col-text flex flex-col gap-2">
             <div>
               <h3>{strings.summary}</h3>
               <p>
