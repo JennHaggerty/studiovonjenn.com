@@ -13,19 +13,9 @@ export const galleries: GalleryInterface[] = [
     title: "3rd Annual Buccaneer's Ball",
   },
   {
-    slug: atmosSlug.replace("{date}", "1125"),
-    directory: atmosDirectory.replace("{date}", "1125"),
-    title: "Atmosphere, Augusta GA, November 2025",
-  },
-  {
-    slug: atmosSlug.replace("{date}", "1025"),
-    directory: atmosDirectory.replace("{date}", "1025"),
-    title: "Atmosphere, Augusta GA, October 2025",
-  },
-  {
-    slug: atmosSlug.replace("{date}", "0925"),
-    directory: atmosDirectory.replace("{date}", "0925"),
-    title: "Atmosphere, Augusta GA, September 2025",
+    slug: "2025",
+    directory: atmosDirectory.replace("{date}", "2025"),
+    title: "Atmosphere, Augusta GA, 2025",
   },
 ];
 
@@ -34,30 +24,34 @@ export const prices = [
     name: "à la carte",
     options: [
       {
-        name: "8in x 10in (x1)",
+        name: "8in x 10in —x1 print",
         price: 30,
       },
       {
-        name: "5in x 7in (x2)",
+        name: "5in x 7in —x2 prints",
         price: 30,
       },
       {
-        name: "2.5in x 3.5in (x4)",
+        name: "2.5in x 3.5in —x4 prints",
         price: 30,
       },
       {
-        name: "Artistic rendering (starts at)",
+        name: "Light and color correction —per image",
+        price: 65,
+      },
+      {
+        name: "Artistic rendering —starts at",
         price: 125,
       },
       {
-        name: "Personal printing license (per image)",
+        name: "Personal printing license —per image",
         price: 175,
       },
     ],
   },
   {
     name: "Le Chat Noir Photo Booth",
-    image: "/images/galleries/atmos/0925/atmos09258.jpg",
+    image: "/images/galleries/atmos/2025/atmos09258.jpg",
     time: "8:30pm - 1:30am",
     delivery: "1-3 days",
     price: 25,
@@ -67,7 +61,7 @@ export const prices = [
     ],
     tips: [
       "There's no obligation to purchase a photo. Come in, we’ll take a few and if you don’t want to keep them they get deleted.",
-      "Bring cash for the door fee ($10) and tips for the staff and performers.",
+      "Bring cash for the $10 door fee and tips for the staff and performers.",
     ],
   },
   {
@@ -83,7 +77,7 @@ export const prices = [
       "1 outfit/look.",
       "Posing and direction.",
     ],
-    addons: [{ name: "Additional person, limit 3", price: 80 }],
+    addons: [{ name: "Additional person —limit 3", price: 80 }],
     tips: [
       "Book your professional makeup and hair artist(s) prior to our session for a truly elevated experience!",
       "Get a good night’s rest and drink lots of water before our session.",
@@ -101,7 +95,7 @@ export const prices = [
       "1 backdrop/background.",
       "Posing and direction.",
     ],
-    addons: [{ name: "Additional hour, limit 2", price: 100 }],
+    addons: [{ name: "Additional hour —limit 2", price: 100 }],
     tips: [
       "Make sure an electrical outlet is available nearby and is free of water, debris, and rust.",
       "If you have furniture and fabrics that fit the vibe you can send me a photo or set them to the side.",

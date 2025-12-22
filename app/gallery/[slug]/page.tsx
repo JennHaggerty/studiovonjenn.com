@@ -47,9 +47,9 @@ export default async function Page({
       </div>
 
       <div className="gallery">
-        {images.map((image) => (
+        {images.map((image, i) => (
           <img
-            key={image.src}
+            key={`${gallery.slug}-${i}`}
             src={image.src}
             alt={image.alt ? image.alt : ""}
           />
