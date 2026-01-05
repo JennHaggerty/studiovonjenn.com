@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { settings, strings } from "../cms";
+import PortfolioGallery from "../components/portfolioGallery";
 
 const TattooGallery = () => {
   return (
@@ -16,21 +19,7 @@ const TattooGallery = () => {
           </div>
         </div>
       </div>
-      <div className="grid gap-3 my-3 md:grid-cols-3 lg:grid-cols-3 *:h-full *:w-full *:object-cover">
-        <img
-          alt=""
-          className="md:col-span-3"
-          src="/images/galleries/atmos/2025/atmos09259.jpg"
-        />
-        <img alt="" src="/images/galleries/atmos/2025/atmos11254.jpg" />
-        <img alt="" src="/images/galleries/atmos/2025/atmos092513.jpg" />
-        <img alt="" src="/images/unknown.jpg" />
-        <img
-          alt=""
-          className="md:col-span-3"
-          src="/images/galleries/atmos/2025/atmos10251.jpg"
-        />
-      </div>
+      <PortfolioGallery />
     </div>
   );
 };

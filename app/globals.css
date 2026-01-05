@@ -26,9 +26,12 @@
   --accent-000: #284c52;
   --accent-100: #03a7c4;
 
+  --black-100-rgba: 28, 17, 24;
   --primary-000-rgba: 245, 0, 0;
   --primary-100-rgba: 114, 0, 0;
 
+  --link-color: var(--white-000);
+  --link-hover-color: var(--accent-100);
   --link-text-decoration: underline;
   --link-font-weight: bold;
 
@@ -96,7 +99,7 @@ p {
 }
 
 a {
-  color: var(--white-000);
+  color: var(--link-color);
   text-decoration: var(--link-text-decoration);
   font-weight: var(--link-font-weight);
 }
@@ -424,6 +427,40 @@ a .icon:hover {
   background-color: var(--primary-100);
 }
 
+.zoom-button {
+  position: relative;
+
+  &,
+  &:hover {
+    background: rgba(var(--black-100-rgba), 0.8);
+  }
+
+  &:hover {
+    &::before {
+      color: var(--link-hover-color);
+      transform: scale(1.5);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+    font-size: 2em;
+    content: "+";
+    background: transparent;
+    transition: transform 0.2s;
+  }
+}
+.zoom-image {
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  background: black;
+}
+
 .gallery,
 .portfolio {
   display: flex;
@@ -613,20 +650,20 @@ a .icon:hover {
   .carousel {
     height: max-content;
     margin: 60px 0;
+
+    & .slide {
+      position: relative;
+
+      & .card {
+        position: absolute;
+        width: 80%;
+        top: 60%;
+        left: 10%;
+      }
+    }
   }
 
-  .carousel .slide {
-    position: relative;
-  }
-
-  .carousel .slide .card {
-    position: absolute;
-    width: 80%;
-    top: 60%;
-    left: 10%;
-  }
-
-  .carousel .prev,
+  .carousel .slide .carousel .prev,
   .carousel .next {
     padding: 1.5em;
     top: 50%;
