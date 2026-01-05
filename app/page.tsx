@@ -2,13 +2,13 @@ import { Metadata } from "next";
 
 import { settings, strings } from "./cms";
 
-import EducationList from "./components/lists/educationList";
-import EventList from "./components/lists/eventList";
-import ExhibitList from "./components/lists/exhibitsList";
-import HomepageGallery from "./components/homepageGallery";
-import PublicationsList from "./components/lists/publicationsList";
-import Footer from "./components/footer";
-import SocialLinks from "./components/lists/socialLinksList";
+import EducationList from "./components/lists/EducationList";
+import EventList from "./components/lists/EventList";
+import ExhibitList from "./components/lists/ExhibitsList";
+import HomepageGallery from "./components/HomepageGallery";
+import PublicationsList from "./components/lists/PublicationsList";
+import Footer from "./components/Footer";
+import SocialLinks from "./components/lists/SocialLinksList";
 
 export const metadata: Metadata = {
   title: settings.name,
