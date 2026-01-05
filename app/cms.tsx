@@ -8,6 +8,11 @@ export const defaultGalleryDescription =
 
 export const galleries: GalleryInterface[] = [
   {
+    slug: atmosSlug.replace("{date}", "0126"),
+    directory: atmosDirectory.replace("{date}", "0126"),
+    title: "Atmosphere, Augusta GA, January 2026",
+  },
+  {
     slug: "pirateparty1125",
     directory: "/images/galleries/pirate-party-1125/",
     title: "3rd Annual Buccaneer's Ball",

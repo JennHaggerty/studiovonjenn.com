@@ -16,12 +16,15 @@ export default async function Page() {
       <div className="gallery">
         {Array(6)
           .fill(1)
-          .map((i) => (
-            <div
-              key={`gallery-${i}`}
-              className="w-[400px] h-[500px] bg-(--old-black-000) animate-pulse"
-            ></div>
-          ))}
+          .map(() => {
+            let i = 0;
+            return (
+              <div
+                key={`loading-gallery-${i++}`}
+                className="w-[400px] h-[500px] bg-(--old-black-000) animate-pulse"
+              ></div>
+            );
+          })}
       </div>
     </>
   );
