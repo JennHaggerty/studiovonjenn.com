@@ -1,5 +1,4 @@
 import { prices as recipes, strings } from "@/app/cms";
-import Footer from "@/app/components/footer";
 import Link from "next/link";
 
 export default async function Page({
@@ -130,7 +129,6 @@ export default async function Page({
           ))}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
