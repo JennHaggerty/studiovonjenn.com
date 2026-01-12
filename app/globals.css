@@ -418,6 +418,7 @@ a .icon:hover {
   max-width: unset;
   mix-blend-mode: lighten;
   mask-image: radial-gradient(circle at center, black 60%, transparent 80%);
+  margin-left: -11em;
 }
 
 .gallery-page .header {
