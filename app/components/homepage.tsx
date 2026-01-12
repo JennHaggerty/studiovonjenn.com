@@ -1,9 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { galleries } from "../cms";
+import { Metadata } from "next";
+
+import AdminDashboard from "@/app/components/adminDashboard";
+import EducationList from "@/app/components/lists/educationList";
+import EventList from "@/app/components/lists/eventList";
+import ExhibitList from "@/app/components/lists/exhibitsList";
+import HomepageGallery from "@/app/components/homepageGallery";
+import PublicationsList from "@/app/components/lists/publicationsList";
+import { settings, galleries } from "../cms";
 import { GalleryInterface } from "../interfaces";
-import AdminDashboard from "./adminDashboard";
+
+export const metadata: Metadata = {
+  title: settings.name,
+  description: settings.description,
+};
 
 export default function Homepage() {
   const [activeGallery, setActiveGallery] = useState<GalleryInterface>();
