@@ -111,7 +111,7 @@ export const prices = [
 
 export const settings = {
   name: "Portrait Photography",
-  description: "by Jennifer Haggerty in Augusta, Georgia.",
+  description: "by Jennifer in Augusta, Georgia.",
   note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
   email: "mailto:thejenniferhaggerty@gmail.com",
   social: "https://discord.gg/gh9TMHQsdB",
