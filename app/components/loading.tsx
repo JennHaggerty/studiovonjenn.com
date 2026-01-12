@@ -1,4 +1,4 @@
-import { strings } from "../cms";
+import { strings } from "@/app/cms";
 
 interface Props {
   text?: string;

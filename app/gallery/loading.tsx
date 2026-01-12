@@ -1,6 +1,6 @@
 import { strings } from "@/app/cms";
 import Link from "next/link";
-import Loading from "../components/loading";
+import Loading from "@/app/components/loading";
 
 export default async function Page() {
   return (
