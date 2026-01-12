@@ -1,7 +1,7 @@
 "use client";
 
 import { settings } from "../cms";
-import SocialLinks from "./lists/SocialLinksList";
+import SocialLinks from "./lists/socialLinksList";
 
 const Footer = () => {
   const copyrightText = settings.copyright.replace(
