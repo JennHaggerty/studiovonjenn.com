@@ -7,7 +7,6 @@ import EventList from "@/app/components/lists/eventList";
 import ExhibitList from "@/app/components/lists/exhibitsList";
 import HomepageGallery from "@/app/components/homepageGallery";
 import PublicationsList from "@/app/components/lists/publicationsList";
-import Footer from "@/app/components/footer";
 import SocialLinks from "@/app/components/lists/socialLinksList";
 
 export const metadata: Metadata = {
@@ -63,8 +62,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </main>
   );
 }

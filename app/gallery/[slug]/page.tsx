@@ -33,28 +33,30 @@ export default async function Page({
   });
 
   return (
-    <>
-      <div className="header">
-        <div className="outline mx-auto!">
-          <Link href={`/`}>{strings.home}</Link>
-          <h1>{gallery.title ? gallery.title : "Photo Gallery"}</h1>
-          <p className="text-left">
-            {gallery.description
-              ? gallery.description
-              : defaultGalleryDescription}
-          </p>
+    <div className=" max-w-[1200px] m-auto">
+      <div className="gallery-page">
+        <div className="header">
+          <div className="outline mx-auto!">
+            <Link href={`/`}>{strings.home}</Link>
+            <h1>{gallery.title ? gallery.title : "Photo Gallery"}</h1>
+            <p className="text-left">
+              {gallery.description
+                ? gallery.description
+                : defaultGalleryDescription}
+            </p>
+          </div>
+        </div>
+
+        <div className="gallery">
+          {images.map((image, i) => (
+            <img
+              key={`${gallery.slug}-${i}`}
+              src={image.src}
+              alt={image.alt ? image.alt : ""}
+            />
+          ))}
         </div>
       </div>
-
-      <div className="gallery">
-        {images.map((image, i) => (
-          <img
-            key={`${gallery.slug}-${i}`}
-            src={image.src}
-            alt={image.alt ? image.alt : ""}
-          />
-        ))}
-      </div>
-    </>
+    </div>
   );
 }
