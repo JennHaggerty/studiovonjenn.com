@@ -1,5 +1,5 @@
 import { settings } from "../site";
-import SocialLinks from "./lists/socialLinksList";
+import Nav from "./nav";
 
 const Footer = () => {
   const copyrightText = settings.copyright.replace(
@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <SocialLinks />
+      <Nav />
       <p className="mt-2">{copyrightText}</p>
     </footer>
   );

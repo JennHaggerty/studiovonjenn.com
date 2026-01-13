@@ -256,7 +256,6 @@ export const portfolioImages = [
 
 export const cv = [
   {
-    wrapper: (children: any) => <div>{children}</div>,
     title: <h3>{strings.summary}</h3>,
     content: (
       <p>
@@ -268,7 +267,6 @@ export const cv = [
     ),
   },
   {
-    wrapper: (children: any) => <div>{children}</div>,
     title: <h3>Publications</h3>,
     content: (
       <ul>
@@ -290,7 +288,6 @@ export const cv = [
     ),
   },
   {
-    wrapper: (children: any) => <div>{children}</div>,
     title: <h3>Shows &amp; Exhibits</h3>,
     content: (
       <ul>
@@ -301,7 +298,6 @@ export const cv = [
     ),
   },
   {
-    wrapper: (children: any) => <div>{children}</div>,
     title: <h3>Education</h3>,
     content: (
       <ul>
@@ -311,7 +307,6 @@ export const cv = [
     ),
   },
   {
-    wrapper: (children: any) => <div>{children}</div>,
     title: <h3>Events</h3>,
     content: (
       <ul>

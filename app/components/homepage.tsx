@@ -4,13 +4,8 @@ import { useState } from "react";
 import { Metadata } from "next";
 
 import AdminDashboard from "@/app/components/adminDashboard";
-import EducationList from "@/app/components/lists/educationList";
-import EventList from "@/app/components/lists/eventList";
-import ExhibitList from "@/app/components/lists/exhibitsList";
-import HomepageGallery from "@/app/components/homepageGallery";
-import PublicationsList from "@/app/components/lists/publicationsList";
-import { settings, strings } from "../site";
-import SocialLinks from "./lists/socialLinksList";
+import { portfolioImages, settings } from "../site";
+import Nav from "./nav";
 
 export const metadata: Metadata = {
   title: settings.name,
@@ -55,7 +50,7 @@ export default function Homepage() {
                   <h1>{settings.name}</h1>
                   <h2>{settings.description}</h2>
                   <p className="note mb-5">{settings.note}</p>
-                  <SocialLinks />
+                  <Nav />
                 </div>
               </div>
               <div className="cover-image max-xl:hidden faded">
@@ -67,14 +62,24 @@ export default function Homepage() {
               </div>
             </div>
           </section>
-          <HomepageGallery />
+          <div className="portfolio">
+            {portfolioImages.map((image, i) => (
+              <img
+                key={`portfolio-image-${i}`}
+                src={image.src}
+                alt={image.alt}
+              />
+            ))}
+          </div>
           <div className="primary-bg">
             <div className="col-2-img-right">
               <div className="col col-text flex flex-col gap-2">
-                <PublicationsList />
-                <ExhibitList />
-                <EducationList />
-                <EventList />
+                {cv.map((item, i) => (
+                  <div key={`cv-item-${i}`}>
+                    {item.title}
+                    {item.content}
+                  </div>
+                ))}
               </div>
               <div className="col col-image">
                 <img

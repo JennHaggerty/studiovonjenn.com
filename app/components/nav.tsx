@@ -1,11 +1,10 @@
-"use client";
+import { navigation } from "../site";
 
-import { navigation } from "@/app/site";
-
-const SocialLinks = () => {
+const Nav = () => {
   const mainMenu = navigation.find((i) => i.id === "main");
 
   if (!mainMenu) return;
+
   return (
     <nav>
       <ul className={`${mainMenu.customClass}`}>
@@ -17,4 +16,4 @@ const SocialLinks = () => {
   );
 };
 
-export default SocialLinks;
+export default Nav;
