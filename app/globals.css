@@ -458,13 +458,12 @@ a .icon:hover {
   }
 }
 
-.socials {
+nav,
+.nav {
   display: flex;
-  margin: auto;
   list-style: none;
   justify-content: center;
   gap: 1em;
-  padding: 1em 0;
 }
 
 .col-2-img-right {

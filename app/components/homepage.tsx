@@ -9,8 +9,7 @@ import EventList from "@/app/components/lists/eventList";
 import ExhibitList from "@/app/components/lists/exhibitsList";
 import HomepageGallery from "@/app/components/homepageGallery";
 import PublicationsList from "@/app/components/lists/publicationsList";
-import { settings, galleries, strings } from "../cms";
-import { GalleryInterface } from "../interfaces";
+import { settings, strings } from "../cms";
 import SocialLinks from "./lists/socialLinksList";
 
 export const metadata: Metadata = {

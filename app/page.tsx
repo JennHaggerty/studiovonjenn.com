@@ -3,11 +3,8 @@ import Homepage from "./components/homepage";
 
 export default function Home() {
   return (
-    <>
-      <main>
-        <Homepage />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Homepage />
+    </main>
   );
 }

@@ -1,4 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
+import { galleries } from "./cms";
+
+interface Gallery {
+  slug: string;
+  directory: string;
+  title?: string;
+  description?: string;
+}
 
 const jsonHeaders = {
   "Content-Type": "application/json",
@@ -135,4 +143,12 @@ export const setFiles = async (args: {
     return data;
   });
   setState(files);
+};
+
+export const getGallery = async (
+  slug: string,
+): Promise<Gallery | undefined> => {
+  const gallery = galleries.find((item) => item.slug === slug);
+
+  return gallery;
 };
