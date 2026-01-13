@@ -1,6 +1,5 @@
 import { prices as recipes, strings } from "@/app/site";
 import Link from "next/link";
-import Footer from "../components/footer";
 
 export default async function Page({
   params,

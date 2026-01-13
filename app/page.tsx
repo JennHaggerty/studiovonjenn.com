@@ -1,13 +1,7 @@
 import { Metadata } from "next";
 
-import { settings, strings } from "./site";
-
-import EducationList from "@/app/components/lists/educationList";
-import EventList from "@/app/components/lists/eventList";
-import ExhibitList from "@/app/components/lists/exhibitsList";
-import HomepageGallery from "@/app/components/homepageGallery";
-import PublicationsList from "@/app/components/lists/publicationsList";
-import SocialLinks from "@/app/components/lists/socialLinksList";
+import { cv, portfolioImages, settings, strings } from "./site";
+import Nav from "./components/nav";
 
 export const metadata: Metadata = {
   title: settings.name,
@@ -27,7 +21,7 @@ export default function Home() {
               <h1>{settings.name}</h1>
               <h2>{settings.description}</h2>
               <p className="note mb-5">{settings.note}</p>
-              <SocialLinks />
+              <Nav />
             </div>
           </div>
           <div className="cover-image max-xl:hidden faded">
@@ -39,14 +33,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <HomepageGallery />
+      <div className="portfolio">
+        {portfolioImages.map((image, i) => (
+          <img key={`portfolio-image-${i}`} src={image.src} alt={image.alt} />
+        ))}
+      </div>
       <div className="primary-bg">
         <div className="col-2-img-right">
           <div className="col col-text flex flex-col gap-2">
-            <PublicationsList />
-            <ExhibitList />
-            <EducationList />
-            <EventList />
+            {cv.map((item, i) => (
+              <div key={`cv-item-${i}`}>
+                {item.title}
+                {item.content}
+              </div>
+            ))}
           </div>
           <div className="col col-image">
             <img src={`/images/ophelia-1.jpg`} alt="Ophelia in the waters" />
