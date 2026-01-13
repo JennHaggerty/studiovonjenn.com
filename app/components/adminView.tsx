@@ -4,9 +4,8 @@ import { settings } from "../site";
 import Loading from "./loading";
 import FolderIcon from "./svgs/folderIcon";
 import { File } from "../interfaces";
-import formidable from "formidable";
 
-const AdminDashboard = () => {
+const AdminView = () => {
   const [files, setFiles] = useState<File[]>();
   const [loading, setLoading] = useState<boolean>(true);
   const [showForm, setShowForm] = useState<boolean>();
@@ -339,4 +338,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default AdminView;
