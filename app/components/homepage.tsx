@@ -9,7 +9,7 @@ import EventList from "@/app/components/lists/eventList";
 import ExhibitList from "@/app/components/lists/exhibitsList";
 import HomepageGallery from "@/app/components/homepageGallery";
 import PublicationsList from "@/app/components/lists/publicationsList";
-import { settings, strings } from "../cms";
+import { settings, strings } from "../site";
 import SocialLinks from "./lists/socialLinksList";
 
 export const metadata: Metadata = {
@@ -44,6 +44,7 @@ export default function Homepage() {
         <AdminDashboard />
       ) : (
         <>
+          {" "}
           <section className="introduction">
             <div
               className="smoke-background relative overflow-hidden 
@@ -70,16 +71,6 @@ export default function Homepage() {
           <div className="primary-bg">
             <div className="col-2-img-right">
               <div className="col col-text flex flex-col gap-2">
-                <div>
-                  <h3>{strings.summary}</h3>
-                  <p>
-                    Jennifer has been obsessed with light, color, and painting
-                    since 1997. She began photographing portraits in 2003. When
-                    she's not at the computer she's working on something
-                    creative or is out in the garden with her partner and their
-                    dogs.
-                  </p>
-                </div>
                 <PublicationsList />
                 <ExhibitList />
                 <EducationList />

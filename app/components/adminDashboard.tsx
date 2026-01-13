@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { deleteFile, deleteFolder, getAllFiles } from "../functions";
-import { settings } from "../cms";
+import { settings } from "../site";
 import Loading from "./loading";
 import FolderIcon from "./svgs/folderIcon";
 import { File } from "../interfaces";

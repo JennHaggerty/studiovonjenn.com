@@ -1,4 +1,4 @@
-import { strings } from "@/app/cms";
+import { strings } from "@/app/site";
 import Link from "next/link";
 import Loading from "@/app/components/loading";
 

@@ -1,26 +1,17 @@
 "use client";
 
-import { settings, strings } from "@/app/cms";
+import { navigation } from "@/app/site";
 
 const SocialLinks = () => {
+  const mainMenu = navigation.find((i) => i.id === "main");
+
+  if (!mainMenu) return;
   return (
     <nav>
-      <ul className="nav">
-        <li>
-          <a href={settings.email}>{strings.contact}</a>
-        </li>
-        <li>
-          <a href={settings.pricelist}>{strings.prices}</a>
-        </li>
-        <li>
-          <a
-            href={settings.social}
-            target="_blank"
-            aria-label={strings.connect}
-          >
-            {strings.discord}
-          </a>
-        </li>
+      <ul className={`${mainMenu.customClass}`}>
+        {mainMenu.items.map((item, i) => (
+          <li key={`main-nav-${i}`}>{item}</li>
+        ))}
       </ul>
     </nav>
   );
