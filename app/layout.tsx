@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import { settings } from "./cms";
+import { settings } from "./site";
 import Footer from "./components/footer";
 
 const montserratSans = Montserrat({

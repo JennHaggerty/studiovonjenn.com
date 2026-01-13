@@ -1,4 +1,4 @@
-import { settings } from "../cms";
+import { settings } from "../site";
 import SocialLinks from "./lists/socialLinksList";
 
 const Footer = () => {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { settings, strings } from "@/app/cms";
+import { settings, strings } from "@/app/site";
 
 const TattooGallery = () => {
   return (

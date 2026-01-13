@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { settings, strings } from "./cms";
+import { settings, strings } from "./site";
 
 import EducationList from "@/app/components/lists/educationList";
 import EventList from "@/app/components/lists/eventList";
@@ -43,15 +43,6 @@ export default function Home() {
       <div className="primary-bg">
         <div className="col-2-img-right">
           <div className="col col-text flex flex-col gap-2">
-            <div>
-              <h3>{strings.summary}</h3>
-              <p>
-                Jennifer has been obsessed with light, color, and painting since
-                1997. She began photographing portraits in 2003. When she's not
-                at the computer she's working on something creative or is out in
-                the garden with her partner and their dogs.
-              </p>
-            </div>
             <PublicationsList />
             <ExhibitList />
             <EducationList />

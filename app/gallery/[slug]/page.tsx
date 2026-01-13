@@ -1,5 +1,5 @@
 import { customStringSort, getGallery } from "@/app/functions";
-import { defaultGalleryDescription, galleries, strings } from "@/app/cms";
+import { defaultGalleryDescription, galleries, strings } from "@/app/site";
 import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
