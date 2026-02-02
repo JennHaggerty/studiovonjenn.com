@@ -49,13 +49,15 @@ export default async function Page({
               {(recipe.addons || recipe.includes || recipe.image) && (
                 <div className="flex mx-0! max-sm:flex-col justify-between gap-5 outline">
                   {recipe.image && (
-                    <img
-                      className=" max-h-[550px] mx-0!"
-                      src={recipe.image}
-                      alt=""
-                    />
+                    <div className="w-full lg:w-1/2 mx-0!">
+                      <img
+                        className="h-full w-full object-cover"
+                        src={recipe.image}
+                        alt=""
+                      />
+                    </div>
                   )}
-                  <div className=" w-full mx-0! flex flex-col gap-5">
+                  <div className="w-full lg:w-1/2 mx-0! flex flex-col gap-5">
                     {recipe.includes && (
                       <div>
                         <h3>{strings.includes}</h3>

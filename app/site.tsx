@@ -57,7 +57,7 @@ export const prices = [
   },
   {
     name: "Le Chat Noir Photo Booth",
-    image: "/images/galleries/atmos/2025/atmos09258.jpg",
+    image: "/images/galleries/atmos/0126/atmos012610.jpg",
     time: "8:30pm - 1:30am",
     delivery: "1-3 days",
     price: 25,
@@ -92,7 +92,7 @@ export const prices = [
   },
   {
     name: "Parties and Events",
-    image: "/images/galleries/pirate-party-1125/pirateparty11202561.jpg",
+    image: "/images/galleries/pirate-party-1125/pirateparty11202559.jpg",
     time: "2.5 hours",
     delivery: "2-3 weeks",
     price: 575,
