@@ -34,25 +34,29 @@ export default async function Page({
   });
 
   return (
-    <div className=" max-w-[1200px] m-auto">
+    <div>
       <div className="gallery-page">
         <HeaderElement
           title={gallery.title ? gallery.title : "Photo Gallery"}
         />
         <div className="p-[2em] primary-bg">
-          {gallery.description
-            ? gallery.description
-            : defaultGalleryDescription}
+          <div className=" max-w-[1200px] m-auto">
+            {gallery.description
+              ? gallery.description
+              : defaultGalleryDescription}
+          </div>
         </div>
 
-        <div className="gallery p-[2em] bg-[var(--black-000)]">
-          {images.map((image, i) => (
-            <img
-              key={`${gallery.slug}-${i}`}
-              src={image.src}
-              alt={image.alt ? image.alt : ""}
-            />
-          ))}
+        <div className="bg-[var(--black-000)]">
+          <div className="max-w-[1200px] m-auto gallery py-[2em]">
+            {images.map((image, i) => (
+              <img
+                key={`${gallery.slug}-${i}`}
+                src={image.src}
+                alt={image.alt ? image.alt : ""}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

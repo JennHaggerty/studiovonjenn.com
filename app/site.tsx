@@ -73,7 +73,7 @@ export const prices = [
   },
   {
     name: "Fine Art Portraiture",
-    image: "/images/safara-1.jpg",
+    image: "/images/egan-1.jpg",
     time: "45 - 90 minutes",
     delivery: "3-5 days",
     price: 325,
