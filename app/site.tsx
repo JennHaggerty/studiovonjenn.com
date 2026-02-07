@@ -139,18 +139,20 @@ export const strings = {
     "Tattoo and piercing portraiture for clients and their artists.",
   summary: "Summary",
   tips: "Tips",
+  about: "About",
+  portfolio: "Portfolio",
 };
 
 export const navigation = [
   {
     id: "main",
-    customClass: "socials",
+    customClass: "flex w-full justify-center gap-3",
     items: [
-      <a href={settings.email}>{strings.contact}</a>,
+      <a href="/">{strings.home}</a>,
+      <a href="/portfolio">{strings.portfolio}</a>,
+      <a href="/about">{strings.about}</a>,
       <a href={settings.pricelist}>{strings.prices}</a>,
-      <a href={settings.social} target="_blank" aria-label={strings.connect}>
-        {strings.discord}
-      </a>,
+      <a href="/contact">{strings.contact}</a>,
     ],
   },
 ];
@@ -256,7 +258,7 @@ export const portfolioImages = [
 
 export const cv = [
   {
-    title: <h3>{strings.summary}</h3>,
+    title: <h3 className="h2 text-4xl!">{strings.summary}</h3>,
     content: (
       <p>
         Jennifer has been obsessed with light, color, and painting since 1997.
@@ -267,7 +269,7 @@ export const cv = [
     ),
   },
   {
-    title: <h3>Publications</h3>,
+    title: <h3 className="h2 text-4xl!">Publications</h3>,
     content: (
       <ul>
         <li>Gothesque Magazine issue #88 Augusta, GA 2020</li>
@@ -288,7 +290,7 @@ export const cv = [
     ),
   },
   {
-    title: <h3>Shows &amp; Exhibits</h3>,
+    title: <h3 className="h2 text-4xl!">Shows &amp; Exhibits</h3>,
     content: (
       <ul>
         <li>Art & Soul Gallery in Aiken, South Carolina, 2022-2023</li>
@@ -298,7 +300,7 @@ export const cv = [
     ),
   },
   {
-    title: <h3>Education</h3>,
+    title: <h3 className="h2 text-4xl!">Education</h3>,
     content: (
       <ul>
         <li>Augusta Technical College, AAS Computer Programming 2021</li>
@@ -307,7 +309,7 @@ export const cv = [
     ),
   },
   {
-    title: <h3>Events</h3>,
+    title: <h3 className="h2 text-4xl!">Events</h3>,
     content: (
       <ul>
         {galleries.map((gallery) => (

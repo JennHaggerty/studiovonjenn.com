@@ -21,7 +21,7 @@ export default function Home() {
               <h1>{settings.name}</h1>
               <h2>{settings.description}</h2>
               <p className="note mb-5">{settings.note}</p>
-              <Nav />
+              <Nav customClass="flex gap-5 justify-center" id="main" />
             </div>
           </div>
           <div className="cover-image max-xl:hidden faded">

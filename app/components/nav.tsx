@@ -1,14 +1,27 @@
 import { navigation } from "../site";
 
-const Nav = () => {
-  const mainMenu = navigation.find((i) => i.id === "main");
+interface Props {
+  id: string;
+  customClass?: string;
+}
 
-  if (!mainMenu) return;
+const Nav = (props: Props) => {
+  const { id, customClass } = props;
+
+  const menu = navigation.find((i) => i.id === id);
+
+  if (!menu) return;
+
+  const concatCss = menu.customClass
+    ? menu.customClass + customClass
+      ? ` ${customClass}`
+      : ""
+    : "";
 
   return (
     <nav>
-      <ul className={`${mainMenu.customClass}`}>
-        {mainMenu.items.map((item, i) => (
+      <ul className={`${concatCss}`}>
+        {menu.items.map((item, i) => (
           <li key={`main-nav-${i}`}>{item}</li>
         ))}
       </ul>
