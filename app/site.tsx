@@ -19,7 +19,7 @@ export const galleries: GalleryInterface[] = [
     title: "3rd Annual Buccaneer's Ball",
   },
   {
-    slug: "2025",
+    slug: "atmos2025",
     directory: atmosDirectory.replace("{date}", "2025"),
     title: "Atmosphere, Augusta GA, 2025",
   },
