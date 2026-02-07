@@ -10,15 +10,12 @@ export default async function Page({
   }>;
 }) {
   return (
-    <div>
+    <>
       <HeaderElement title={strings.prices} />
-      <div className="primary-bg w-full">
-        <p className="color-white text-center italic">
-          Updated December 18, 2025
-        </p>
-        <div className="flex flex-col gap-3 max-w-[1200px] m-auto">
+      <div className="primary-bg">
+        <div className="flex flex-col gap-3 m-auto p-[2em]">
           {recipes.map((recipe, i) => (
-            <div key={`pricing-${i}`} className="primary-bg p-5">
+            <div key={`pricing-${i}`}>
               <div>
                 <div className="flex justify-between">
                   <div>
@@ -127,7 +124,10 @@ export default async function Page({
             </div>
           ))}
         </div>
+        <p className="color-white text-center italic pb-2">
+          Updated December 18, 2025
+        </p>
       </div>
-    </div>
+    </>
   );
 }

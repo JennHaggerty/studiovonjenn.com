@@ -27,35 +27,6 @@ export const galleries: GalleryInterface[] = [
 
 export const prices = [
   {
-    name: "à la carte",
-    options: [
-      {
-        name: "8in x 10in —x1 print",
-        price: 30,
-      },
-      {
-        name: "5in x 7in —x2 prints",
-        price: 30,
-      },
-      {
-        name: "2.5in x 3.5in —x4 prints",
-        price: 30,
-      },
-      {
-        name: "Light and color correction —per image",
-        price: 65,
-      },
-      {
-        name: "Artistic rendering —starts at",
-        price: 125,
-      },
-      {
-        name: "Personal printing license —per image",
-        price: 175,
-      },
-    ],
-  },
-  {
     name: "Le Chat Noir Photo Booth",
     image: "/images/galleries/atmos/0126/atmos012610.jpg",
     time: "8:30pm - 1:30am",
@@ -108,6 +79,35 @@ export const prices = [
       "Send me the vibes/dress code, I love immersion and will dress to blend in!",
     ],
   },
+  {
+    name: "à la carte",
+    options: [
+      {
+        name: "8in x 10in —x1 print",
+        price: 30,
+      },
+      {
+        name: "5in x 7in —x2 prints",
+        price: 30,
+      },
+      {
+        name: "2.5in x 3.5in —x4 prints",
+        price: 30,
+      },
+      {
+        name: "Light and color correction —per image",
+        price: 65,
+      },
+      {
+        name: "Artistic rendering —starts at",
+        price: 125,
+      },
+      {
+        name: "Personal printing license —per image",
+        price: 175,
+      },
+    ],
+  },
 ];
 
 export const settings = {
@@ -148,8 +148,7 @@ export const navigation = [
     id: "main",
     customClass: "flex w-full justify-center gap-3",
     items: [
-      <a href="/">{strings.home}</a>,
-      <a href="/portfolio">{strings.portfolio}</a>,
+      <a href="/">{strings.portfolio}</a>,
       <a href="/about">{strings.about}</a>,
       <a href={settings.pricelist}>{strings.prices}</a>,
       <a href="/contact">{strings.contact}</a>,

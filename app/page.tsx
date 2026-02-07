@@ -20,7 +20,7 @@ export default function Home() {
             <div className="outline">
               <h1>{settings.name}</h1>
               <h2>{settings.description}</h2>
-              <p className="note mb-5">{settings.note}</p>
+              <p className="note mb-3">{settings.note}</p>
               <Nav customClass="flex gap-5 justify-center" id="main" />
             </div>
           </div>
