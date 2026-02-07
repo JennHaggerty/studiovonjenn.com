@@ -3,6 +3,7 @@ import { defaultGalleryDescription, galleries, strings } from "@/app/site";
 import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
+import HeaderElement from "@/app/components/header";
 
 export async function generateStaticParams() {
   return galleries.map((gallery) => ({
@@ -35,19 +36,16 @@ export default async function Page({
   return (
     <div className=" max-w-[1200px] m-auto">
       <div className="gallery-page">
-        <div className="header">
-          <div className="outline mx-auto!">
-            <Link href={`/`}>{strings.home}</Link>
-            <h1>{gallery.title ? gallery.title : "Photo Gallery"}</h1>
-            <p className="text-left">
-              {gallery.description
-                ? gallery.description
-                : defaultGalleryDescription}
-            </p>
-          </div>
+        <HeaderElement
+          title={gallery.title ? gallery.title : "Photo Gallery"}
+        />
+        <div className="p-[2em] primary-bg">
+          {gallery.description
+            ? gallery.description
+            : defaultGalleryDescription}
         </div>
 
-        <div className="gallery">
+        <div className="gallery p-[2em] bg-[var(--black-000)]">
           {images.map((image, i) => (
             <img
               key={`${gallery.slug}-${i}`}

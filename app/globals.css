@@ -406,10 +406,6 @@ a .icon:hover {
   margin-left: -11em;
 }
 
-.gallery-page .header {
-  padding-bottom: 1em;
-}
-
 .gallery-page button {
   width: 100%;
 }
@@ -663,10 +659,14 @@ a .icon:hover {
   animation: slide-top 1s;
 }
 .fade-up {
-  animation: fade 2s, slide-bottom 0.75s;
+  animation:
+    fade 2s,
+    slide-bottom 0.75s;
 }
 .fade-down {
-  animation: fade 2s, slide-top 0.75s;
+  animation:
+    fade 2s,
+    slide-top 0.75s;
 }
 
 .loader {

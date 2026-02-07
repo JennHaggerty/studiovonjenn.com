@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 import { cv, portfolioImages, settings, strings } from "./site";
 import Nav from "./components/nav";
+import HeaderElement from "./components/header";
 
 export const metadata: Metadata = {
   title: settings.name,
@@ -10,29 +11,18 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <section className="introduction">
-        <div
-          className="smoke-background relative overflow-hidden 
-      flex max-xl:justify-center min-xl:flex-row w-full"
-        >
-          <div className="header xl:min-w-1/2 xl:my-auto">
-            <div className="outline">
-              <h1>{settings.name}</h1>
-              <h2>{settings.description}</h2>
-              <p className="note mb-3">{settings.note}</p>
-              <Nav customClass="flex gap-5 justify-center" id="main" />
-            </div>
-          </div>
-          <div className="cover-image max-xl:hidden faded">
-            <img
-              className=""
-              src="/images/jennifer.jpg"
-              alt="Self portrait as Morticia Addams drinking tea."
-            />
-          </div>
+    <>
+      <div className="header p-2!">
+        <div className="outline m-auto!">
+          <h1>{settings.name}</h1>
+          <h2>{settings.description}</h2>
+          <p className="note mb-3">{settings.note}</p>
+          <Nav
+            customClass="flex! align-center justify-center gap-5"
+            id="main"
+          />
         </div>
-      </section>
+      </div>
       <div className="portfolio">
         {portfolioImages.map((image, i) => (
           <img key={`portfolio-image-${i}`} src={image.src} alt={image.alt} />
@@ -53,6 +43,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </>
   );
 }

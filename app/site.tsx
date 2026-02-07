@@ -4,8 +4,38 @@ import Link from "next/link";
 const atmosSlug = "atmos{date}";
 const atmosDirectory = "/images/galleries/atmos/{date}/";
 
-export const defaultGalleryDescription =
-  "Images are for personal use only and may not be used commercially; selling prints, advertisements, representing goods and services, and editing/retouching/alterations/manipulations to the images are prohibited. Inquires to request commercial licenses, prints, and personal printing licenses may be sent to thejenniferhaggerty@gmail.com.";
+export const settings = {
+  name: "Portrait Photography",
+  description: "by Jennifer in Augusta, Georgia.",
+  note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
+  email: "thejenniferhaggerty@gmail.com",
+  discord: "https://discord.gg/gh9TMHQsdB",
+  instagram: "https://www.instagram.com/studiovonjenn/",
+  pricelist: "/prices",
+  copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
+};
+
+export const defaultGalleryDescription = (
+  <div className="flex flex-col gap-2">
+    <p>
+      Ready to share images from{" "}
+      <a href="https://www.facebook.com/p/Atmosphere-Augusta-100088686398685/">
+        Atmosphere
+      </a>
+      , Augusta Georgia's premiere dark electronic night hosted by{" "}
+      <a href="https://www.instagram.com/lcnaugusta/">Le Chat Noir</a> on the
+      first Saturday of the month. Images are for personal use only and may not
+      be used commercially; selling prints, advertisements, representing goods
+      and services, and editing/retouching/alterations/manipulations to the
+      images are prohibited –
+      <a href="https://www.instagram.com/studiovonjenn/">Instagram</a> is the
+      exception, you may add a filter for personal posting/viewing. Inquires to
+      request commercial licenses, prints, and personal printing licenses may be
+      sent to{" "}
+      <a href={`mailto:${settings.email}`}>thejenniferhaggerty@gmail.com</a>.
+    </p>
+  </div>
+);
 
 export const galleries: GalleryInterface[] = [
   {
@@ -109,16 +139,6 @@ export const prices = [
     ],
   },
 ];
-
-export const settings = {
-  name: "Portrait Photography",
-  description: "by Jennifer in Augusta, Georgia.",
-  note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
-  email: "mailto:thejenniferhaggerty@gmail.com",
-  social: "https://discord.gg/gh9TMHQsdB",
-  pricelist: "/prices",
-  copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
-};
 
 export const strings = {
   loadingGalleryPage: "Loading gallery page",
@@ -271,20 +291,48 @@ export const cv = [
     title: <h3 className="h2 text-4xl!">Publications</h3>,
     content: (
       <ul>
-        <li>Gothesque Magazine issue #88 Augusta, GA 2020</li>
+        <li>
+          <a target="_blank" href="https://gothesquemagazine.com/">
+            Gothesque Magazine
+          </a>{" "}
+          issue #88 Augusta, GA 2020
+        </li>
         <li>Gothesque Magazine August issue Austin, TX 2016</li>
-        <li>Tenebrous Magazine issue #8 New York, NY 2014</li>
-        <li>Beautiful Bizarre Magazine New York, NY 2014</li>
+        <li>
+          <a target="_blank" href="https://tenebrousmag.com/">
+            Tenebrous Mag
+          </a>{" "}
+          issue #8 New York, NY 2014
+        </li>
+        <li>
+          <a target="_blank" href="https://beautifulbizarre.net/">
+            Beautiful Bizarre Magazine
+          </a>{" "}
+          New York, NY 2014
+        </li>
         <li>BadSkin Magazine New York, NY 2014</li>
         <li>Gothesque Magazine issue #11 (cover) New York, NY 2014</li>
         <li>Gothesque Magazine issue #10 New York, NY 2014</li>
         <li>Gothesque Magazine issue #9 New York, NY 2014</li>
         <li>Freque Magazine Vol 5 Part 1 New York, NY 2014</li>
-        <li>Dark Beauty Magazine issue #24 New York, NY 2013</li>
-        <li>Tenebrous Magazine issue #1 New York, NY 2013</li>
+        <li>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/darkbeautymag/?hl=en"
+          >
+            Dark Beauty Magazine
+          </a>{" "}
+          issue #24 New York, NY 2013
+        </li>
+        <li>Tenebrous Mag issue #1 New York, NY 2013</li>
         <li>Strange Beauty Magazine premier issue New York, NY 2013</li>
         <li>Dark Beauty Magazine issue #19 New York, NY 2013</li>
-        <li>Photographer’s Forum Magazine Columbia, SC 2011</li>
+        <li>
+          <a target="_blank" href="https://www.pfmagazine.net/">
+            Photographer’s Forum Magazine
+          </a>{" "}
+          Columbia, SC 2011
+        </li>
       </ul>
     ),
   },
@@ -294,7 +342,12 @@ export const cv = [
       <ul>
         <li>Art & Soul Gallery in Aiken, South Carolina, 2022-2023</li>
         <li>Meadowlands Museum in Rutherford, New Jersey, 2013</li>
-        <li>City Art in Columbia, South Carolina, 2012</li>
+        <li>
+          <a target="_blank" href="https://www.cityartonline.com/">
+            City Art
+          </a>{" "}
+          in Columbia, South Carolina, 2012
+        </li>
       </ul>
     ),
   },
@@ -313,7 +366,9 @@ export const cv = [
       <ul>
         {galleries.map((gallery) => (
           <li key={gallery.slug}>
-            <Link href={`/gallery/${gallery.slug}`}>{gallery.title}</Link>
+            <Link rel="internal" href={`/gallery/${gallery.slug}`}>
+              {gallery.title}
+            </Link>
           </li>
         ))}
         <li>Hero's Con, Charlotte NC, 2018</li>

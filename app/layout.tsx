@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${montserratSans.variable} ${cormorantSerif.variable} antialiased`}
       >
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

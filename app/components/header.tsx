@@ -1,4 +1,3 @@
-import { strings } from "../site";
 import Nav from "./nav";
 
 interface Props {
