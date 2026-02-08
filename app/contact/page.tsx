@@ -34,7 +34,7 @@ export default async function Page({
                 <a href="https://www.facebook.com/p/Atmosphere-Augusta-100088686398685/">
                   Atmosphere
                 </a>
-                . Wear your editorial best and come get a photo.
+                .
               </p>
             </div>
             <div className="col col-image">
