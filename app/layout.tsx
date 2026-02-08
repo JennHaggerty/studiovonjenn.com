@@ -3,6 +3,7 @@ import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { settings } from "./site";
 import Footer from "./components/footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const montserratSans = Montserrat({
   variable: "--font-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
       </body>
+      <GoogleTagManager gtmId="G-E56J5RYR35" />
     </html>
   );
 }
