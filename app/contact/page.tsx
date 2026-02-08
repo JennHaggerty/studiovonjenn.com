@@ -38,7 +38,10 @@ export default async function Page({
               </p>
             </div>
             <div className="col col-image">
-              <img src={`/images/karinA.jpg`} alt="Ophelia in the waters" />
+              <img
+                src={`/images/karinA.jpg`}
+                alt="Portrait of woman with red hair and wearing a white dress"
+              />
             </div>
           </div>
         </div>
