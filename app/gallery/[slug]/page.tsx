@@ -1,8 +1,7 @@
 import { customStringSort, getGallery } from "@/app/functions";
-import { defaultGalleryDescription, galleries, strings } from "@/app/site";
+import { defaultGalleryDescription, galleries } from "@/app/site";
 import { promises as fs } from "fs";
 import path from "path";
-import Link from "next/link";
 import HeaderElement from "@/app/components/header";
 
 export async function generateStaticParams() {

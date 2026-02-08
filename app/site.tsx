@@ -12,6 +12,7 @@ export const settings = {
   discord: "https://discord.gg/gh9TMHQsdB",
   instagram: "https://www.instagram.com/studiovonjenn/",
   pricelist: "/prices",
+  googleTagManagerId: "G-E56J5RYR35",
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
 };
 
@@ -42,11 +43,6 @@ export const galleries: GalleryInterface[] = [
     slug: atmosSlug.replace("{date}", "0126"),
     directory: atmosDirectory.replace("{date}", "0126"),
     title: "Atmosphere, Augusta GA, January 2026",
-  },
-  {
-    slug: "pirateparty1125",
-    directory: "/images/galleries/pirate-party-1125/",
-    title: "3rd Annual Buccaneer's Ball",
   },
   {
     slug: "atmos2025",
