@@ -39,7 +39,7 @@ export default async function Page({
           title={gallery.title ? gallery.title : "Photo Gallery"}
         />
         <div className="p-[2em] primary-bg">
-          <div className=" max-w-[1200px] m-auto">
+          <div className=" max-w-[var(--max-width)] m-auto">
             {gallery.description
               ? gallery.description
               : defaultGalleryDescription}
@@ -47,7 +47,7 @@ export default async function Page({
         </div>
 
         <div className="bg-[var(--black-000)]">
-          <div className="max-w-[1200px] m-auto gallery py-[2em]">
+          <div className="max-w-[var(--max-width)] m-auto gallery py-[2em]">
             {images.map((image, i) => (
               <img
                 key={`${gallery.slug}-${i}`}

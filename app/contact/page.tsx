@@ -12,7 +12,7 @@ export default async function Page({
     <>
       <HeaderElement title={strings.contact} />
       <div className="primary-bg">
-        <div className=" max-w-[1200px] mx-auto">
+        <div className=" max-w-[var(--max-width)] mx-auto">
           <div className="col-2-img-right">
             <div className="col col-text flex flex-col gap-2">
               <h2 className="text-4xl!">Hey there,</h2>

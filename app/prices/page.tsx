@@ -13,7 +13,7 @@ export default async function Page({
       <HeaderElement title={strings.prices} />
 
       <div className="primary-bg">
-        <div className="flex flex-col gap-3 m-auto p-[2em] max-w-[1200px]">
+        <div className="flex flex-col gap-3 m-auto p-[2em] max-w-[var(--max-width)]">
           {recipes.map((recipe, i) => (
             <div key={`pricing-${i}`}>
               {i !== 0 && <hr />}

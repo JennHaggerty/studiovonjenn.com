@@ -7,7 +7,7 @@ export default async function Page() {
   return (
     <>
       <HeaderElement title={strings.galleries} />
-      <div className=" max-w-[1200px] mx-auto">
+      <div className=" max-w-[var(--max-width)] mx-auto">
         <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-3">
           {items.map((item, i) => (
             <a

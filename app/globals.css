@@ -38,6 +38,8 @@
 
   --link-color: var(--primary-200);
   --link-hover-color: var(--white-000);
+
+  --max-width: 1200px;
 }
 
 body {
