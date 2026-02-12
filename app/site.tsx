@@ -53,10 +53,28 @@ export const galleries: GalleryInterface[] = [
     featuredImg: "/images/galleries/atmos/0126/atmos012610.jpg",
   },
   {
-    slug: "atmos2025",
-    directory: atmosDirectory.replace("{date}", "2025"),
-    title: "Atmosphere 2025",
-    featuredImg: "/images/galleries/atmos/2025/atmos092520.jpg",
+    slug: "pirateparty112025",
+    directory: "/images/galleries/pirate-party-1125/",
+    title: "Annual Buccaneer's Party",
+    featuredImg: "/images/galleries/pirate-party-1125/pirateparty11202537.jpg",
+  },
+  {
+    slug: atmosSlug.replace("{date}", "1125"),
+    directory: atmosDirectory.replace("{date}", "1125"),
+    title: "Atmosphere November 2025",
+    featuredImg: "/images/galleries/atmos/1125/atmos11254.jpg",
+  },
+  {
+    slug: atmosSlug.replace("{date}", "1025"),
+    directory: atmosDirectory.replace("{date}", "1025"),
+    title: "Atmosphere October 2025",
+    featuredImg: "/images/galleries/atmos/1025/atmos10255.jpg",
+  },
+  {
+    slug: atmosSlug.replace("{date}", "0925"),
+    directory: atmosDirectory.replace("{date}", "0925"),
+    title: "Atmosphere September 2025",
+    featuredImg: "/images/galleries/atmos/0925/atmos09258.jpg",
   },
 ];
 
