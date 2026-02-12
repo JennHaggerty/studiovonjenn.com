@@ -37,6 +37,7 @@
   --h1-color: var(--white-100);
 
   --link-color: var(--primary-200);
+  --link-hover-color: var(--white-000);
 }
 
 body {
@@ -104,7 +105,7 @@ a {
 
 a:hover,
 .a:hover {
-  color: var(--white-000);
+  color: var(--link-hover-color);
   cursor: pointer;
 }
 

@@ -2,6 +2,8 @@ export interface GalleryInterface {
   title: string;
   slug: string;
   directory: string;
+  imgAlt?: string;
+  featuredImg?: string;
   description?: string;
   onCloseText?: string;
 }

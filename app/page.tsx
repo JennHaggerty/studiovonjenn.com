@@ -2,7 +2,6 @@ import { Metadata } from "next";
 
 import { cv, portfolioImages, settings, strings } from "./site";
 import Nav from "./components/nav";
-import HeaderElement from "./components/header";
 
 export const metadata: Metadata = {
   title: settings.name,
@@ -17,12 +16,12 @@ export default function Home() {
           <h1>{settings.name}</h1>
           <h2>{settings.description}</h2>
           <p className="note mb-3">{settings.note}</p>
-          <Nav
-            customClass="flex! align-center justify-center gap-5"
-            id="main"
-          />
         </div>
       </div>
+      <Nav
+        customClass="flex! mb-2 align-center justify-center gap-5"
+        id="main"
+      />
       <div className="portfolio">
         {portfolioImages.map((image, i) => (
           <img key={`portfolio-image-${i}`} src={image.src} alt={image.alt} />

@@ -39,7 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://studiovonjenn.com/portfolio",
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.8,
       images: [
         "https://studiovonjenn.com/images/birds-1.jpg",
         "https://studiovonjenn.com/images/birds-2.jpg",
@@ -71,14 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://studiovonjenn.com/about",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.8,
       images: ["https://studiovonjenn.com/images/ophelia-1.jpg"],
     },
     {
       url: "https://studiovonjenn.com/prices",
       lastModified: "2025-12-18T14:47:22+00:00",
       changeFrequency: "yearly",
-      priority: 0.8,
       images: [
         "https://studiovonjenn.com/images/galleries/atmos/0126/atmos012610.jpg",
         "https://studiovonjenn.com/images/safara-1.jpg",
@@ -89,7 +86,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://studiovonjenn.com/contact",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.8,
+    },
+    {
+      url: "https://studiovonjenn.com/gallery",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
     },
   ];
 }

@@ -14,6 +14,7 @@ export const settings = {
   pricelist: "/prices",
   googleTagManagerId: "G-E56J5RYR35",
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
+  defaultFeaturedImage: "/images/jennifer-3.jpg",
 };
 
 export const defaultGalleryDescription = (
@@ -40,14 +41,22 @@ export const defaultGalleryDescription = (
 
 export const galleries: GalleryInterface[] = [
   {
+    slug: atmosSlug.replace("{date}", "0226"),
+    directory: atmosDirectory.replace("{date}", "0226"),
+    title: "Atmosphere February 2026",
+    featuredImg: "/images/galleries/atmos/0226/atmos02266.jpg",
+  },
+  {
     slug: atmosSlug.replace("{date}", "0126"),
     directory: atmosDirectory.replace("{date}", "0126"),
-    title: "Atmosphere, Augusta GA, January 2026",
+    title: "Atmosphere January 2026",
+    featuredImg: "/images/galleries/atmos/0126/atmos012610.jpg",
   },
   {
     slug: "atmos2025",
     directory: atmosDirectory.replace("{date}", "2025"),
-    title: "Atmosphere, Augusta GA, 2025",
+    title: "Atmosphere 2025",
+    featuredImg: "/images/galleries/atmos/2025/atmos092520.jpg",
   },
 ];
 
@@ -157,6 +166,7 @@ export const strings = {
   tips: "Tips",
   about: "About",
   portfolio: "Portfolio",
+  galleries: "Galleries",
 };
 
 export const navigation = [
@@ -164,8 +174,9 @@ export const navigation = [
     id: "main",
     customClass: "flex w-full justify-center gap-3",
     items: [
-      <a href="/">{strings.portfolio}</a>,
       <a href="/about">{strings.about}</a>,
+      <a href="/">{strings.portfolio}</a>,
+      <a href="/gallery">{strings.galleries}</a>,
       <a href={settings.pricelist}>{strings.prices}</a>,
       <a href="/contact">{strings.contact}</a>,
     ],
