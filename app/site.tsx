@@ -12,7 +12,8 @@ export const settings = {
   discord: "https://discord.gg/gh9TMHQsdB",
   instagram: "https://www.instagram.com/studiovonjenn/",
   pricelist: "/prices",
-  googleTagManagerId: "G-E56J5RYR35",
+  googleTagManagerId: "GTM-KB6ZXVPL",
+  googleAnalyticsId: "G-E56J5RYR35",
   copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
   defaultFeaturedImage: "/images/jennifer-3.jpg",
 };
