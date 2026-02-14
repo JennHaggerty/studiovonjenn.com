@@ -2,11 +2,6 @@ import { settings } from "../site";
 import Nav from "./nav";
 
 const Footer = () => {
-  const copyrightText = settings.copyright.replace(
-    "{year}",
-    new Date().getFullYear().toString(),
-  );
-
   return (
     <footer>
       <div className="flex flex-col md:flex-row w-full space-between max-w-[var(--max-width)] mx-auto gap-5 p-[2em]">
@@ -19,7 +14,7 @@ const Footer = () => {
           <Nav id="main" customClass="flex flex-col gap-3" />
         </div>
       </div>
-      <p className="mt-2">{copyrightText}</p>
+      <p className="mt-2">{settings.copyright}</p>
     </footer>
   );
 };

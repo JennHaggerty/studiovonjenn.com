@@ -14,7 +14,16 @@ export const settings = {
   pricelist: "/prices",
   googleTagManagerId: "GTM-KB6ZXVPL",
   googleAnalyticsId: "G-E56J5RYR35",
-  copyright: "Copyright © {year} Jennifer Haggerty. All rights reserved.",
+  copyright: (
+    <>
+      Copyright © {new Date().getFullYear().toString()} all rights reserved.
+      Website designed and developed by{" "}
+      <a href="https://jenniferhaggerty.com" target="_blank">
+        Jennifer Haggerty
+      </a>
+      .
+    </>
+  ),
   defaultFeaturedImage: "/images/jennifer-3.jpg",
 };
 
