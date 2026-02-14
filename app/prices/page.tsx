@@ -1,5 +1,11 @@
-import { prices as recipes, strings } from "@/app/site";
+import { prices as recipes, settings, strings } from "@/app/site";
 import HeaderElement from "../components/header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: settings.name + " | Portrait Photography Prices",
+  description: "Transparent pricing and creative artistry.",
+};
 
 export default async function Page({
   params,

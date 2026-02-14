@@ -1,5 +1,12 @@
 import { settings, strings } from "../site";
 import HeaderElement from "../components/header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: settings.name + " | Book Your Photographer",
+  description:
+    "Email Jennifer at thejenniferhaggerty@gmail.com to book your fine art portrait photography session.",
+};
 
 export default async function Page({
   params,

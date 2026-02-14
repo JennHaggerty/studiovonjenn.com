@@ -1,5 +1,12 @@
-import { cv, portfolioImages, strings } from "../site";
+import { portfolioImages, settings, strings } from "../site";
 import HeaderElement from "../components/header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: settings.name + " | Fine Art Portrait Photography Portfolio",
+  description:
+    "A curated collection of fine art portrait photography by Jennifer Haggerty.",
+};
 
 export default async function Page({
   params,

@@ -1,6 +1,13 @@
 import { settings, strings } from "../site";
 import HeaderElement from "../components/header";
 import { galleries } from "@/app/site";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: settings.name + " | Gallery of Photography",
+  description:
+    "Collections and galleries of fine art photography and studio artworks.",
+};
 
 export default async function Page() {
   const items = galleries;
