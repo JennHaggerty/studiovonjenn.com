@@ -3,7 +3,7 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.name + " | Portrait Photography Prices",
+  title: settings.name + " | Prices",
   description: "Transparent pricing and creative artistry.",
 };
 
