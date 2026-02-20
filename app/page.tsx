@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 import { cv, portfolioImages, settings, strings } from "./site";
 import Nav from "./components/nav";
+import Contact from "./components/contact";
 
 export const metadata: Metadata = {
   title: settings.name,
@@ -30,6 +31,7 @@ export default function Home() {
       <div className="primary-bg">
         <div className="col-2-img-right">
           <div className="col col-text flex flex-col gap-2">
+            <Contact />
             {cv.map((item, i) => (
               <div key={`cv-item-${i}`}>
                 {item.title}

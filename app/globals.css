@@ -21,10 +21,10 @@
   --black-100: #1c1118;
   --black-200: #3b3f3f;
   --primary-000: #f50000;
-  --primary-100: #720000;
-  --primary-200: #ff7070;
-  --accent-000: #284c52;
-  --accent-100: #03a7c4;
+  --primary-100: #4a0404;
+  --primary-200: #f99191;
+  --accent-000: #044a4a;
+  --accent-100: #2b9fa3;
 
   --primary-000-rgba: 245, 0, 0;
   --primary-100-rgba: 114, 0, 0;
@@ -100,26 +100,24 @@ p {
 }
 
 a,
-nav ul li a {
-  color: var(--accent-100);
-  text-decoration: var(--link-text-decoration);
-  font-weight: var(--link-font-weight);
-
-  &:hover {
-    color: var(--link-hover-color);
-    cursor: pointer;
-  }
-}
-
-.a:hover {
-  color: var(--link-hover-color);
-  cursor: pointer;
-}
-
-main a {
+.primary-bg a {
   color: var(--link-color);
   text-decoration: var(--link-text-decoration);
   font-weight: var(--link-font-weight);
+}
+
+nav ul li a,
+.outline a,
+footer p a {
+  color: var(--accent-100);
+  text-decoration: var(--link-text-decoration);
+  font-weight: var(--link-font-weight);
+}
+
+a:hover,
+.a:hover {
+  color: var(--link-hover-color);
+  cursor: pointer;
 }
 
 button,
