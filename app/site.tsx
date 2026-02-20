@@ -211,8 +211,8 @@ export const navigation = [
     id: "main",
     customClass: "flex w-full justify-center gap-3",
     items: [
-      <a href="/about">{strings.about}</a>,
       <a href="/">{strings.portfolio}</a>,
+      <a href="/about">{strings.about}</a>,
       <a href="/gallery">{strings.galleries}</a>,
       <a href={settings.pricelist}>{strings.prices}</a>,
       <a href="/contact">{strings.contact}</a>,

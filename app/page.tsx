@@ -12,16 +12,16 @@ export default function Home() {
   return (
     <>
       <div className="header p-2!">
-        <div className="outline m-auto!">
+        <div className="outline m-auto! w-full">
           <h1>{settings.name}</h1>
           <h2>{settings.description}</h2>
-          <p className="note mb-3">{settings.note}</p>
+          <p className=" mb-3 max-w-[500px] mx-auto">{settings.note}</p>
+          <Nav
+            customClass="flex! mb-2 align-center justify-center gap-5"
+            id="main"
+          />
         </div>
       </div>
-      <Nav
-        customClass="flex! mb-2 align-center justify-center gap-5"
-        id="main"
-      />
       <div className="portfolio">
         {portfolioImages.map((image, i) => (
           <img key={`portfolio-image-${i}`} src={image.src} alt={image.alt} />

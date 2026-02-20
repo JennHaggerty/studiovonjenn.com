@@ -8,12 +8,12 @@ const HeaderElement = (props: Props) => {
   const { title } = props;
 
   return (
-    <div className="header">
-      <div className="outline mx-auto!">
+    <div className="header p-2">
+      <div className="outline mx-auto! w-full">
         <h1>{title}</h1>
-      </div>
-      <div className="mb-2 mx-auto">
-        <Nav id="main" customClass="flex flex-row gap-5" />
+        <div className="mb-2 mx-auto!">
+          <Nav id="main" customClass="flex flex-row gap-5 justify-center" />
+        </div>
       </div>
     </div>
   );

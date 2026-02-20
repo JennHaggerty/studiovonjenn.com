@@ -37,7 +37,7 @@ export default async function Page({
                 <a target="_blank" href="http://www.lcnaugusta.com/">
                   Le Chat Noir
                 </a>{" "}
-                at 304 8th Street in Augusta Georgia, from 8:30pm — 2:00am for{" "}
+                at 304 8th Street in Augusta Georgia, from 8:30pm — 12:00am for{" "}
                 <a href="https://www.facebook.com/p/Atmosphere-Augusta-100088686398685/">
                   Atmosphere
                 </a>
