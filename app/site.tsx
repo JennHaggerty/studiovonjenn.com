@@ -25,6 +25,15 @@ export const settings = {
     </>
   ),
   defaultFeaturedImage: "/images/jennifer-3.jpg",
+  meta: {
+    title: "Jennifer Haggerty | Portrait Photographer | Augusta, GA",
+    description:
+      "Portrait Photographer specializing in fine art dark fantasy with a painter style.",
+    keywords: `Portrait Photographer, Portrait Photography, Fine Art Photography, 
+      Gothic Art, Alternative Photographer, Editorial Photographer, 
+      Event Photographer, Renaissance Photographer, Fantasy Photographer,
+      Photo-Booth Photographer, Local Photo-Booth`,
+  },
 };
 
 export const defaultGalleryDescription = (

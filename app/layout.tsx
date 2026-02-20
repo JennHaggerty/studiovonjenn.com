@@ -14,8 +14,9 @@ const cormorantSerif = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: settings.name,
-  description: settings.description,
+  title: settings.meta.title,
+  description: settings.meta.description,
+  keywords: settings.meta.keywords,
 };
 
 export default function RootLayout({
