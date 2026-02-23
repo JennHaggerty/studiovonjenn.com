@@ -8,7 +8,7 @@ export const settings = {
   name: "Jennifer Haggerty",
   siteName: "Portrait Photography",
   description: "by Jennifer in Augusta, Georgia.",
-  note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
+  note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street in Augusta, GA. Available for events and private sessions.",
   email: "thejenniferhaggerty@gmail.com",
   discord: "https://discord.gg/gh9TMHQsdB",
   instagram: "https://www.instagram.com/studiovonjenn/",
@@ -206,6 +206,8 @@ export const strings = {
   portfolio: "Portfolio",
   galleries: "Galleries",
   blog: "Blog",
+  instagram: "Instagram",
+  email: "Email",
 };
 
 export const navigation = [
@@ -218,6 +220,15 @@ export const navigation = [
       <a href="/gallery">{strings.galleries}</a>,
       <a href={settings.pricelist}>{strings.prices}</a>,
       <a href="/contact">{strings.contact}</a>,
+    ],
+  },
+  {
+    id: "socials",
+    customClass: "flex w-full justify-center gap-3",
+    items: [
+      <a href={settings.discord}>{strings.discord}</a>,
+      <a href={settings.instagram}>{strings.instagram}</a>,
+      <a href={settings.email}>{strings.email}</a>,
     ],
   },
 ];

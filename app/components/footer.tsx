@@ -9,9 +9,13 @@ const Footer = () => {
           <h3 className="">{settings.siteName}</h3>
           <p>{settings.description}</p>
         </div>
-        <div className="w-full md:w-1/4 m-auto">
+        <div className="w-full md:w-1/4 mx-auto">
           <h3 className="mb-2">Menu</h3>
           <Nav id="main" customClass="flex flex-col gap-3" />
+        </div>
+        <div className="w-full md:w-1/4 mx-auto">
+          <h3 className="mb-2">Connect</h3>
+          <Nav id="socials" customClass="flex flex-col gap-3" />
         </div>
       </div>
       <p className="mt-2">{settings.copyright}</p>
