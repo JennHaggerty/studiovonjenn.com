@@ -26,7 +26,7 @@ export default async function Page() {
               </div>
               <img
                 alt=""
-                className="object-cover h-full w-full grayscale hover:grayscale-0 duration-300 ease-in-out"
+                className="object-cover h-screen w-full grayscale hover:grayscale-0 duration-300 ease-in-out"
                 src={item.featuredImg || settings.defaultFeaturedImage}
               />
             </a>
