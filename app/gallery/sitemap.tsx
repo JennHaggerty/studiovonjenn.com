@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { galleries } from "../../app/site";
+import { galleries } from "../../app/site/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return galleries.map((item) => ({

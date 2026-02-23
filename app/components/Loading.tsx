@@ -1,4 +1,4 @@
-import { strings } from "../site";
+import { strings } from "../site/site";
 
 interface Props {
   text?: string;

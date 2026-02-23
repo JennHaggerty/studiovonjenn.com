@@ -1,20 +1,20 @@
 import { Metadata } from "next";
 
-import { cv, portfolioImages, settings, strings } from "./site";
+import { cv, portfolioImages, settings, strings } from "./site/site";
 import Nav from "./components/nav";
 import Contact from "./components/contact";
 
 export const metadata: Metadata = {
-  title: settings.name,
+  title: settings.siteName,
   description: settings.description,
 };
 
 export default function Home() {
   return (
     <>
-      <div className="header p-2!">
+      <div className="header">
         <div className="outline m-auto! w-full">
-          <h1>{settings.name}</h1>
+          <h1>{settings.siteName}</h1>
           <h2>{settings.description}</h2>
           <p className=" mb-3 max-w-[500px] mx-auto">{settings.note}</p>
           <Nav

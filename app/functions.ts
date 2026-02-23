@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import { galleries } from "./site";
+import { galleries } from "./site/site";
+import { PostInterface } from "./interfaces";
+import { posts } from "./site/blog";
 
 interface Gallery {
   slug: string;
@@ -113,4 +115,12 @@ export const getGallery = async (
   const gallery = galleries.find((item) => item.slug === slug);
 
   return gallery;
+};
+
+export const getPost = async (
+  slug: string,
+): Promise<PostInterface | undefined> => {
+  const post = posts.find((item) => item.slug === slug);
+
+  return post;
 };

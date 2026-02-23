@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import { settings } from "./site";
+import { settings } from "./site/site";
 import Footer from "./components/footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 

@@ -1,9 +1,9 @@
-import { prices as recipes, settings, strings } from "@/app/site";
+import { prices as recipes, settings, strings } from "@/app/site/site";
 import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.name + " | Prices",
+  title: settings.siteName + " | Prices",
   description: "Transparent pricing and creative artistry.",
 };
 

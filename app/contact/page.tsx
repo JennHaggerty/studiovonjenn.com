@@ -1,10 +1,10 @@
-import { settings, strings } from "../site";
+import { settings, strings } from "../site/site";
 import HeaderElement from "../components/header";
 import { Metadata } from "next";
 import Contact from "../components/contact";
 
 export const metadata: Metadata = {
-  title: settings.name + " | Book Your Photographer",
+  title: settings.siteName + " | Book Your Photographer",
   description:
     "Email Jennifer at thejenniferhaggerty@gmail.com to book your fine art portrait photography session.",
 };

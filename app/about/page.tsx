@@ -1,9 +1,9 @@
-import { cv, settings, strings } from "../site";
+import { cv, settings, strings } from "../site/site";
 import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.name + " | About the Photographer",
+  title: settings.siteName + " | About the Photographer",
   description:
     "Jennifer Haggerty is a fine art portrait photographer from Germany living and working in Augusta, GA.",
 };

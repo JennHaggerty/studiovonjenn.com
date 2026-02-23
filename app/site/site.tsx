@@ -1,11 +1,12 @@
-import { GalleryInterface } from "./interfaces";
+import { GalleryInterface } from "../interfaces";
 import Link from "next/link";
 
 const atmosSlug = "atmos{date}";
 const atmosDirectory = "/images/galleries/atmos/{date}/";
 
 export const settings = {
-  name: "Portrait Photography",
+  name: "Jennifer Haggerty",
+  siteName: "Portrait Photography",
   description: "by Jennifer in Augusta, Georgia.",
   note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street. Available for events and private sessions.",
   email: "thejenniferhaggerty@gmail.com",
@@ -17,19 +18,19 @@ export const settings = {
   copyright: (
     <>
       Copyright © {new Date().getFullYear().toString()} all rights reserved.
-      Website designed and developed by{" "}
+      Website by{" "}
       <a href="https://jenniferhaggerty.com" target="_blank">
-        Jennifer Haggerty
+        Jennifer
       </a>
       .
     </>
   ),
   defaultFeaturedImage: "/images/jennifer-3.jpg",
   meta: {
-    title: "Jennifer Haggerty | Portrait Photographer | Augusta, GA",
+    title: "Jennifer Haggerty | Fine Art Photographer | Augusta, GA",
     description:
-      "Portrait Photographer specializing in fine art dark fantasy with a painter style.",
-    keywords: `Portrait Photographer, Portrait Photography, Fine Art Photography, 
+      "Fine Art portrait Photographer specializing in gothic fantasy with a painter's style.",
+    keywords: `Portrait Photographer, Portrait Photography, Fine Art Photography, Fine Art Photographer,
       Gothic Art, Alternative Photographer, Editorial Photographer, 
       Event Photographer, Renaissance Photographer, Fantasy Photographer,
       Photo-Booth Photographer, Local Photo-Booth`,
@@ -204,6 +205,7 @@ export const strings = {
   about: "About",
   portfolio: "Portfolio",
   galleries: "Galleries",
+  blog: "Blog",
 };
 
 export const navigation = [

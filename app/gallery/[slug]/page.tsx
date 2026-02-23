@@ -1,5 +1,5 @@
 import { customStringSort, getGallery } from "@/app/functions";
-import { defaultGalleryDescription, galleries } from "@/app/site";
+import { defaultGalleryDescription, galleries } from "@/app/site/site";
 import { promises as fs } from "fs";
 import path from "path";
 import HeaderElement from "@/app/components/header";

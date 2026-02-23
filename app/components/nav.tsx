@@ -1,4 +1,4 @@
-import { navigation } from "../site";
+import { navigation } from "../site/site";
 
 interface Props {
   id: string;

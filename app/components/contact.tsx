@@ -1,4 +1,4 @@
-import { settings } from "../site";
+import { settings } from "../site/site";
 
 const Contact = () => {
   return (
