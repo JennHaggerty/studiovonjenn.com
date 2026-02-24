@@ -30,7 +30,7 @@ export const settings = {
     title:
       "Jennifer Haggerty | Fine Art Photography & Portrait Photographer | Augusta, GA",
     description:
-      "Fine Art portrait Photographer specializing in gothic fantasy with a painter's style.",
+      "Fine Art portrait Photographer specializing in gothic fantasy with a painter's style in Augusta, GA. Book your fantastical photo-shoot today!",
     keywords: `Portrait Photographer, Portrait Photography, Fine Art Photography, Fine Art Photographer,
       Gothic Art, Alternative Photographer, Editorial Photographer, 
       Event Photographer, Renaissance Photographer, Fantasy Photographer,
