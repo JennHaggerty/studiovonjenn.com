@@ -10,7 +10,7 @@ const montserratSans = Montserrat({
 
 const cormorantSerif = Cormorant_Garamond({
   variable: "--font-serif",
-});\
+});
 
 export default function RootLayout({
   children,
