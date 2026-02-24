@@ -5,8 +5,9 @@ import Nav from "./components/nav";
 import Contact from "./components/contact";
 
 export const metadata: Metadata = {
-  title: settings.siteName,
-  description: settings.description,
+  title: settings.meta.title,
+  description: settings.meta.description,
+  keywords: settings.meta.keywords,
 };
 
 export default function Home() {

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { settings } from "./site/site";
@@ -11,13 +10,7 @@ const montserratSans = Montserrat({
 
 const cormorantSerif = Cormorant_Garamond({
   variable: "--font-serif",
-});
-
-export const metadata: Metadata = {
-  title: settings.meta.title,
-  description: settings.meta.description,
-  keywords: settings.meta.keywords,
-};
+});\
 
 export default function RootLayout({
   children,
