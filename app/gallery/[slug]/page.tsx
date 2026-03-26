@@ -1,8 +1,35 @@
 import { customStringSort, getGallery } from "@/app/functions";
-import { defaultGalleryDescription, galleries } from "@/app/site/site";
+import {
+  defaultGalleryDescription,
+  galleries,
+  settings,
+} from "@/app/site/site";
 import { promises as fs } from "fs";
 import path from "path";
 import HeaderElement from "@/app/components/header";
+import { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = (await params).slug;
+
+  // fetch post information
+  const gallery = await getGallery(slug);
+
+  return {
+    title: gallery ? gallery.title : "Gallery",
+    description: gallery ? gallery.description : " ",
+    alternates: {
+      canonical: new URL(slug, settings.domain),
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return galleries.map((gallery) => ({
@@ -10,13 +37,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{
-    slug: string;
-  }>;
-}) {
+export default async function Page({ params }: Props) {
   const { slug } = await params;
   const gallery = await getGallery(slug);
 
@@ -39,6 +60,9 @@ export default async function Page({
           title={gallery.title ? gallery.title : "Photo Gallery"}
         />
         <div className="p-[2em] primary-bg">
+          <div className="text-center">
+            <h2>Welcome to the Gallery</h2>
+          </div>
           <div className=" max-w-[var(--max-width)] m-auto">
             {gallery.description
               ? gallery.description

@@ -3,8 +3,11 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.siteName + " | Prices",
-  description: "Transparent pricing and creative artistry.",
+  title: "Prices | " + settings.meta.title,
+  description: "Transparent pricing of the portrait photography services.",
+  alternates: {
+    canonical: settings.domain + "/prices",
+  },
 };
 
 export default async function Page({
@@ -19,6 +22,9 @@ export default async function Page({
       <HeaderElement title={strings.prices} />
 
       <div className="primary-bg">
+        <div className="text-center pt-[2em]">
+          <h2>Welcome to the pricing page</h2>
+        </div>
         <div className="flex flex-col gap-3 m-auto p-[2em] max-w-[var(--max-width)]">
           {recipes.map((recipe, i) => (
             <div key={`pricing-${i}`}>
@@ -26,7 +32,7 @@ export default async function Page({
 
               <div className="flex justify-between">
                 <div>
-                  <h2 className="text-4xl!">{recipe.name}</h2>
+                  <h3 className="h2 text-4xl!">{recipe.name}</h3>
 
                   {recipe.time && (
                     <p>
@@ -109,7 +115,7 @@ export default async function Page({
                       <img
                         className="h-full w-full object-cover"
                         src={recipe.image}
-                        alt=""
+                        alt=" "
                       />
                     </div>
                   )}

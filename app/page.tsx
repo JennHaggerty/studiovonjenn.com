@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: settings.meta.title,
   description: settings.meta.description,
   keywords: settings.meta.keywords,
+  alternates: {
+    canonical: settings.domain,
+  },
 };
 
 export default function Home() {
@@ -32,13 +35,14 @@ export default function Home() {
       <div className="primary-bg">
         <div className="col-2-img-right">
           <div className="col col-text flex flex-col gap-2">
-            <Contact />
             {cv.map((item, i) => (
               <div key={`cv-item-${i}`}>
                 {item.title}
                 {item.content}
               </div>
             ))}
+            <h3 className="h2 text-4xl!">Contact</h3>
+            <Contact />
           </div>
           <div className="col col-image">
             <img src={`/images/ophelia-1.jpg`} alt="Ophelia in the waters" />

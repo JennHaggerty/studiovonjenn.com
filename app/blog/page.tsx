@@ -4,9 +4,8 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.siteName + " | Blog ",
-  description:
-    "Collections and galleries of fine art photography and studio artworks.",
+  title: "Blurbs from a " + settings.meta.title,
+  description: "Writings, posted sparingly, about art --mostly.",
 };
 
 export default async function Page() {

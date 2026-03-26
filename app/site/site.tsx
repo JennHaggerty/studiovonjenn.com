@@ -3,11 +3,16 @@ import Link from "next/link";
 
 const atmosSlug = "atmos{date}";
 const atmosDirectory = "/images/galleries/atmos/{date}/";
+const env = process.env.NODE_ENV;
 
 export const settings = {
+  domain:
+    env === "development"
+      ? "http://localhost:3000"
+      : "https://studiovonjenn.com",
   name: "Jennifer Haggerty",
   siteName: "Portrait Photography",
-  description: "by Jennifer in Augusta, Georgia.",
+  description: "Artistic portraiture in Augusta, GA.",
   note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street in Augusta, GA. Available for events and private sessions.",
   email: "thejenniferhaggerty@gmail.com",
   discord: "https://discord.gg/gh9TMHQsdB",
@@ -19,7 +24,7 @@ export const settings = {
     <>
       Copyright © {new Date().getFullYear().toString()} all rights reserved.
       Website by{" "}
-      <a href="https://jenniferhaggerty.com" target="_blank">
+      <a href="https://jenniferhaggerty.com" target="_blank" rel="noopener">
         Jennifer
       </a>
       .
@@ -27,8 +32,7 @@ export const settings = {
   ),
   defaultFeaturedImage: "/images/jennifer-3.jpg",
   meta: {
-    title:
-      "Jennifer Haggerty | Fine Art Photography & Portrait Photographer | Augusta, GA",
+    title: "Portrait Photographer in Augusta, GA 30901",
     description:
       "Fine Art portrait Photographer specializing in gothic fantasy with a painter's style in Augusta, GA. Book your fantastical photo-shoot today!",
     keywords: `Portrait Photographer, Portrait Photography, Fine Art Photography, Fine Art Photographer,
@@ -227,9 +231,9 @@ export const navigation = [
     id: "socials",
     customClass: "flex w-full justify-center gap-3",
     items: [
+      <a href={`mailto:${settings.email}`}>{strings.email}</a>,
       <a href={settings.discord}>{strings.discord}</a>,
       <a href={settings.instagram}>{strings.instagram}</a>,
-      <a href={settings.email}>{strings.email}</a>,
     ],
   },
 ];
@@ -321,15 +325,15 @@ export const portfolioImages = [
   },
   {
     src: "/images/egan-3.jpg",
-    alt: "Egan wearing black horns, a red heart eye patch, and pentagram top for Gothesque Magazine",
+    alt: "Egan in gothic fantasy fashion for Gothesque Magazine",
   },
   {
     src: "/images/egan-2.jpg",
-    alt: "gan is wearing ram horns and a white dress personifying Aries in this Gothesque editorial portrait",
+    alt: "Egan is personifying Aries in a fashion portrait for Gothesque Magazine",
   },
   {
     src: "/images/egan-1.jpg",
-    alt: "Statuesque beauty",
+    alt: "Egan in a gothic editorial for Gothesque Magazine",
   },
 ];
 
@@ -350,20 +354,28 @@ export const cv = [
     content: (
       <ul>
         <li>
-          <a target="_blank" href="https://gothesquemagazine.com/">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://gothesquemagazine.com/"
+          >
             Gothesque Magazine
           </a>{" "}
           issue #88 Augusta, GA 2020
         </li>
         <li>Gothesque Magazine August issue Austin, TX 2016</li>
         <li>
-          <a target="_blank" href="https://tenebrousmag.com/">
+          <a target="_blank" rel="noopener" href="https://tenebrousmag.com/">
             Tenebrous Mag
           </a>{" "}
           issue #8 New York, NY 2014
         </li>
         <li>
-          <a target="_blank" href="https://beautifulbizarre.net/">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://beautifulbizarre.net/"
+          >
             Beautiful Bizarre Magazine
           </a>{" "}
           New York, NY 2014
@@ -376,6 +388,7 @@ export const cv = [
         <li>
           <a
             target="_blank"
+            rel="noopener"
             href="https://www.instagram.com/darkbeautymag/?hl=en"
           >
             Dark Beauty Magazine
@@ -386,7 +399,7 @@ export const cv = [
         <li>Strange Beauty Magazine premier issue New York, NY 2013</li>
         <li>Dark Beauty Magazine issue #19 New York, NY 2013</li>
         <li>
-          <a target="_blank" href="https://www.pfmagazine.net/">
+          <a target="_blank" rel="noopener" href="https://www.pfmagazine.net/">
             Photographer’s Forum Magazine
           </a>{" "}
           Columbia, SC 2011
@@ -401,7 +414,11 @@ export const cv = [
         <li>Art & Soul Gallery in Aiken, South Carolina, 2022-2023</li>
         <li>Meadowlands Museum in Rutherford, New Jersey, 2013</li>
         <li>
-          <a target="_blank" href="https://www.cityartonline.com/">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.cityartonline.com/"
+          >
             City Art
           </a>{" "}
           in Columbia, South Carolina, 2012

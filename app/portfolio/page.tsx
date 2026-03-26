@@ -3,9 +3,12 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.siteName + " | Fine Art Portrait Photography Portfolio",
+  title: "Portfolio of " + settings.meta.title,
   description:
-    "A curated collection of fine art portrait photography by Jennifer Haggerty.",
+    "A curated collection of fine art portrait photography by Jennifer.",
+  alternates: {
+    canonical: settings.domain + "/portfolio",
+  },
 };
 
 export default async function Page({

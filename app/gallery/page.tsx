@@ -3,9 +3,12 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.meta.title + " | Gallery",
+  title: "Galleries of " + settings.meta.title,
   description:
     "Collections and galleries of fine art photography and studio artworks.",
+  alternates: {
+    canonical: settings.domain + "/gallery",
+  },
 };
 
 export default async function Page() {
@@ -14,6 +17,9 @@ export default async function Page() {
     <>
       <HeaderElement title={strings.galleries} />
       <div className="max-w-[var(--max-width)]  mx-auto">
+        <div className="text-center my-[2em]">
+          <h2>Click a photo to see more in their gallery</h2>
+        </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <a
@@ -25,7 +31,7 @@ export default async function Page() {
                 <span className="text-lg">{item.title}</span>
               </div>
               <img
-                alt=""
+                alt=" "
                 className="object-cover h-screen w-full grayscale hover:grayscale-0 duration-300 ease-in-out"
                 src={item.featuredImg || settings.defaultFeaturedImage}
               />

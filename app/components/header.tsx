@@ -3,7 +3,7 @@ import { settings } from "../site/site";
 import Nav from "./nav";
 
 interface Props {
-  title: string;
+  title?: string;
 }
 
 const HeaderElement = (props: Props) => {
@@ -18,9 +18,7 @@ const HeaderElement = (props: Props) => {
               {settings.siteName}
             </Link>
           </div>
-          <div>
-            <h1>{title}</h1>
-          </div>
+          <div>{title && <h1>{title}</h1>}</div>
           <Nav
             id="main"
             customClass="flex flex-row gap-5 justify-center lg:justify-end"
