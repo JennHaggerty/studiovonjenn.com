@@ -7,7 +7,7 @@ interface Gallery {
   slug: string;
   directory: string;
   title?: string;
-  description?: string;
+  description?: string | React.ReactElement;
 }
 
 const jsonHeaders = {

@@ -1,12 +1,10 @@
-import { ReactElement } from "react";
-
 export interface GalleryInterface {
   title: string;
   slug: string;
   directory: string;
   imgAlt?: string;
   featuredImg?: string;
-  description?: string | ReactElement;
+  description?: string | React.ReactElement;
 }
 
 export interface File {
