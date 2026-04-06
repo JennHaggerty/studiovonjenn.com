@@ -3,7 +3,7 @@ import { settings } from "../site/site";
 const Contact = () => {
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="text-4xl!">Hey there,</h2>
+      <span className="h2 text-4xl!">Hey there,</span>
       <p>
         Ready to make some art? Email me at{" "}
         <a href={`mailto:${settings.email}`}>{settings.email}</a>.

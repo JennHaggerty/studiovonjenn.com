@@ -3,7 +3,7 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: settings.meta.title + " | Gallery",
+  title: "Fine Art Portraiture Galleries | 30901",
   description:
     "Collections and galleries of fine art photography and studio artworks.",
 };

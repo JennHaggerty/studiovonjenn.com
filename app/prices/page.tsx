@@ -4,7 +4,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: settings.siteName + " | Prices",
-  description: "Transparent pricing and creative artistry.",
+  description:
+    "Transparent pricing and creative artistry. 3 portrait packages to choose from.",
 };
 
 export default async function Page({
@@ -26,7 +27,7 @@ export default async function Page({
 
               <div className="flex justify-between">
                 <div>
-                  <h2 className="text-4xl!">{recipe.name}</h2>
+                  <h3 className="h2 text-4xl!">{recipe.name}</h3>
 
                   {recipe.time && (
                     <p>
@@ -56,7 +57,7 @@ export default async function Page({
                   <div className="w-full lg:w-1/2 mx-0! flex flex-col gap-5">
                     {recipe.includes && (
                       <div>
-                        <h3>{strings.includes}</h3>
+                        <h4 className="h3">{strings.includes}</h4>
                         <ul className="flex flex-col gap-2">
                           {recipe.includes.map((item, i) => (
                             <li key={`includes-${i}`}>{item}</li>
@@ -67,7 +68,7 @@ export default async function Page({
 
                     {recipe.addons && (
                       <div>
-                        <h3>{strings.addons}</h3>
+                        <h4 className="h3">{strings.addons}</h4>
                         <ul className="flex flex-col gap-2">
                           {recipe.addons.map((item, i) => (
                             <li
@@ -89,7 +90,7 @@ export default async function Page({
 
                     {recipe.tips && (
                       <div>
-                        <h3>{strings.tips}</h3>
+                        <h4 className="h3">{strings.tips}</h4>
                         <ul className="flex flex-col gap-2 list-disc">
                           {recipe.tips.map((item, i) => (
                             <li

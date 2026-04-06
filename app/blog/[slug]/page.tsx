@@ -1,7 +1,7 @@
 import { posts } from "@/app/site/blog";
 import HeaderElement from "@/app/components/header";
 import { getPost } from "@/app/functions";
-import { settings, strings } from "@/app/site/site";
+import { strings } from "@/app/site/site";
 
 export async function generateStaticParams() {
   return posts.map((item) => ({

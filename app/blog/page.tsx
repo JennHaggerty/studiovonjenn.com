@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: settings.siteName + " | Blog ",
   description:
-    "Collections and galleries of fine art photography and studio artworks.",
+    "A collection of writings and blog style photo journaling from Augusta GA's fine art portrait photographer",
 };
 
 export default async function Page() {
