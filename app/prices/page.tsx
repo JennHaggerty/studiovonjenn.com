@@ -21,6 +21,7 @@ export default async function Page({
 
       <div className="primary-bg">
         <div className="flex flex-col gap-3 m-auto p-[2em] max-w-[var(--max-width)]">
+          <h2>Prices</h2>
           {recipes.map((recipe, i) => (
             <div key={`pricing-${i}`}>
               {i !== 0 && <hr />}

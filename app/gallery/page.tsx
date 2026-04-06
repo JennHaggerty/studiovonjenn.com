@@ -14,6 +14,11 @@ export default async function Page() {
     <>
       <HeaderElement title={strings.galleries} />
       <div className="max-w-[var(--max-width)]  mx-auto">
+        <div className="p-[2em] primary-bg">
+          <div className=" max-w-[var(--max-width)] center">
+            <h2>Galleries</h2>
+          </div>
+        </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <a

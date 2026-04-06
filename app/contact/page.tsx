@@ -23,6 +23,7 @@ export default async function Page({
         <div className=" max-w-[var(--max-width)] mx-auto">
           <div className="col-2-img-right">
             <div className="col col-text">
+              <h2>Contact</h2>
               <Contact />
             </div>
             <div className="col col-image">

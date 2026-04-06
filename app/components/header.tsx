@@ -16,10 +16,9 @@ const HeaderElement = (props: Props) => {
           <Nav customClass="flex gap-5 m-auto align-middle" id="main" />
         </div>
         <div className="flex gap-3 my-auto">
-          {title && <h2 className="bold">{title}</h2>}
           <a
             href={`mailto:${settings.email}`}
-            className="p-3 bg-[var(--primary-100)] text-[var(--primary-200)]! rounded-sm hover:bg-[var(--primary-000)] hover:text-white!"
+            className="p-3 w-full bg-[var(--primary-100)] text-[var(--primary-200)]! rounded-sm hover:bg-[var(--primary-000)] hover:text-white!"
           >
             Book
           </a>
