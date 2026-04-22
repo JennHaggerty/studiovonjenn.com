@@ -11,9 +11,9 @@ export const settings = {
       ? "http://localhost:3000"
       : "https://studiovonjenn.com",
   name: "Jennifer Haggerty",
-  siteName: "Portrait Photography",
+  siteName: "Studio von Jennifer",
   description: "Artistic portraiture in Augusta, GA.",
-  note: "Specializing in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street in Augusta, GA. Available for events and private sessions.",
+  note: "Jennifer specializes in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street in Augusta, GA. Available for events and private sessions.",
   email: "thejenniferhaggerty@gmail.com",
   discord: "https://discord.gg/gh9TMHQsdB",
   instagram: "https://www.instagram.com/studiovonjenn/",
@@ -65,6 +65,15 @@ export const defaultGalleryDescription = (
 );
 
 export const galleries: GalleryInterface[] = [
+  {
+    slug: "no-kings-protest-march-28-2026",
+    directory: "/images/galleries/no-kings-march-28-2026/",
+    title: "No Kings Protest March 28, 2026",
+    description:
+      "On March 28th, 2026, Augusta GA participates in a nation-wide event protesting the Trump administration's direct attacks on immigrants and citizens. While pedophiles govern the country, the individual American is seeing their rights stripped away as the nation steers towards fascism and slavery.",
+    featuredImg:
+      "/images/galleries/no-kings-march-28-2026/No Kings 3-28-2026 (82).jpg",
+  },
   {
     slug: atmosSlug.replace("{date}", "0226"),
     directory: atmosDirectory.replace("{date}", "0226"),

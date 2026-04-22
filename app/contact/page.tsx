@@ -24,8 +24,8 @@ export default async function Page({
       <HeaderElement title={strings.contact} />
       <div className="primary-bg">
         <div className=" max-w-[var(--max-width)] mx-auto">
-          <div className="col-2-img-right">
-            <div className="col col-text min-h-[25vh]">
+          <div className="col-2-img-right lg:h-screen ">
+            <div className="col col-text">
               <div className="pt-6">
                 <h2>Let's make some art</h2>
                 <Contact />
@@ -33,6 +33,7 @@ export default async function Page({
             </div>
             <div className="col col-image">
               <img
+                className="h-full"
                 src={`/images/karinA.jpg`}
                 alt="Portrait of woman with red hair and wearing a white dress"
               />
