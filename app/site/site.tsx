@@ -11,9 +11,9 @@ export const settings = {
       ? "http://localhost:3000"
       : "https://studiovonjenn.com",
   name: "Jennifer Haggerty",
-  siteName: "Studio von Jennifer",
-  description: "Artistic portraiture in Augusta, GA.",
-  note: "Jennifer specializes in Gothic Renaissance and the painterly style. Posted monthly on the first Saturday at Le Chat Noir on 8th Street in Augusta, GA. Available for events and private sessions.",
+  siteName: "Jennifer Haggerty",
+  description: "Fine art portrait photographer in Augusta, Georgia.",
+  note: "Specializing in Gothic Renaissance and the painterly style. Available for events and private sessions.",
   email: "thejenniferhaggerty@gmail.com",
   discord: "https://discord.gg/gh9TMHQsdB",
   instagram: "https://www.instagram.com/studiovonjenn/",
@@ -66,6 +66,12 @@ export const defaultGalleryDescription = (
 
 export const galleries: GalleryInterface[] = [
   {
+    slug: atmosSlug.replace("{date}", "0426"),
+    directory: atmosDirectory.replace("{date}", "0426"),
+    title: "Atmosphere April 2026",
+    featuredImg: "/images/galleries/atmos/0426/atmos04261.jpg",
+  },
+  {
     slug: "no-kings-protest-march-28-2026",
     directory: "/images/galleries/no-kings-march-28-2026/",
     title: "No Kings Protest March 28, 2026",
@@ -91,6 +97,19 @@ export const galleries: GalleryInterface[] = [
     directory: "/images/galleries/pirate-party-1125/",
     title: "Annual Buccaneer's Party",
     featuredImg: "/images/galleries/pirate-party-1125/pirateparty11202537.jpg",
+    description: (
+      <div className="flex flex-col gap-2">
+        <p>
+          Images are for personal use only and may not be used commercially;
+          selling prints, advertisements, representing goods and services, and
+          editing/retouching/alterations/manipulations to the images are
+          prohibited. Inquires to request commercial licenses, prints, and
+          personal printing licenses may be sent to{" "}
+          <a href={`mailto:${settings.email}`}>thejenniferhaggerty@gmail.com</a>
+          .
+        </p>
+      </div>
+    ),
   },
   {
     slug: atmosSlug.replace("{date}", "1125"),
@@ -230,8 +249,8 @@ export const navigation = [
     customClass: "flex w-full justify-center gap-3",
     items: [
       <a href="/">{strings.portfolio}</a>,
-      <a href="/about">{strings.about}</a>,
       <a href="/gallery">{strings.galleries}</a>,
+      <a href="/about">{strings.about}</a>,
       <a href={settings.pricelist}>{strings.prices}</a>,
       <a href="/contact">{strings.contact}</a>,
     ],

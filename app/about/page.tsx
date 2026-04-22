@@ -1,14 +1,11 @@
-import { cv, settings, strings } from "../site/site";
+import { cv, strings } from "../site/site";
 import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About a " + settings.meta.title,
+  title: "About Augusta GA's portrait photographer | 30901",
   description:
-    "Jennifer Haggerty is a fine art portrait photographer from Germany living and working in Augusta, GA.",
-  alternates: {
-    canonical: settings.domain + "/about",
-  },
+    "Jennifer is a fine art portrait photographer from Germany living and working in Augusta, GA.",
 };
 
 export default async function Page({
@@ -25,9 +22,7 @@ export default async function Page({
         <div className=" max-w-[var(--max-width)] mx-auto">
           <div className="col-2-img-right">
             <div className="col col-text flex flex-col gap-2">
-              <h2 className="text-lg capitalize">
-                Augusta's portrait photographer
-              </h2>
+              <h2>About</h2>
               {cv.map((item, i) => (
                 <div key={`cv-item-${i}`}>
                   {item.title}

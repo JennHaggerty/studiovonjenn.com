@@ -1,11 +1,12 @@
 import { settings, strings } from "../site/site";
-import { posts } from "../site/blog";
 import HeaderElement from "../components/header";
+import { posts } from "../site/blog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blurbs from a " + settings.meta.title,
-  description: "Writings, posted sparingly, about art --mostly.",
+  title: settings.siteName + " | Blog ",
+  description:
+    "A collection of writings and blog style photo journaling from Augusta GA's fine art portrait photographer",
 };
 
 export default async function Page() {

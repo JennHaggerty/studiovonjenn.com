@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { settings } from "../site/site";
 import Nav from "./nav";
 
@@ -12,17 +11,15 @@ const HeaderElement = (props: Props) => {
   return (
     <div className="header">
       <div className="outline w-full">
-        <div className="max-w-[1500px] grid grid-col-1 lg:grid-cols-3 items-center mx-auto">
-          <div className="max-md:hidden lg:text-left text-xl">
-            <Link href={"/"} className="text-white!">
-              {settings.siteName}
-            </Link>
-          </div>
-          <div>{title && <h1>{title}</h1>}</div>
-          <Nav
-            id="main"
-            customClass="flex flex-row gap-5 justify-center lg:justify-end"
-          />
+        <div className="flex flex-col m-auto align-middle gap-3">
+          <h1 className="">{settings.siteName}</h1>
+          <Nav customClass="flex gap-5 m-auto align-middle" id="main" />
+          <a
+            href={`mailto:${settings.email}`}
+            className="capitalize p-3 w-full bg-[var(--accent-000)] hover:text-black! rounded-sm hover:bg-[var(--accent-100)] text-white!"
+          >
+            Book your portrait
+          </a>
         </div>
       </div>
     </div>

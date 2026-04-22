@@ -10,11 +10,11 @@ const Footer = () => {
           <p>{settings.description}</p>
         </div>
         <div className="w-full md:w-1/4 mx-auto">
-          <h3 className="mb-2">Menu</h3>
+          <p className="mb-2">Menu</p>
           <Nav id="main" customClass="flex flex-col gap-3" />
         </div>
         <div className="w-full md:w-1/4 mx-auto">
-          <h3 className="mb-2">Social Links</h3>
+          <p className="mb-2">Connect</p>
           <Nav id="socials" customClass="flex flex-col gap-3" />
         </div>
       </div>

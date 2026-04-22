@@ -4,7 +4,7 @@ export interface GalleryInterface {
   directory: string;
   imgAlt?: string;
   featuredImg?: string;
-  description?: string;
+  description?: string | React.ReactElement;
 }
 
 export interface File {

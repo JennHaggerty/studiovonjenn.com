@@ -100,12 +100,27 @@ a,
   font-weight: var(--link-font-weight);
 }
 
+nav {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@media (max-width: 669px) {
+  nav {
+    margin: auto;
+    padding-bottom: 20px;
+  }
+}
+
 nav ul li a,
 .outline a,
 footer p a {
   color: var(--accent-100);
   text-decoration: var(--link-text-decoration);
   font-weight: var(--link-font-weight);
+
+  &:active {
+    color: var(--white-000);
+  }
 }
 
 a:hover,
@@ -432,7 +447,6 @@ a .icon:hover {
 
 .gallery,
 .portfolio {
-  @apply gap-2;
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;

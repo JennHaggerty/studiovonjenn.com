@@ -3,11 +3,9 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prices | " + settings.meta.title,
-  description: "Transparent pricing of the portrait photography services.",
-  alternates: {
-    canonical: settings.domain + "/prices",
-  },
+  title: settings.siteName + " | Prices",
+  description:
+    "Transparent pricing and creative artistry. 3 portrait packages to choose from.",
 };
 
 export default async function Page({
@@ -26,6 +24,7 @@ export default async function Page({
           <h2>Welcome to the pricing page</h2>
         </div>
         <div className="flex flex-col gap-3 m-auto p-[2em] max-w-[var(--max-width)]">
+          <h2>Prices</h2>
           {recipes.map((recipe, i) => (
             <div key={`pricing-${i}`}>
               {i !== 0 && <hr />}
@@ -62,7 +61,7 @@ export default async function Page({
                   <div className="w-full lg:w-1/2 mx-0! flex flex-col gap-5">
                     {recipe.includes && (
                       <div>
-                        <h3>{strings.includes}</h3>
+                        <h4 className="h3">{strings.includes}</h4>
                         <ul className="flex flex-col gap-2">
                           {recipe.includes.map((item, i) => (
                             <li key={`includes-${i}`}>{item}</li>
@@ -73,7 +72,7 @@ export default async function Page({
 
                     {recipe.addons && (
                       <div>
-                        <h3>{strings.addons}</h3>
+                        <h4 className="h3">{strings.addons}</h4>
                         <ul className="flex flex-col gap-2">
                           {recipe.addons.map((item, i) => (
                             <li
@@ -95,7 +94,7 @@ export default async function Page({
 
                     {recipe.tips && (
                       <div>
-                        <h3>{strings.tips}</h3>
+                        <h4 className="h3">{strings.tips}</h4>
                         <ul className="flex flex-col gap-2 list-disc">
                           {recipe.tips.map((item, i) => (
                             <li

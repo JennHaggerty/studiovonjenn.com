@@ -3,7 +3,7 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio of " + settings.meta.title,
+  title: "Fine Art Portfolio of Augusta GA's portrait photographer | 30901",
   description:
     "A curated collection of fine art portrait photography by Jennifer.",
   alternates: {

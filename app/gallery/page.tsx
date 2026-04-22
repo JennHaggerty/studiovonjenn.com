@@ -3,7 +3,7 @@ import HeaderElement from "../components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Galleries of " + settings.meta.title,
+  title: "Fine Art Portraiture Galleries | 30901",
   description:
     "Collections and galleries of fine art photography and studio artworks.",
   alternates: {
@@ -16,12 +16,12 @@ export default async function Page() {
   return (
     <>
       <HeaderElement title={strings.galleries} />
-      <div className="max-w-[var(--max-width)]  mx-auto">
-        <div className="text-center my-[2em]">
-          <h2>Click a photo to see more in their gallery</h2>
+      <div className="mx-auto">
+        <div className="p-[2em] primary-bg">
+          <div className=" max-w-[var(--max-width)] center">
+            <h2>Galleries</h2>
+          </div>
         </div>
-      </div>
-      <div>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <a
