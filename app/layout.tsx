@@ -3,6 +3,7 @@ import "./globals.css";
 import { settings } from "./site/site";
 import Footer from "./components/footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const montserratSans = Montserrat({
   variable: "--font-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({
       >
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
       <GoogleTagManager gtmId={settings.googleTagManagerId} />
       <GoogleAnalytics gaId={settings.googleAnalyticsId} />
