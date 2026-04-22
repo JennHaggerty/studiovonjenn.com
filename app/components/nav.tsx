@@ -19,7 +19,7 @@ const Nav = (props: Props) => {
     : "";
 
   return (
-    <nav>
+    <nav className="content-center m-auto max-sm:pb-[10px]">
       <ul className={`${concatCss}`}>
         {menu.items.map((item, i) => (
           <li key={`main-nav-${i}`}>{item}</li>
