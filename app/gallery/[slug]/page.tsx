@@ -8,6 +8,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import HeaderElement from "@/app/components/header";
 import { Metadata, ResolvingMetadata } from "next";
+import { json } from "stream/consumers";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,7 +25,7 @@ export async function generateMetadata(
 
   return {
     title: gallery ? gallery.title : "Gallery",
-    description: gallery ? gallery.description : " ",
+    description: gallery ? String(gallery.description) : " ",
     alternates: {
       canonical: new URL(slug, settings.domain),
     },
