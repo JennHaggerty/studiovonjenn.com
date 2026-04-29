@@ -449,7 +449,6 @@ a .icon:hover {
 .portfolio {
   display: flex;
   flex-direction: column;
-  margin-bottom: 8px;
 }
 
 @media (min-width: 768px) {
