@@ -275,28 +275,16 @@ export const navigation = [
 
 export const portfolioImages = [
   {
-    src: "/images/birds-1.jpg",
-    alt: "A black raven mask with red eyes adorns Jennifer in this Raven in Flight portrait",
+    src: "/images/tiffany-rae-knight-3.jpg",
+    alt: "Portrait of Tiffay featured in Dark Beauty Magazine",
   },
   {
-    src: "/images/birds-2.jpg",
-    alt: "Blood red crystal adorn the white plague doctor mask Jana is wearing in this Gothesque editorial",
+    src: "/images/tiffany-rae-knight-2.jpg",
+    alt: "Steampunk portrait of Tiffay in warm tones looking into your eyes",
   },
   {
-    src: "/images/birds-3.jpg",
-    alt: "The Raven wearing a black cape and a black plague doctor mask with red eyes.",
-  },
-  {
-    src: "/images/safara-1.jpg",
-    alt: "Safara's portrait in a dark realm",
-  },
-  {
-    src: "/images/sarah-2.jpg",
-    alt: "A black spiral shell crown sits atop Sarah's head.",
-  },
-  {
-    src: "/images/safara-2.jpg",
-    alt: "Safara's portrait in a dark realm with lace.",
+    src: "/images/tiffany-rae-knight-1.jpg",
+    alt: "Victorian portrait of Tiffay in purple holding a mirror",
   },
   {
     src: "/images/jennifer-3.jpg",
@@ -311,28 +299,16 @@ export const portfolioImages = [
     alt: "Jennifer wears a warm floral crown against her long teal hair, her dress and lips are a bold red",
   },
   {
-    src: "/images/winter-queen-1.jpg",
-    alt: "Melanie wears a brilliant silver crown of twigs with intense makeup.",
+    src: "/images/safara-1.jpg",
+    alt: "Safara's portrait in a dark realm",
   },
   {
-    src: "/images/winter-queen-2.jpg",
-    alt: "Melanie is the ice queen with her crown of sparkling twigs and silver corset gown.",
+    src: "/images/sarah-2.jpg",
+    alt: "A black spiral shell crown sits atop Sarah's head.",
   },
   {
-    src: "/images/winter-queen-3.jpg",
-    alt: "Her crown and scepter of silver twigs, Melanie stands against a winter backdrop in falling snow",
-  },
-  {
-    src: "/images/tiffany-rae-knight-3.jpg",
-    alt: "Portrait of Tiffay featured in Dark Beauty Magazine",
-  },
-  {
-    src: "/images/tiffany-rae-knight-2.jpg",
-    alt: "Steampunk portrait of Tiffay in warm tones looking into your eyes",
-  },
-  {
-    src: "/images/tiffany-rae-knight-1.jpg",
-    alt: "Victorian portrait of Tiffay in purple holding a mirror",
+    src: "/images/safara-2.jpg",
+    alt: "Safara's portrait in a dark realm with lace.",
   },
   {
     src: "/images/rozi-1.jpg",
@@ -369,6 +345,30 @@ export const portfolioImages = [
   {
     src: "/images/egan-1.jpg",
     alt: "Egan in a gothic editorial for Gothesque Magazine",
+  },
+  {
+    src: "/images/birds-1.jpg",
+    alt: "A black raven mask with red eyes adorns Jennifer in this Raven in Flight portrait",
+  },
+  {
+    src: "/images/birds-2.jpg",
+    alt: "Blood red crystal adorn the white plague doctor mask Jana is wearing in this Gothesque editorial",
+  },
+  {
+    src: "/images/birds-3.jpg",
+    alt: "The Raven wearing a black cape and a black plague doctor mask with red eyes.",
+  },
+  {
+    src: "/images/winter-queen-1.jpg",
+    alt: "Melanie wears a brilliant silver crown of twigs with intense makeup.",
+  },
+  {
+    src: "/images/winter-queen-2.jpg",
+    alt: "Melanie is the ice queen with her crown of sparkling twigs and silver corset gown.",
+  },
+  {
+    src: "/images/winter-queen-3.jpg",
+    alt: "Her crown and scepter of silver twigs, Melanie stands against a winter backdrop in falling snow",
   },
 ];
 
