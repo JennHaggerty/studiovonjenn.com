@@ -66,6 +66,13 @@ export const defaultGalleryDescription = (
 
 export const galleries: GalleryInterface[] = [
   {
+    slug: atmosSlug.replace("{date}", "0526"),
+    directory: atmosDirectory.replace("{date}", "0526"),
+    title: "Atmosphere May 2026",
+    featuredImg:
+      "/images/galleries/atmos/0526/jennifer-haggerty-atmosphere-052614.jpg",
+  },
+  {
     slug: atmosSlug.replace("{date}", "0426"),
     directory: atmosDirectory.replace("{date}", "0426"),
     title: "Atmosphere April 2026",
